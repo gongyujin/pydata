@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- get: id,pw 보임(검색같은거 쓸때)과 post: 안보임(로그인같은거 쓸때), action은 어디로 이동할지 , value는 미리 input으로 뭘 넣을지 정해주는 것-->
+    <form name="frm1" method="get" action="w0329_01.html">
+        <label for="id">아이디</label>
+        <input type="text" name="id" id="id" value="aaa"><br>
+        <label>패스워드</label>
+        <input type="password" name="pw" autofocus><br>
+        <fieldset>
+            <label>성별</label><br>
+            <input type="radio" name="gender" value="male" id="male">
+            <label for="male">남자</label>
+            <input type="radio" name="gender" value="female" id="female">
+            <label for="female">여자</label>
+            <!--radio에서 글자를 선택했을때 자동으로 눌러지고 싶다면 id와 label for를 사용하면 됨-->
+            <br>
+        </fieldset>
+        
+        <fieldset>
+            <label>광고메일신청</label><br>
+            <input type="radio" name="gender" value="male" id="yes">
+            <label for="male">신청</label>
+            <input type="radio" name="gender" value="female" id="no">
+            <label for="female">취소</label>
+            <br>
+        </fieldset>
+
+        <input type="submit" value="로그인">
+        <input type="submit" value="입력취소">
+
+        <!-- name 설정하면 id,pw가 쌍으로 묶여짐 -->
+    </form>
+    
+</body>
+</html>

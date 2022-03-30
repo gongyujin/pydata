@@ -20,9 +20,9 @@ def lottosuffle(lottoNum, lotto6):
     for i in range(6):
         lotto6.append(lottoNum[i])
         
-def lottoOk(okNum, lotto6, lottoInput,count):
-    for i in range(6):
-        if lottoInput[i] in lotto6:
-            okNum.append(lottoInput[i])
-            count+=1
-    return count
+def lottoOk(okNum, lotto6, lottoInput):
+    for temp in lottoInput:
+        if temp in lotto6:
+            okNum.append(temp)
+  
+    
