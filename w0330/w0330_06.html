@@ -10,14 +10,18 @@
         #section{width:1620px; margin:0 auto; height: 3000px;
             background: url('../images/so1.jpg') no-repeat;
             background-attachment: fixed;} /*background-attachment: 배경이 스크롤에 따라 움직이지 않고 고정*/
-        #img1, #img2, #img3{width:500px; height: 650px;
+        #img1, #img2, #img3{width:500px; height: 500px;
             border: 1px solid black; background-size: 500px;
             text-align: center; color: #fff;}
             /*background-size로 이미지 크기조정, background-position으로 배치를 해줄수 있음*/
             /*cover: 짧은 쪽을 기준으로 늘려서 빈공간이 안보이게 함 대신, 이미지가 짤릴수 있음
             contain: 긴쪽을 기준으로 늘려서 빈공간이 보일 수 있음*/
-        #img1:hover, #img2:hover,#img3:hover {background-size: 600px;}
-        #img1{ float: left;background: url('../images/sec1_img1_full.jpg') no-repeat; margin-right:50px;} 
+        #img1:hover, #img2:hover,#img3:hover {background-size: 600px; display:none} 
+            /*display:none으로 반응형 사이트에서 사용될 수 있음
+            display가 inline형태인데 높이와 너비를 주고 싶을때 inline-block으로 사용하면 된다*/
+            
+        #img1{ float: left;background: url('../images/sec1_img1_full.jpg') no-repeat; 
+            border-radius: 250px; margin-right:50px;} 
         #img2{ float: left;background: url('../images/sec1_img2_full.jpg') no-repeat; margin-right:50px;}
         #img3{ float: left;background: url('../images/sec1_img3_full.jpg') no-repeat;}
         #img1 h4, #img2 h4, #img3 h4{margin: 120px 0 10px 0; font-size: 38px;}
