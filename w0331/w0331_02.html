@@ -1,0 +1,30 @@
+<!-- 선택자를 쓰는 이유: 위치를 찾아서 css를 적용시키기 위함 -->
+<!-- 속성선택자, 속성=값 선택자, 속성$=값 선택자, 속성*=값 선택자-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*a[href]{background: yellow;}*/
+        input[checked]+label{color: red;}
+        a[target='_blank']{background: green;}
+    </style> <!--속성으로하면 반드시 일치시켜야하지만 class속성값은 포함해서 할 수 있다/ *=와 $=(끝) 정도 알아두면 좋을듯-->
+</head>
+<body> <!--method 숨길건지 말건지 결정-->
+    <a href="#" target="_blank">메뉴</a>
+    <a href="#" target="_self">메뉴</a>
+    <a href="#" target="_blank">메뉴</a>
+
+    <form action="#" method="get" name="frm">
+        <label>성별</label><br>
+        <!--input은 태그/ type,name,value 이런건 속성-->
+        <input type="checkbox" name="gender" value="male" id="male" checked>
+        <label for ="male">남자</label> <!--checked를 선택했을때 라벨: 인접형제선택자-->
+        <input type="checkbox" name="gender" value="female" id="female">
+        <label for ="female">여자</label>
+    </form>
+</body>
+</html>
