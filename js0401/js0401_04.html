@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- select
+        1900-2022년 1-12월  1-31일
+    -->
+    <form action="#" method="get" name="frm">
+        <select name="year" id="year"></select>
+        <label>년</label>
+        <select name="month" id="month"></select>
+        <label>월</label>
+        <select name="day" id="day"></select>
+        <label>일</label>
+        <br>
+        <input type="submit" value="전송">
+    </form>
+    <script>
+        // 자바스크립트 날짜 함수
+        let today=new Date(); // today에 년, 월, 일을 모두 가져옴
+        let todayYear=today.getFullYear() //년도를 가져옴
+        let todayMonth=today.getMonth()+1 //0부터 시작함 ==> +1을 해줘서 1월시작으로 맞춰줌
+        let todayDate=today.getDate()
+        let todayDay=today.getDay() //0:월요일, 1:화요일 .... 6:일요일
+        
+        let str1=''
+        for (let i=1900; i<=2022;i++){
+            // todayYear와 같다면 selected 추가
+            if (todayYear==i)
+            str1+='<option value="'+i+'" selected>'+i+'</option>'
+            else
+            str1+='<option value="'+i+'">'+i+'</option>'
+        }
+        let str2=''
+        for (let i=1; i<=12;i++){
+            if (todayMonth==i)
+            str2+='<option value="'+i+'" selected>'+i+'</option>'
+            else
+            str2+='<option value="'+i+'">'+i+'</option>'
+        }
+        let str3=''
+        for (let i=1; i<=31;i++){
+            if (todayDate==i)
+            str3+='<option value="'+i+'" selected>'+i+'</option>'
+            else
+            str3+='<option value="'+i+'">'+i+'</option>'
+        }
+        document.getElementById('year').innerHTML=str1
+        document.getElementById('month').innerHTML=str2
+        document.getElementById('day').innerHTML=str3
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/js0401_10.js"></script>
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <form action="js0401_02.html" method="get" name="frm">
+        <label>글자</label>
+        <input type="text" name="id" id="id"><br>
+        <select name="birth" id="birth">
+            <!-- innerHTML로 태그를 넣어줌/ innerText랑 다르게 태그를 넣어주는것-->
+        </select>
+        <label>년</label>
+        <br>
+        <input type="submit" value="전송">
+    </form>
+    <script>
+
+        let str1=''
+        for(let i=1900; i<=2022;i++){
+            str1+='<option value="'+i+'">'+i+'</option>'
+        }
+        document.getElementById('birth').innerHTML=str1
+        
+        // let str2='생일축하합니다.'
+        // 함수를 호출할때는 getElementById에 대한 게 위에 있어도 상관없지만
+        // 그게 아니라면 먼저 id가 입력된상태에서 script를 불러와야함
+        
+    </script>
+</body>
+</html>
