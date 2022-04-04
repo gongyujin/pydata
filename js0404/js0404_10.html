@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            let n=1;
+            $('.gallery1').click(function(){
+                num=-1
+                n+=num
+                if (n>5){
+                    n=1;
+                }else if (n<1){
+                    n=5;
+                }
+                //let a='<img src="images/'+n+'.jpg">'
+                $('#main').css("background","url('images/"+n+".jpg')")
+                $('p').text(n)
+            })
+            $('.gallery2').click(function(){
+                num=1
+                n+=num
+                if (n>5){
+                    n=1;
+                }else if (n<1){
+                    n=5;
+                }
+                //let a='<img src="images/'+n+'.jpg">'
+                $('#main').css("background","url('images/"+n+".jpg')")
+                $('p').text(n)
+            })
+
+
+
+        })
+    </script>
+    <style>
+        #main{width:500px; height: 400px; border: 1px solid black;
+            overflow: hidden; margin: 0 auto; margin-top: 50px; background: url('images/1.jpg');}
+        #sub{width: 150px; margin: 20px auto;}
+        p{width: 700px; height:500px; margin: 0 auto;}
+    </style>
+</head>
+<body>
+    <div id="main">
+        
+    </div>
+    <div id="sub">
+        <button class="gallery1">◀ 이전</button>&nbsp;&nbsp;
+        <button class="gallery2">다음 ▶</button>
+    </div>
+    <p>1</p>
+    
+</body>
+</html>
