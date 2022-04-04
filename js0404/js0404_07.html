@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!--해당 버전만 가져옴-->
+    <!-- <script  src="http://code.jquery.com/jquery-latest.min.js"></script>--> <!--항상 최신버전만 가져옴 -->
+    <title>Document</title>
+    <script>
+        //제이쿼리 기본선언 - html문서를 모두 읽은후 function실행 (장점: script의 위치를 신경쓰지 않아도 됨)
+        // $(document).ready(function(){}) //document와 ready가 생략가능함
+
+        //제이쿼리 단축선언-제이쿼리는 function안에서 항상 돌아가야함
+        $(function(){ //min제이쿼리는 항상 위에다가 선언해줘야함
+            //$('#txt').html('<h2>한글</h2>'); //document.getElementById('txt').innerHTML='<h2>한글</h2>'과 같은 형태
+
+            $('.saveBtn').click(function(){
+                alert('제이쿼리 함수호출')
+            })
+        });
+
+        // 자바스크립트 (제이퀘리가 아님), button안에 onclick이 있어야만 실행됨
+        function sBtn(){ //$function안에 들어가게 되면 지역함수가 되어버려서 호출이 되지 않음
+            alert('자바스크립트 함수호출')
+            //$('#txt').html('<h2>한글</h2>'); //제이퀘리를 자바스크립트안에 넣어도 구동이 됨
+            //$('#kor').val(100); // 값 넣어주기
+            alert('국어점수 읽어옴 : '+$('#kor').val()); // 값 읽어오기
+
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label>이름</label>
+        <input type="text" name="name" id="name"><br>
+        <label>국어</label>
+        <input type="text" name="kor" id="kor"><br>
+        <label>영어</label>
+        <input type="text" name="eng" id="eng"><br>
+    </form>
+    <button class="" onclick="sBtn()">저장</button>
+    <div id="txt"></div>
+    
+</body>
+</html>
