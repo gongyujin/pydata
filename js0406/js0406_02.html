@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+    <style>
+        table{width: 800px; margin: 0 auto; margin-top: 50px;}
+        table,th,td{border: 1px solid black; border-collapse: collapse;}
+        th{background: rgb(196, 195, 195);}
+        th,td{text-align: center; height: 40px;}
+        form{width: 800px; font-size: 20px; margin: 0 auto;}
+    </style>
+    <script>
+        let count=1
+
+        $(function(){
+            //날짜 객체생성
+            let today = new Date()
+            let year=today.getFullYear()
+            let month=today.getMonth()+1 //getMonth: 0~11
+            month=(month<10)?'0'+month:month //삼항식 
+            let day=today.getDate()
+            day=(day<10)?'0'+day:day
+            let todayDate=year+'/'+month+'/'+day
+            $('#fdate').val(todayDate)
+
+            let str=''
+            let arr=[['홍길동',1],['홍길자',10],['홍길순',5],['이순신',7],['한소희',3],['한소정',2],['송선유',100],['조승완',105],['공유진',50],['윤지현',70]]
+            
+            for(let i=0;i<10;i++){
+                str+='<tr>'
+                str+='<td>'+(i+1)+'</td>'
+                str+='<td>게시글작성'+(i+1)+'</td>'
+                str+='<td>2022/04/06</td>'
+                str+='<td>'+arr[i][0]+'</td>'
+                str+='<td>'+arr[i][1]+'</td>'
+                str+='<tr>'
+                count++
+            }
+            $('#section').html(str)
+
+            //글쓰기 버튼클릭
+            $('#fwrite').click(function(){
+                str=''
+                str+='<tr>'
+                str+='<td>'+count+'</td>'
+                str+='<td>'+$('#ftitle').val()+'</td>'
+                str+='<td>'+todayDate+'</td>'
+                str+='<td>'+$('#fname').val()+'</td>'
+                str+='<td>1</td>'
+                str+='<tr>'
+                $('tbody').append(str)
+                count++
+            })
+
+
+        })
+    </script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성일</th>
+                <th>작성자</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+
+        <tbody id="section">
+        </tbody>
+
+    </table>
+    <div>
+        <form action="#" method="get" name="frm">
+            <h3>글쓰기</h3>
+            <label>작성자</label>
+            <input type="text" name="fname" id="fname"><br>
+            <label>제목</label>
+            <input type="text" name="ftitle" id="ftitle"><br>
+            <label>날짜</label>
+            <input type="text" name="fdate" id="fdate" readonly><br>
+            <button type="button" id="fwrite">쓰기</button>
+
+
+        </form>
+    </div>
+        
+    
+</body>
+</html>
