@@ -24,11 +24,12 @@
         let todayDate=year+'/'+month+'/'+day
         $('#fdate').val(todayDate)
 
+        //전체불러오기
         let arr1=['카카오플러스 친구 오픈','[마이다스 호텔&리조트] 제23회 경기건축문화 금상 수상','마이다스 멤버쉽 안내','[키즈잼] 2월 프로그램 안내','[키즈잼] 3월 프로그램 안내','홈페이지 개인정보 보안 강화','[키즈잼] 2020년 1분기 정기 휴관일 안내','[키즈잼] 2020년 이용 시간 & 이용 요금 변경 안내','[2020년3월] 시설 정비 공사 안내','신종코로나바이러스 예방관련 운영 안내']
         let arr=[['홍길동',1],['홍길자',10],['홍길순',5],['이순신',7],['한소희',3],['한소정',2],['송선유',100],['조승완',105],['공유진',50],['윤지현',70]]
         let str=''
         for (let i=0;i<10;i++){
-            str+='<tr>'
+            str+='<tr id="'+(10-i)+'">'
             str+='<td>'+(10-i)+'</td>'
             str+='<td class="table-title">'+arr1[9-i]+'</td>'
             str+='<td>'+arr[9-i][0]+'</td>'
@@ -40,11 +41,12 @@
         }
         $('#section').html(str)
 
+        //글쓰기
         $('#fwrite').click(function(){
             str=''
-            str+='<tr>'
+            str+='<tr id="'+count+'">'
             str+='<td>'+count+'</td>'
-            str+='<td>'+$('#ftitle').val()+'</td>'
+            str+='<td class="table-title">'+$('#ftitle').val()+'</td>'
             str+='<td>'+$('#fname').val()+'</td>'
             str+='<td>'+todayDate+'</td>'
             str+='<td>1</td>'
@@ -53,13 +55,52 @@
             count++
         })
 
+        //글삭제
+        $('#fdelete').click(function(){
+            let fid='#'+$('#fno').val().trim()
+            if (confirm('정말 삭제하시겠습니까?')){
+                $(fid).remove()
+            }else return false
+
+
+        })
+
+        //불러오기
+        $('#fopen').click(function(){
+            let fid='#'+$('#fno').val().trim()
+            $('#fname').val($(fid+'>td:nth-child(3)').text())
+            $('#ftitle').val($(fid+'>td:nth-child(2)').text())
+            $('#fdate').val($(fid+'>td:nth-child(4)').text())
+            $('#tdid').val(fid)
+            
+        })
+
+        //수정하기
+        $('#fmodify').click(function(){
+            let temp=$('#tdid').val() // #num
+            $(temp+'>td:nth-child(3)').text($('#fname').val())
+            $(temp+'>td:nth-child(2)').text($('#ftitle').val())
+            $(temp+'>td:nth-child(4)').text($('#fdate').val())
+            $('#fname').val('')
+            $('#ftitle').val('')
+            $('#fdate').val('')
+
+        })
+
     })
   </script>
   <style>
-    #writesection{width: 400px; font-size: 20px; margin: 0 auto;}
-    #writesection input{border: 1px solid black; margin: 5px;}
+    #td{text-align: left;}
+    #writesection{width: 300px; font-size: 20px; margin: 0 auto;}
+    #writesection input{border: 1px solid black; margin: 2px;}
+    #fname{position:relative; left:26px;}
+    #ftitle, #fdate{position:relative; left:40px;}
+    #fno{position:relative; left:10px;}
     #fdate{position: relative;}
-    #fwrite{position: relative; margin: 30px 0 0 0; left: 100px;}
+    #fwrite{position: relative; margin: 30px 0 0 0; left: 200px;}
+    #fmodify{position: relative; margin: 30px 0 0 0; left: 200px;}
+    #fopen{position: relative;width: 120px; margin: 30px 0 0 0; left: 120px;}
+    #fdelete{position: relative; margin: 30px 0 0 0; left: 120px;}
   </style>
 
 </head>
@@ -202,13 +243,21 @@
   <div id="writesection">
     <h2>글쓰기</h2>
     <form action="#" method="get" name="frm">
+    <input type="hidden" name="tdid" id="tdid">
     <label>작성자</label>
     <input type="text" name="fname" id="fname"><br>
     <label>제목</label>
     <input type="text" name="ftitle" id="ftitle"><br>
     <label>날짜</label>
     <input type="text" name="fdate" id="fdate" readonly><br>
-    <button type="button" id="fwrite">쓰기</button>
+    <button type="button" id="fwrite">쓰기</button>&nbsp;
+    <button type="button" id="fmodify">수정</button>
+    <br>
+    <br>
+    <label>해당번호</label>
+    <input type="text" name="fno" id="fno"><br>
+    <button type="button" id="fopen">불러오기</button>&nbsp;
+    <button type="button" id="fdelete">삭제</button>
     </form>
   </div>
 
