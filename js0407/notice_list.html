@@ -18,6 +18,7 @@
           dataType:"json",
           success:function(data){
             let str=''
+            let scount=0
             for (let i=0;i<data.length;i++){
               str+='<tr>'
               str+='<td>'+data[i].id+'</td>'
@@ -26,55 +27,87 @@
               str+='<td>'+data[i].email+'</td>'
               str+='<td>'+data[i].gender+'</td>'
               str+='</tr>'
+              scount++
   
             }
             $('#btable').html(str)
-  
+            $('#viewTitle').text(scount+'개 검색')
+            
           },
           error:function(){
             alert('실패')
           }
   
-        })
+        })//ajax
         
-      })
+      })//ajaxBtn
+
+      $('#searchTxt').keydown(function(key){
+        if (key.keyCode==13){
+          searchFunc()
+          return false
+        }//keyCode
+      })//searchTxt
+
 
       $('#searchBtn').click(function(){
-        let searchWord=$('#searchTxt').val().toLowerCase()
-        $.ajax({
-          url:"js/MOCK_DATA.json",
-          dataType:"json",
-          success:function(data){
-            let str=''
-            for (let i=0;i<data.length;i++){
-              let temp=data[i].first_name.toLowerCase()
-              // 검색한 단어가 없는 경우 다음으로 넘어감
-              if (temp.indexOf(searchWord)==-1) continue
-              //count
-              
-              str+='<tr>'
-              str+='<td>'+data[i].id+'</td>'
-              str+='<td>'+data[i].first_name+'</td>'
-              str+='<td>'+data[i].last_name+'</td>'
-              str+='<td>'+data[i].email+'</td>'
-              str+='<td>'+data[i].gender+'</td>'
-              str+='</tr>'
-  
+        searchFunc()
+      })//searchBtn
+
+    })//function
+
+    
+    //function은 제이쿼리 밖에 둬야함
+    function searchFunc(){
+      let searchWord=$('#searchTxt').val().toLowerCase()
+      $.ajax({
+        url:"js/MOCK_DATA.json",
+        dataType:"json",
+        success:function(data){
+          let str=''
+          let scount=0
+          for (let i=0;i<data.length;i++){
+            
+            
+            let temp=''
+            if($('#category').val()=='firstn'){ //성
+              temp=data[i].first_name.toLowerCase()
+            }else if ($('#category').val()=='lastn'){ //이름
+              temp=data[i].last_name.toLowerCase()
+            }else if ($('#category').val()=='all'){ //전체
+              temp=data[i].first_name.toLowerCase()+','+data[i].last_name.toLowerCase()
             }
-            $('#btable').html(str)
-  
-          },
-          error:function(){
-            alert('실패')
+
+
+            // 검색한 단어가 없는 경우 다음으로 넘어감
+            if (temp.indexOf(searchWord)==-1) continue
+            
+            str+='<tr>'
+            str+='<td>'+data[i].id+'</td>'
+            str+='<td>'+data[i].first_name+'</td>'
+            str+='<td>'+data[i].last_name+'</td>'
+            str+='<td>'+data[i].email+'</td>'
+            str+='<td>'+data[i].gender+'</td>'
+            str+='</tr>'
+            scount++
+            
           }
-  
-        })
-      })
+          $('#btable').html(str)
+          $('#viewTitle').text(scount+'개 검색')
 
-    })
 
+        },
+        error:function(){
+          alert('실패')
+        }
+
+      })//ajax
+    }
 
   </script>
+  <style>
+    #viewTitle{position: relative; padding-top: 30px;}
+  </style>
 </head>
 <body>
   <header>
@@ -116,9 +149,9 @@
     <div class="wrapper">
       <form action="/search" name="search" method="post">
         <select name="category" id="category">
-          <option value="0">성</option>
-          <option value="title">이름</option>
-          <option value="content">전체</option>
+          <option value="firstn">성</option>
+          <option value="lastn">이름</option>
+          <option value="all">전체</option>
         </select>
 
         <div class="title">
@@ -128,6 +161,7 @@
         <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
       </form>
     </div>
+    <div id="viewTitle">0개 검색</div>
 
     <table>
       <colgroup>
