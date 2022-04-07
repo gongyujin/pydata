@@ -12,13 +12,28 @@
 
             $('#ajaxBtn').click(function(){
                 //ajax 선언
-                $.ajax({
+                $.ajax({ //페이지가 리로딩되지 않으면서 일부 데이터가 변경될수 있음
                     url:"js/MOCK_DATA.json",
-                    dataType:"json",
-                    data:{"userId":"admin","userPw":"1111"},
-                    success:function(data){
-                        alert('성공')
-                        $('#txt').text(data)
+                    dataType:"json", //데이터 타입을 미리적어주지 않으면 문자라고 인식해서 data를 읽을 수 없음 (타입을 맞춰주지않으면 에러발생)
+                    data:{"userId":"admin","userPw":"1111"}, //data라는 변수가 없어도 가능, 대신 받고싶은 데이터의 타입이 무엇인지 알아야함
+                    //직접입력한 데이터를 Request URL: http://127.0.0.1:8887/js/MOCK_DATA.json?userId=admin&userPw=1111 으로 headers에 불러옴
+
+                    success:function(data){ //data=[{},{},{},.....] ||  MOCK_DATA.json 파일형태: 리스트안에 데이터가 들어가있음
+                        alert('성공 : '+data.length) //data는 배열
+                        
+                        let str=''
+                        for (let i=0;i<data.length;i++){
+                            str+='<tr>'
+                            str+='<td>'+data[i].id+'</td>'
+                            str+='<td>'+data[i].first_name+'</td>'
+                            str+='<td>'+data[i].last_name+'</td>'
+                            str+='<td>'+data[i].email+'</td>'
+                            str+='<td>'+data[i].gender+'</td>'
+                            str+='</tr>'
+
+                        }
+
+                        $('#btable').html(str)
                     },
                     error:function(){
                         alert('실패')
@@ -34,11 +49,37 @@
         //$.ajax({}) //제이쿼리외부에서도 가능함
 
     </script>
+    <style>
+        div{width: 1100px; margin: 0;}
+        #ajaxBtn{width: 200px; height:50px; margin: 50px 0 30px 0; 
+        cursor: pointer;}
+        table,th,td{border: 1px solid black; border-collapse: collapse;
+        width: 1100px; margin-top:50px auto; text-align: center;}
+        th,td{height: 30px;}
+    </style>
 </head>
 <body>
-    <button id="ajaxBtn">ajax 읽어오기</button>
-    <div id="txt">
+    <div>
 
+        <button id="ajaxBtn">ajax 읽어오기</button>
     </div>
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>성</th>
+            <th>이름</th>
+            <th>이메일</th>
+            <th>성별</th>
+        </tr>
+        <tbody id="btable">
+            <tr>
+                <td>1</td>
+                <td>hong</td>
+                <td>gildong</td>
+                <td>gildong@gmail.com</td>
+                <td>male</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
