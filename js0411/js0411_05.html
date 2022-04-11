@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            let xData=[]
+            let yData=[]
+            $('#chartBtn').click(function(){
+                $.ajax({
+                    url:'js/income.json',
+                    dataType:'json',
+                    success:function(data){
+                        /*
+                        $.each(data,function(i,item){
+                            xData.push(item.iyear)
+                            yData.push(item.iincome)
+                        })
+                        */
+                        for (let i=0;i<data.length;i++){
+                            xData.push(data[i].iyear)
+                            yData.push(data[i].iincome)
+                        }
+
+                        //그래프 그리기 (시각화)
+                        const ctx = document.getElementById('myChart').getContext('2d');
+                        const myChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: xData,
+                                datasets: [{
+                                    label: '연도별 매출액', //title
+                                    data: yData,
+                                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                    borderColor: 'rgba(255, 99, 132, 1)',
+                                    borderWidth: 3
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero: true,
+                                            fontSize : 14,
+                                        }
+                                    }]
+                                }
+                            }
+        
+                        });//chart
+                    },
+                    error:function(){
+                        alert('실패')
+                    }
+                })//ajax
+            })//chartBtn
+        })//function
+    </script>
+    <style>
+        div{width:900px; height: 450px; border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <button id="chartBtn">차트가져오기</button>
+    <br><br>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+</body>
+</html>

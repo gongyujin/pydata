@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            let xData=[]
+            let yData=[]
+            $('#chartBtn').click(function(){
+                $.ajax({
+                    url:'https://api.odcloud.kr/api/15077756/v1/vaccine-stat?page=1&perPage=10&serviceKey=Ipx52TKNQYQIqd8pC9w%2BMQqG5uX8b%2FLcUqiDf3jra%2BLewkrmtRm4dHzr9DCkzX8fyXhP3hJZnDtt%2BDst718ZMg%3D%3D',
+                    dataType:'json',
+                    success:function(data){
+                        /*
+                        //for문으로 만들기
+                        for (let i=1;i<8;i++){
+                            xData.push(data.data[i].sido)
+                            yData.push(data.data[i].accumulatedFirstCnt)
+                        }
+                        */
+                        if(data.data.length>0){
+                            //each로 만들기
+                            $.each(data.data,function(i,item){
+                                if (i>0 && i<8){
+                                    xData.push(item.sido)
+                                    yData.push(item.accumulatedFirstCnt)
+    
+                                }
+    
+                            })
+    
+                            //그래프 그리기 (시각화)
+                            const ctx = document.getElementById('myChart').getContext('2d');
+                            const myChart = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: xData,
+                                    datasets: [{
+                                        label: '연도별 매출액', //title
+                                        data: yData,
+                                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                        borderColor: 'rgba(255, 99, 132, 1)',
+                                        borderWidth: 3
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+                                                beginAtZero: true,
+                                                fontSize : 14,
+                                            }
+                                        }]
+                                    }
+                                }
+            
+                            });//chart
+
+                        }else{
+                            alert('데이터가 없습니다.')
+                            return false;
+                        }
+                    },
+                    error:function(){
+                        alert('실패')
+
+                    }
+
+                })//ajax
+            })//chartBtn
+        })//function
+
+    </script>
+    <style>
+        div{width: 900px; height: 450px; border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <!--1차누계접종자 : 서울, 부산, 대구, 인천, 광주, 대전, 울산-->
+    <button id="chartBtn">차트가져오기</button>
+    <br><br>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+</body>
+</html>

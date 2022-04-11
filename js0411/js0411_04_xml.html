@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <title>xml로 가져오기</title>
+    <script>
+        $(function(){
+            $('#ajaxBtn').click(function(){
+                let searchWord=''
+                searchWord=$('input[name="search"]').val()
+                /*
+                if (searchWord==0){
+                    alert('페이지번호가 없으면 못 찾아옵니다. 꼭 넣어주세요!!!')
+                    $('input[name=="search"]').focus()
+                    return false;
+                }
+                */
+
+                $.ajax({
+                    url:'http://api.visitkorea.or.kr/openapi/service/rest/PhotoGalleryService/galleryDetailList?serviceKey=Ipx52TKNQYQIqd8pC9w%2BMQqG5uX8b%2FLcUqiDf3jra%2BLewkrmtRm4dHzr9DCkzX8fyXhP3hJZnDtt%2BDst718ZMg%3D%3D&pageNo=1&numOfRows=10&MobileOS=ETC&MobileApp=AppTest&title='+searchWord,
+                    data:{}, //검색한 내용이 url에 들어가는게 아니라고 DB에 넣으려면 data:{"searchWord":$('input[name="search"]').val()} 형태로 넣어주면 됨
+                    dataType:'xml',
+                    success:function(data){
+                        let str=''
+                        dataXml=$(data).find('items')//첫번째 태그 dataset을 해줘야함 //find: 내가 찾고자하는 태그(여기서는 data)의 하위태그에서 원하는 요소를 찾아줌
+                        let len=dataXml.find('item').length
+                        console.log("len : "+len)
+                        if(len>0){
+                            for (let i=0;i<len;i++){
+                                let galContentId, galCreatedtime, galPhotographer,galTitle,galWebImageUrl;
+
+                                galContentId=dataXml.find('item').eq(i).find('galContentId').text()
+                                galCreatedtime=dataXml.find('item').eq(i).find('galCreatedtime').text()
+                                galPhotographer=dataXml.find('item').eq(i).find('galPhotographer').text()
+                                galTitle=dataXml.find('item').eq(i).find('galTitle').text()
+                                galWebImageUrl=dataXml.find('item').eq(i).find('galWebImageUrl').text()
+
+                                str+='<tr>'
+                                str+='<td>'+galContentId+'</td>'
+                                str+='<td>'+galCreatedtime+'</td>'
+                                str+='<td>'+galPhotographer+'</td>'
+                                str+='<td>'+galTitle+'</td>'
+                                str+='<td><a href="'+galWebImageUrl+'" target="_blank"><img src="'+galWebImageUrl+'"></a></td>'
+                                str+='</tr>'
+
+                            }//for
+                            $('#tbody').html(str)
+                            $('#itemDate').text('관광사진갤러리 목록 조회')
+                        }//if
+                        else{
+                            alert('검색한 사진이 없습니다.')
+                            $('input[name="search"]').val()
+                            return false;
+                        }//else
+                    },
+                    error:function(){
+                        alert('실패')
+
+                    }
+                })//ajax
+
+            })//ajaxBtn
+        })//function
+    </script>
+    <style>
+        div{width: 1400px; margin: 0 auto;}
+        #ajaxBtn{width: 200px; height:50px; margin: 50px 0 30px 0; 
+        cursor: pointer;}
+        table,th,td{border: 1px solid black; border-collapse: collapse;
+        width: 1400px; margin-top: 50px;margin:0 auto; text-align: center;}
+        th,td{height: 30px;}
+        img{width:50px;}
+    </style>
+</head>
+<body>
+    <div>
+        <label>검색할 내용을 입력하세요.</label>
+        <input type="text" name="search">
+        <button id="ajaxBtn">사진 검색</button>
+    </div>
+    <br>
+    <div id="itemDate">관광사진갤러리 목록 조회</div>
+    <br>
+    <table>
+        <tr>
+            <th>아이디</th>
+            <th>촬영시간</th>
+            <th>촬영자</th>
+            <th>사진제목</th>
+            <th>이미지</th>
+        </tr>
+        <tbody id="tbody">
+            <tr>
+                <td>2814635</td>
+                <td>20220331163128</td>
+                <td>한국관광공사 김지호</td>
+                <td>화순곶자왈 생태탐방숲길</td>
+                <td><img src='http://tong.visitkorea.or.kr/cms2/website/35/2814635.jpg'></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

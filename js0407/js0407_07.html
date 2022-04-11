@@ -21,6 +21,18 @@
                         console.log('data.data.data : '+data.data[0].orgnm)
                         $('#txt').text(data.currentCount)
                         $('#txt2').text(data.data[0].orgnm)
+                        let str=''
+                        for (let i=0;i<data.length;i++){
+                            str+='<tr>'
+                            str+='<td>'+data.data[i].dywk+'</td>'
+                            str+='<td>'+data.data[i].orgnm+'</td>'
+                            str+='<td>'+data.data[i].orgTlno+'</td>'
+                            str+='<td>'+data.data[i].lunchSttTm+'</td>'
+                            str+='<td>'+data.data[i].lunchEndTm+'</td>'
+                            str+='</tr>'
+                        }
+                        $('#tbody').html(str)
+
                     },
                     error:function(){
                         alert('실패')
@@ -32,9 +44,29 @@
             })//dataBtn
         })//function
     </script>
+    <style>
+        div{width: 1100px; margin: 0 auto;}
+        #ajaxBtn{width: 200px; height:50px; margin: 50px 0 30px 0; 
+        cursor: pointer;}
+        table,th,td{border: 1px solid black; border-collapse: collapse;
+        width: 1100px; margin-top: 50px;margin:0 auto; text-align: center;}
+        th,td{height: 30px;}
+    </style>
 </head>
 <body>
     <button id="dataBtn">데이터 가져오기</button>
+    <br>
+    <table>
+        <tr>
+            <th>요일</th>
+            <th>병원이름</th>
+            <th>전화번호</th>
+            <th>점심시작시간</th>
+            <th>점심종료시간</th>
+        </tr>
+        <tbody id="tbody">
+        </tbody>
+    </table>
     <div id="txt"></div>
     <div id="txt2"></div>
     

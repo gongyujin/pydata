@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            $('#chartBtn').click(function(){
+                let xData=[]
+                let yData1=[]
+                let yData2=[]
+                
+                // 삼성전자 매출액 배열에 저장
+                $('label').each(function(){
+                    xData.push($(this).text())
+                    yData1.push($(this).next().val()) //label의 형제요소가져옴
+                    yData2.push($(this).next().next().val()) //label의 형제요소가져옴
+                })
+                
+                
+                //ajax으로 들어갈때
+                $.ajax({
+                    //서버저장주소
+                    url:'https://api.odcloud.kr/api/15077756/v1/vaccine-stat?page=1&perPage=10&serviceKey=Ipx52TKNQYQIqd8pC9w%2BMQqG5uX8b%2FLcUqiDf3jra%2BLewkrmtRm4dHzr9DCkzX8fyXhP3hJZnDtt%2BDst718ZMg%3D%3D',
+                    data:{'year':xData,'income':yData1,'gain':yData2},
+                    dataType:'json',
+                    success:function(data){
+                        $('#myChart').remove()
+                        $('#graph').append('<canvas id="myChart"><canvas>')
+                        const ctx = document.getElementById('myChart').getContext('2d');
+                        const myChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: xData,
+                                datasets: [{
+                                    label: '삼성전자 매출액 (10억원)', //title
+                                    data: yData1,
+                                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                    borderColor: 'rgba(255, 99, 132, 1)',
+                                    borderWidth: 3
+                                },{
+                                    label: '삼성전자 영업이익 (10억원)', //title
+                                    data: yData2,
+                                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                    borderColor: 'rgba(54, 162, 235, 1)',
+                                    borderWidth: 3
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero: true,
+                                            fontSize : 14,
+                                        }
+                                    }]
+                                }
+                            }
+
+                        });//chart
+                    },
+                    error:function(){
+                        alert('실패')
+                    }
+                })
+
+            })//chartBtn
+        })//function
+
+    </script>
+    <style>
+        div{width: 900px; height: 450px; border: 1px solid black;}
+        table{width: 500px; margin-left: 120px;}
+    </style>
+</head>
+<body>
+    <!--1차누계접종자 : 서울, 부산, 대구, 인천, 광주, 대전, 울산-->
+    <h2>삼성전자 매출액 현황</h2>
+    <table>
+        <tr>
+            <td>매출</td>
+            <td>영업이익</td>
+        </tr>
+    </table>
+    <label>2015년</label>
+    <input type="text" name="2015">
+    <input type="text" name="a2015"><br>
+    <label>2016년</label>
+    <input type="text" name="2016">
+    <input type="text" name="a2016"><br>
+    <label>2017년</label>
+    <input type="text" name="2017">
+    <input type="text" name="a2017"><br>
+    <label>2018년</label>
+    <input type="text" name="2018">
+    <input type="text" name="a2018"><br>
+    <label>2019년</label>
+    <input type="text" name="2019">
+    <input type="text" name="a2019"><br>
+    <label>2020년</label>
+    <input type="text" name="2020">
+    <input type="text" name="a2020"><br>
+    <label>2021년</label>
+    <input type="text" name="2021">
+    <input type="text" name="a2021"><br><br>
+    <button id="chartBtn">차트그리기</button>
+    <br><br>
+    <div id="graph">
+        <canvas id="myChart"></canvas>
+    </div>
+</body>
+</html>
