@@ -125,6 +125,24 @@ def stuModify():
                 conn.commit()
                 conn.close()
                 print('국어점수가 {}으로 변경되었습니다.'.format(score))
+            if tempNum==2:
+                print('현재 영어점수 : {}'.format(row[3]))
+                score=int(input('수정할 영어점수를 입력하세요.>> '))
+                sql="update studata set eng=:1,total=:2,avg=:3 where stuno=:4"
+                cs.execute(sql,(score,(score+row[2]+row[4]),(score+row[2]+row[4])/3,row[0]))
+                cs.close()
+                conn.commit()
+                conn.close()
+                print('영어점수가 {}으로 변경되었습니다.'.format(score))
+            if tempNum==3:
+                print('현재 수학점수 : {}'.format(row[4]))
+                score=int(input('수정할 수학점수를 입력하세요.>> '))
+                sql="update studata set math=:1,total=:2,avg=:3 where stuno=:4"
+                cs.execute(sql,(score,(score+row[2]+row[3]),(score+row[2]+row[3])/3,row[0]))
+                cs.close()
+                conn.commit()
+                conn.close()
+                print('수학점수가 {}으로 변경되었습니다.'.format(score))
    
             count=1
             break
