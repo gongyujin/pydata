@@ -4,6 +4,7 @@ def topTitle():
     print('번호','이름','국어','영어','수학','합계','평균','등수',sep='\t')
     print('-'*60)
     
+    
 def screenPrint():
     print('[ 학생성적프로그램 ]')
     print('-'*40)
