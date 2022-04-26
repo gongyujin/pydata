@@ -26,7 +26,7 @@ time.sleep(random.uniform(1,3))
 # 5. 자바스크립트 소스추가 및 자바스크립트 페이지 적용
 input_js='document.getElementById("id").value="{id}";\
     document.getElementById("pw").value="{pw}"\
-    '.format(id='gyuj0114',pw='alfk47430990')
+    '.format(id='admin',pw='1111')
 
 
 # 자바스크립트 적용, input데이터 삽입

@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import csv 
 import time # 대기시간 사용을 위한 import
 import random # 랜덤으로 input에 데이터 입력
 
@@ -98,6 +99,17 @@ page_html = browser.page_source
 # BeautifulSoup html파싱
 soup = BeautifulSoup(page_html,"lxml")
 
+
+# csv 파일 저장
+filename='airline.csv'
+f=open(filename,'w',encoding='utf-8-sig',newline='')
+
+writer=csv.writer(f)
+
+title='항공사 이름,가격,출발시간,도착시간'
+title=title.split(',')
+writer.writerow(title)
+
 flights = soup.find_all("div",{"class":"domestic_Flight__sK0eA result"})
 choice=[]
 for flight in flights:
@@ -105,14 +117,23 @@ for flight in flights:
     name=flight.find('div',{'class':'domestic_item__2B--k'}).find('div',{'class':'airline'}).b.get_text()
     price=price.replace(',','')
     price=int(price)
-    
+    stime=flight.find('div',{'class':'domestic_item__2B--k'}).find('div',{'class':'route_Route__2UInh'}).find('span',{'class':'route_airport__3VT7M'}).b.get_text()
+    ftime=flight.find('div',{'class':'domestic_item__2B--k'}).find('div',{'class':'route_Route__2UInh'}).find('span',{'class':'route_airport__3VT7M'}).next_sibling.b.get_text()
+    data=[]
     if price <= 50000:
         choice.append(price)
+        data.append(name)
+        data.append(price)
+        data.append(stime)
+        data.append(ftime)
         print('항공사 이름: {}'.format(name))
         print('가격 : {}원'.format(price))
+        print('출발시간 : {}'.format(stime))
+        print('도착시간 : {}'.format(ftime))
         print('-'*30)
+        writer.writerow(data)
 print()
         
 print("5만원 이하 검색 개수 : ",len(choice))
 
-
+f.close()
