@@ -14,7 +14,6 @@
 # 멜론 1-100위까지 csv파일로 저장
 # ex) 순위, 곡정보 (제목,가수), 앨범,좋아요
 
-from json import encoder
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
