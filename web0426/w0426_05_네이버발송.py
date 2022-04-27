@@ -41,7 +41,7 @@ soup=BeautifulSoup(browser.page_source,'lxml')
 title=soup.find('h1',{'class':'headline'}).get_text()
 txts=soup.find('div',{'class':'article_body fs3'})
 txt_1=txts.find_all('p')
-
+txt_1=txt_1[1:]
 re_text=''
 for txt in txt_1:
     re_text+=txt.get_text()
@@ -51,8 +51,8 @@ smtpName="smtp.naver.com" # 메일서버주소
 smtpPort=587 # 메일서버 포트번호
 
 
-sendEmail="gyuj0114@naver.com" # 자신의 아이디
-password="alfk47430990" # 자신의 비밀번호
+sendEmail="admin@naver.com" # 자신의 아이디
+password="1111" # 자신의 비밀번호
 recvEmail="mayitshe87@naver.com" # 받는사람 주소
 
 
