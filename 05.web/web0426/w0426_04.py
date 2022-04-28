@@ -7,7 +7,7 @@ smtpPort=587 # 메일서버 포트번호
 
 
 sendEmail="gyuj0114@naver.com" # 자신의 아이디
-password="alfk47430990" # 자신의 비밀번호
+password="1111" # 자신의 비밀번호
 recvEmail="mayitshe87@naver.com" # 받는사람 주소
 
 

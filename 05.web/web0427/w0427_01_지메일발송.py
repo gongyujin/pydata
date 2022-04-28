@@ -17,7 +17,7 @@ smtpName="smtp.gmail.com"
 smtpPort=587
 
 sendEmail="gongyujin98@gmail.com"
-password="umxqscpqkgsrpxzk"
+password="1111"
 recvEmail="gyuj0114@naver.com"
 
 
