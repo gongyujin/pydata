@@ -11,6 +11,7 @@ df_m.set_index('행정기관',inplace=True)
 # print(df_m)
 print(df_m.index)
 
+# index 명칭변경
 df_m.rename(index={'전국  ':'전국'},inplace=True)
 print(df_m.index)
 
