@@ -43,6 +43,8 @@ print(df.loc[df.index[3]]) # rows index명으로 출력 => 지원번호 4번에 
 # print(df.columns) # 컬럼출력
 # print(df.shape) # row, column 수를 출력
 
-# # skiprows: 개수만큼 제외, nrows: 개수만큼 가져옴
-# df=pd.read_excel('user.xlsx',skiprows=[i for i in range(0,500)],nrows=10)
-# print(df)
+# skiprows: 개수만큼 제외, nrows: 개수만큼 가져옴
+df=pd.read_excel('user.xlsx')
+print(df)
+df=pd.read_excel('user.xlsx',skiprows=[i for i in range(0,500)],nrows=10)
+print(df)
