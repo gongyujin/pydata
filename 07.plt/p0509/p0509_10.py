@@ -7,11 +7,14 @@ matplotlib.rcParams['axes.unicode_minus']=False
 import pandas as pd
 import numpy as np
 import re
+
 def strchange(temp):
     result=float(re.sub(r'[^0-9.]','',temp))
     return result
 
 df=pd.read_csv('chipotle.tsv',sep='\t')
+# 타입변경
+df['order_id']=df['order_id'].astype(str)
 df['item_price']=df['item_price'].apply(strchange) # $표시 없애주기
 
 # 1. 가장 주문을 많이 한 상품 5개
@@ -45,6 +48,7 @@ print('-'*50)
 # 4. order_id 주문당 평균 계산금액을 출력
 print('<order_id 주문당 평균 계산금액을 출력>')
 print(df.groupby('order_id')['item_price'].mean())
+print('평균주문금액 : {:.2f} 달러'.format(df.groupby('order_id')['item_price'].sum().mean()))
 print('-'*50)
 
 
