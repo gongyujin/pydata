@@ -6,14 +6,15 @@ matplotlib.rcParams['font.size']=10
 matplotlib.rcParams['axes.unicode_minus']=False
 import pandas as pd
 import numpy as np
-import re
+import re 
 
 def strchange(temp):
     result=float(re.sub(r'[^0-9.]','',temp))
+    
     return result
 
 df=pd.read_csv('chipotle.tsv',sep='\t')
-# 타입변경
+# 타입 변경
 df['order_id']=df['order_id'].astype(str)
 df['item_price']=df['item_price'].apply(strchange) # $표시 없애주기
 
