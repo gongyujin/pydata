@@ -9,6 +9,7 @@ class Student(models.Model):
     s_age = models.IntegerField(default=0) # 정수
     s_grade = models.IntegerField(default=0) # 정수
     s_gender = models.CharField(max_length=3) # 문자
+    s_date = models.DateField(auto_now=True) # 날짜
     
     def __str__(self):
         return self.s_name
