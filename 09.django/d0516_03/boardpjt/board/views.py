@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
 # Create your views here.
-def boardList(request):
+def boardlist(request):
     return render(request,'boardList.html')
