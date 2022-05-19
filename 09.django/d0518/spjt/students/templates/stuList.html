@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -22,7 +23,7 @@
 <body>
     <div>
         <h2>학생전체리스트</h2>
-        <h3>학생수 : {{ count }} </h3>
+        <h3>학생수 : {{ count }}명 </h3>
         <table>
             <tr>
                 <th>번호</th>
@@ -35,7 +36,7 @@
             </tr>
             {%if stuList%}
             {% for stu in stuList %}
-            <tr>
+                <tr>
                     <td>{{stu.s_no}}</td>
                     <td><a href="{% url 'students:stuView' stu.s_no %}">{{stu.s_name}}</a></td>
                     <td>{{stu.s_major}}</td>
@@ -46,7 +47,10 @@
                 </tr>
                 {% endfor %}
                 {%else%}
-                <td colspan='7'>데이터가 없습니다.</td>
+                <tr>
+
+                    <td colspan='7'>데이터가 없습니다.</td>
+                </tr>
                 {%endif%}
             </table>
             <br>
@@ -54,5 +58,6 @@
                 <a href="{% url 'students:stuWrite' %}"><button>학생등록</button></a>
             </h4>
         </div>
+        <img src="{% static 'images/abc.jpg' %}">
 </body>
 </html>

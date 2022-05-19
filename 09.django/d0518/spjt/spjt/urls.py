@@ -6,4 +6,5 @@ urlpatterns = [
     # http://127.0.0.1:8000/students/
     path('students/',include('students.urls')),
     path('',include('home.urls')),
+    path('member/',include('member.urls')),
 ]
