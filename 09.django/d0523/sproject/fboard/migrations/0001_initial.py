@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('member', '0002_alter_member_creatdate_alter_member_updatedate'),
+        ('member', '0002_alter_member_createdate_alter_member_updatedate'),
     ]
 
     operations = [
@@ -24,8 +24,8 @@ class Migration(migrations.Migration):
                 ('f_step', models.IntegerField(default=0)),
                 ('f_indent', models.IntegerField(default=0)),
                 ('f_hit', models.IntegerField(default=1)),
-                ('f_creatdate', models.DateTimeField(blank=True, default=datetime.datetime(2022, 5, 23, 10, 55, 57, 898627))),
-                ('f_updatedate', models.DateTimeField(blank=True, default=datetime.datetime(2022, 5, 23, 10, 55, 57, 898627))),
+                ('f_createdate', models.DateTimeField(blank=True, default=datetime.datetime(2022, 5, 23, 10, 55, 52, 236512))),
+                ('f_updatedate', models.DateTimeField(blank=True, default=datetime.datetime(2022, 5, 23, 10, 55, 52, 236512))),
                 ('f_file', models.ImageField(blank=True, upload_to='')),
                 ('member', models.ForeignKey(null=True, on_delete=django.db.models.deletion.DO_NOTHING, to='member.member')),
             ],

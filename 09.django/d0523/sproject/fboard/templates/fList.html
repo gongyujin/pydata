@@ -1,4 +1,4 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,11 +7,11 @@
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-  <link rel="stylesheet" href="{%static 'css/style.css'%}">
-  <link rel="stylesheet" href="{%static 'css/notice_list.css'%}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/notice_list.css' %}">
   <script>
     function writeBtn(){
-      location.href="{%url 'fboard:fWrite' %}"
+      location.href="{% url 'fboard:fWrite' %}"
     }
   </script>
 </head>
@@ -27,9 +27,7 @@
   </header>
 
   <nav>
-    <a href="{%url 'index'%}">
-    <div class="logo"></div>
-    </a>
+    <a href="{% url 'index' %}"><div class="logo"></div></a>
     <div id="search">
       <div class="search"></div><br>
       <span>메뉴찾기</span>
@@ -55,7 +53,7 @@
     <h1>NOTICE</h1>
     <div class="wrapper">
       <form action="/search" name="search" method="post">
-
+        {% csrf_token %}
         <select name="category" id="category">
           <option value="0">전체</option>
           <option value="title">제목</option>
@@ -65,7 +63,6 @@
         <div class="title">
           <input type="text" size="16">
         </div>
-  
         <button type="submit"><i class="fas fa-search"></i></button>
       </form>
     </div>
@@ -89,34 +86,33 @@
         <td><span class="table-notice">NOTICE</span></td>
         <td class="table-title">신종코로나바이러스 예방관련 운영 안내</td>
         <td>2020-02-28</td>
-      </tr>
-       {% endcomment %}
-      {%if fList%}
-      {%for board in fList%}
-      <tr>
-        <td>{{board.f_no}}</td>
-        <td class="table-title">
-          <a href="{%url 'fboard:fView' board.f_no%}">
-            {%if board.f_indent > 0 %}
-            {% comment %} fboard.f_indent를 글자로 인식 {% endcomment %}
-            {% comment %} "x"|rjust 숫자로 인식시켜줌 {% endcomment %}
-              {% for i in 'x'|rjust:board.f_indent%}
-                ▶
-              {%endfor%}
-            {%endif%}
-            {{board.f_title}}
-          </a>
-        </td>
-        <td>{{board.member.name}}</td>
-        <td>{{board.f_updatedate | date:'Y-m-d H:i'}}</td>
-        <td>{{board.f_hit}}</td>
-      </tr>
-      {%endfor%}
-      {%else%}
-      <tr>
-        <td colspan="5">데이터가 없습니다.</td>
-      </tr>
-      {%endif%}
+      </tr> {% endcomment %}
+      {% if fList %}
+        {% for board in fList %}
+        <tr>
+          <td>{{board.f_no}}</td>
+          <td class="table-title">
+            <a href="{% url 'fboard:fView' board.f_no %}">
+              {% if board.f_indent > 0 %}
+              {% comment %} board.f_indent 글자로 인식 {% endcomment %}
+              {% comment %} "x"|rjust 숫자로 인식 {% endcomment %}
+                {% for i in "x"|rjust:board.f_indent %}
+                  ▶
+                {% endfor %}  
+              {% endif %}
+              {{board.f_title}}
+            </a>
+          </td>
+          <td>{{board.member.name}}</td>
+          <td>{{board.f_updatedate|date:'Y-m-d H:i'}}</td>
+          <td>{{board.f_hit}}</td>
+        </tr>
+        {% endfor %}
+      {% else %}
+        <tr>
+          <td colspan='5'>데이터가 없습니다.</td>
+        </tr>
+      {% endif %}
     </table>
 
     <ul class="page-num">
@@ -129,7 +125,7 @@
       <li class="last"></li>
     </ul>
 
-    <div class="write" onclick='writeBtn()'>쓰기</div>
+    <div class="write" onclick="writeBtn()">쓰기</div>
   </section>
 
   <footer>

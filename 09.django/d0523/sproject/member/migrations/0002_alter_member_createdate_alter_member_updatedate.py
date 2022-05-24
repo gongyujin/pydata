@@ -13,12 +13,12 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterField(
             model_name='member',
-            name='creatdate',
-            field=models.DateTimeField(blank=True, default=datetime.datetime(2022, 5, 23, 10, 55, 57, 898627)),
+            name='createdate',
+            field=models.DateTimeField(blank=True, verbose_name=datetime.datetime(2022, 5, 23, 10, 55, 52, 236512)),
         ),
         migrations.AlterField(
             model_name='member',
             name='updatedate',
-            field=models.DateTimeField(blank=True, default=datetime.datetime(2022, 5, 23, 10, 55, 57, 898627)),
+            field=models.DateTimeField(blank=True, verbose_name=datetime.datetime(2022, 5, 23, 10, 55, 52, 236512)),
         ),
     ]

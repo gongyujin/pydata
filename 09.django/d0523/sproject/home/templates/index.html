@@ -1,25 +1,24 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="{%static 'css/style_main.css'%}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style_main.css' %}">
 	</head>
 	<body>
 	 	<header>
 	 		<div id="nav_up">
 	 			<ul>
-	 				
-					{% if not request.session.session_id %}
-					<li>회원가입</li>
-	 				<li><a href="{%url 'member:login'%}">로그인</a></li>
-					{%else%}
-					<li>{{request.session.session_nickname}}님</li>
-	 				<li><a href="{%url 'member:logout'%}">로그아웃</a></li>
-					{%endif%}
-	 				<li><a href="{%url 'fboard:fList'%}">고객행복센터</a></li>
+					{% if not request.session.session_id%} 
+	 					<li>회원가입</li>
+	 					<li><a href="{% url 'member:login' %}">로그인</a></li>
+					{% else %}
+	 					<li>{{request.session.session_nickname}}님</li>
+	 					<li><a href="{% url 'member:logout' %}">로그아웃</a></li>
+					{% endif %}
+					<li><a href="{% url 'fboard:fList' %}">고객행복센터</li></a>
 	 				<li>배송정보검색</li>
 	 				<li><a href="/admin">admin</a></li>
 	 			</ul>

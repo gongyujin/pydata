@@ -1,4 +1,4 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pages - Login</title>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/style.css'%}">
-  <link rel="stylesheet" href="{% static 'css/write.css'%}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/write.css' %}">
   <script>
     function cancelBtn(){
       if (confirm('답글을 취소하시겠습니까?')){
-        location.href="{%url 'fboard:fList'%}"
-        
+        location.href="{% url 'fboard:fList' %}"
       }
+
     }
   </script>
 </head>
@@ -25,7 +25,7 @@
       <li>로그인</li> <span>|</span>
       <li>고객행복센터</li> <span>|</span>
       <li>배송지역검색</li> <span>|</span>
-      <li><a href="/admin">admin</a></li>
+      <li>기프트카드 등록</li>
     </ul>
   </header>
 
@@ -57,7 +57,7 @@
     <h1>답글쓰기</h1>
     <hr>
 
-    <form action="{% url 'fboard:fReply' board.f_no%}" name="write" method="post">
+    <form action="{% url 'fboard:fReply' board.f_no %}" name="write" method="post">
       {% csrf_token %}
       <table>
         <colgroup>
@@ -84,16 +84,17 @@
         <tr>
           <th>아이디</th>
           <td>{{request.session.session_id}}</td>
-          <input type="hidden" name="id" value="{{request.session.session_id}}">
-          <input type="hidden" name="group" value="{{board.f_group}}">
-          <input type="hidden" name="step" value="{{board.f_step}}">
-          <input type="hidden" name="indent" value="{{board.f_indent}}">
+          <input type='hidden' name='id' value="{{request.session.session_id}}">
+          <input type='hidden' name='group' value="{{board.f_group}}">
+          <input type='hidden' name='step' value="{{board.f_step}}">
+          <input type='hidden' name='indent' value="{{board.f_indent}}">
+
         </tr>
         <tr>
           <th>내용</th>
           <td>
             <textarea name="content" id="text" cols="50" rows="10">[답글]
----------------------------------------------------------
+-------------------------------------------------
 {{board.f_content}}
             </textarea>
           </td>
@@ -111,7 +112,6 @@
         <button type="button" onclick="cancelBtn()" class="cancel">취소</button>
       </div>
     </form>
-
   </section>
 
   <footer>

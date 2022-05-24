@@ -7,18 +7,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('member', '0004_alter_member_creatdate_alter_member_updatedate'),
+        ('member', '0004_alter_member_createdate_alter_member_updatedate'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='member',
-            name='creatdate',
-            field=models.DateTimeField(blank=True, default=datetime.datetime(2022, 5, 23, 11, 3, 18, 278920)),
+            name='createdate',
+            field=models.DateTimeField(blank=True, verbose_name=datetime.datetime(2022, 5, 23, 11, 3, 3, 364150)),
         ),
         migrations.AlterField(
             model_name='member',
             name='updatedate',
-            field=models.DateTimeField(blank=True, default=datetime.datetime(2022, 5, 23, 11, 3, 18, 278920)),
+            field=models.DateTimeField(blank=True, verbose_name=datetime.datetime(2022, 5, 23, 11, 3, 3, 364150)),
         ),
     ]

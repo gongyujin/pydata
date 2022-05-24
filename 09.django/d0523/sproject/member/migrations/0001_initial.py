@@ -25,8 +25,8 @@ class Migration(migrations.Migration):
                 ('address2', models.CharField(blank=True, max_length=300)),
                 ('gender', models.CharField(default='남자', max_length=10)),
                 ('hobby', models.CharField(blank=True, max_length=100)),
-                ('creatdate', models.DateTimeField(blank=True, default=datetime.datetime(2022, 5, 23, 10, 21, 50, 627915))),
-                ('updatedate', models.DateTimeField(blank=True, default=datetime.datetime(2022, 5, 23, 10, 21, 50, 627915))),
+                ('createdate', models.DateTimeField(blank=True, verbose_name=datetime.datetime(2022, 5, 23, 10, 21, 42, 30387))),
+                ('updatedate', models.DateTimeField(blank=True, verbose_name=datetime.datetime(2022, 5, 23, 10, 21, 42, 30387))),
             ],
         ),
     ]

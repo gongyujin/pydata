@@ -13,12 +13,12 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterField(
             model_name='fboard',
-            name='f_creatdate',
-            field=models.DateTimeField(blank=True, default=datetime.datetime(2022, 5, 23, 11, 3, 18, 278920)),
+            name='f_createdate',
+            field=models.DateTimeField(blank=True, default=datetime.datetime(2022, 5, 23, 11, 3, 3, 379797)),
         ),
         migrations.AlterField(
             model_name='fboard',
             name='f_updatedate',
-            field=models.DateTimeField(blank=True, default=datetime.datetime(2022, 5, 23, 11, 3, 18, 278920)),
+            field=models.DateTimeField(blank=True, default=datetime.datetime(2022, 5, 23, 11, 3, 3, 379797)),
         ),
     ]

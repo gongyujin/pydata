@@ -1,4 +1,4 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,31 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pages - Login</title>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
-  <link rel="stylesheet" href="{%static 'css/style.css'%}">
-  <link rel="stylesheet" href="{%static 'css/login.css'%}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
   <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script>
     function loginBtn(){
-      if ($('#id').val()==''){
+      if($("#id").val()==''){
         alert('아이디가 입력되지 않았습니다. 아이디를 입력해주세요.')
-        $('#id').focus()
+        $("#id").focus()
         return false
       }
-      if ($('#pw').val()==''){
+      if($("#pw").val()==''){
         alert('패스워드가 입력되지 않았습니다. 패스워드를 입력해주세요.')
-        $('#pw').focus()
+        $("#pw").focus()
         return false
       }
-      return $('#login').submit()
+
+      return $("#login").submit()
     }
   </script>
 </head>
-
 <body>
-  {%if msg%}
+  {% if msg %}
     <script>alert('{{ msg }}')</script>
-  {%endif%}
-  
+  {% endif %}
   <header>
     <ul>
       <li>회원가입</li> <span>|</span>
@@ -75,7 +74,7 @@
       </ul>  
     </article>
 
-    <form action="{% url 'member:login'%}" id='login' name="login" method="post">
+    <form action="{% url 'member:login' %}" id='login' name="login" method="post">
       {% csrf_token %}
       <div class="id">
         <input type="text" name="id" id='id' size="30" placeholder="CJ ONE 통합아이디 6~20자">

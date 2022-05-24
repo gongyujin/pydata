@@ -1,4 +1,4 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,13 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pages - Login</title>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/style.css'%}">
-  <link rel="stylesheet" href="{% static 'css/write.css'%}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/write.css' %}">
   <script>
     function cancelBtn(){
       if (confirm('글쓰기를 취소하시겠습니까?')){
-        location.href="{%url 'fboard:fList'%}"
-        
+        location.href="{% url 'fboard:fList' %}"
       }
     }
   </script>
@@ -25,7 +24,7 @@
       <li>로그인</li> <span>|</span>
       <li>고객행복센터</li> <span>|</span>
       <li>배송지역검색</li> <span>|</span>
-      <li><a href="/admin">admin</a></li>
+      <li>기프트카드 등록</li>
     </ul>
   </header>
 
@@ -84,7 +83,7 @@
         <tr>
           <th>아이디</th>
           <td>{{request.session.session_id}}</td>
-          <input type="hidden" name="id" value="{{request.session.session_id}}">
+          <input type='hidden' name='id' value="{{request.session.session_id}}">
         </tr>
         <tr>
           <th>내용</th>
@@ -105,7 +104,6 @@
         <button type="button" onclick="cancelBtn()" class="cancel">취소</button>
       </div>
     </form>
-
   </section>
 
   <footer>
