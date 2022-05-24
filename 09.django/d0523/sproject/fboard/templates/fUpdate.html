@@ -11,7 +11,7 @@
   <script>
     function cancelBtn(){
       if (confirm('수정을 취소하시겠습니까?')){
-        location.href="{% url 'fboard:fList' %}"
+        location.href="{% url 'fboard:fList' nowpage %}"
       }
 
     }
@@ -57,7 +57,7 @@
     <h1>답글쓰기</h1>
     <hr>
 
-    <form action="{% url 'fboard:fUpdate' board.f_no %}" name="write" method="post">
+    <form action="{% url 'fboard:fUpdate' nowpage board.f_no %}" name="write" method="post"  enctype="multipart/form-data">
       {% csrf_token %}
       <table>
         <colgroup>
@@ -96,8 +96,17 @@
         <tr>
           <th>이미지 표시</th>
           <td>
-            <input type="file" name="file" id="file">
+            <input type="file" name="file" id="file" >
           </td>
+        </tr>
+        <tr>
+          <th>이미지 이름</th>
+          {%if board.f_file%}
+          <td>{{board.f_file}}</td>
+          <input type="hidden" name="refile" value="{{board.f_file}}">
+          {%else%}
+          <td><h4>이미지 없음</h4></td>
+          {%endif%}
         </tr>
       </table>
       <hr>

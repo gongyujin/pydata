@@ -26,9 +26,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'home',
     'member',
     'fboard',
+    'product',
 ]
 
 MIDDLEWARE = [
@@ -114,10 +116,10 @@ STATICFILES_DIRS = (
 
 # url이 media 들어오면은 이동하는 위치지정
 MEDIA_URL='media/'
-MEDIA_ROOT=(
-    os.path.join(BASE_DIR,'media'),
-)
-# MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+# MEDIA_ROOT=(
+#     os.path.join(BASE_DIR,'media')
+# )
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
