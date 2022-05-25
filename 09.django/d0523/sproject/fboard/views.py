@@ -78,9 +78,35 @@ def fReply(request,f_no,nowpage):
 # 게시판 읽기 함수
 def fView(request,f_no,nowpage):
     qs = Fboard.objects.get(f_no=f_no)
+    
+    # 게시판리스트 - f_group역순정렬, f_step 순차정렬
+    # 이전글: 답글로 게시글이 등록될때 찾을 수 있는 검색
+    try:
+        qs_next=Fboard.objects.filter(f_group=qs.f_group,f_step__lt=qs.f_step).order_by('-f_group','f_step').last().f_no
+    except:
+        # 순차적으로 게시글이 등록될때 찾을 수 있는 이전글 검색
+        try:
+            qs_next=Fboard.objects.filter(f_group__gt=qs.f_group).order_by('-f_group','f_step').last().f_no
+        except:
+            # 마지막 게시글 선택시 에러 처리
+            qs_next=Fboard.objects.order_by('-f_group','f_step').first().f_no
+            
+            
+    try:
+        qs_prev=Fboard.objects.filter(f_group=qs.f_group,f_step__gt=qs.f_step).order_by('-f_group','f_step').first().f_no
+    except:
+        # 순차적으로 게시글이 등록될때 찾을 수 있는 다음글 검색
+        try:
+            qs_prev=Fboard.objects.filter(f_group__lt=qs.f_group).order_by('-f_group','f_step').first().f_no
+        except:
+            # 첫번째 게시글 선택시 에러 처리
+            qs_prev=Fboard.objects.order_by('-f_group','f_step').last().f_no
+    
     qs.f_hit+=1
     qs.save()
-    context={'board':qs,'nowpage':nowpage}
+    qsPrev=Fboard.objects.get(f_no=qs_prev)
+    qsNext=Fboard.objects.get(f_no=qs_next)
+    context={'board':qs,'nowpage':nowpage,'boardPrev':qsPrev,'boardNext':qsNext}
     return render(request,'fView.html',context)
 
 # 게시판 글쓰기 함수
