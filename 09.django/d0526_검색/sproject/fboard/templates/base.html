@@ -21,7 +21,7 @@
       <li>{{request.session.session_nickname}}님</li> <span>|</span>
       <li><a href="{% url 'member:logout' %}">로그아웃</a></li> <span>|</span>
       {% endif %}
-      <li><a href="{% url 'fboard:fList' nowpage=1 %}">고객행복센터</a></li> <span>|</span>
+      <li><a href="{% url 'fboard:fList' nowpage=1 category='first' searchword='first'%}">고객행복센터</a></li> <span>|</span>
       <li><a href="{% url 'product:pWrite' %}">상품등록</li> <span>|</span>
       <li><a href="/admin">admin</a></li>
     </ul>

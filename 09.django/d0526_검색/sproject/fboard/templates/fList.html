@@ -6,7 +6,7 @@
   </head>
   <script>
     function writeBtn(){
-      location.href="{% url 'fboard:fWrite' nowpage %}"
+      location.href="{% url 'fboard:fWrite' nowpage category searchword %}"
     }
     
     function searchBtn(){
@@ -19,9 +19,9 @@
     }
   </script>
 
-  <h1 id="noticeH1">NOTICE</h1>
+  <h1 id="noticeH1">NOTICE : {{count}}</h1>
   <div class="wrapper">
-    <form action="{%url 'fboard:fList' nowpage=1 %}" id="search" name="search" method="post"  enctype="multipart/form-data">
+    <form action="{%url 'fboard:fList' nowpage=1 category=category searchword=searchword%}" id="search" name="search" method="post"  enctype="multipart/form-data">
       {% csrf_token %}
       <select name="category" id="category">
         <option value="all">전체</option>
@@ -35,7 +35,7 @@
         <button type="button" onclick='searchBtn()'><i class="fas fa-search"></i></button>
       </form>
     </div>
-
+ 
     <table>
       <colgroup>
         <col width="15%">
@@ -57,11 +57,12 @@
         <td>2020-02-28</td>
       </tr> {% endcomment %}
       {% if fList %}
+
       {% for board in fList %}
       <tr>
         <td>{{board.f_no}}</td>
         <td class="table-title">
-          <a href="{% url 'fboard:fView' nowpage board.f_no %}">
+          <a href="{% url 'fboard:fView' nowpage category searchword board.f_no %}">
             {% if board.f_indent > 0 %}
             {% comment %} board.f_indent 글자로 인식 {% endcomment %}
             {% comment %} "x"|rjust 숫자로 인식 {% endcomment %}
@@ -90,8 +91,8 @@
     {% comment %} 이전페이지 처리 {% endcomment %}
     <ul class="page-num">
       {% if fList.has_previous %}
-      <a href="{%url 'fboard:fList' nowpage=1 %}"><li class="first"></li></a>
-      <a href="{%url 'fboard:fList' nowpage=fList.previous_page_number %}"><li class="prev"></li></a>
+      <a href="{%url 'fboard:fList' nowpage=1 category=category searchword=searchword%}"><li class="first"></li></a>
+      <a href="{%url 'fboard:fList' nowpage=fList.previous_page_number category=category searchword=searchword %}"><li class="prev"></li></a>
       {%else%}
       <li class="first"></li>
       <li class="prev"></li>
@@ -99,7 +100,7 @@
       <!-- 페이지순서 처리 -->
       {% for page in fList.paginator.page_range %}
       {% if page != nowpage %}
-      <a href="{%url 'fboard:fList' nowpage=page %}">
+      <a href="{%url 'fboard:fList' nowpage=page category=category searchword=searchword%}">
         <li class="num"><div>{{page}}</div></li>
       </a>
       {% else %}
@@ -109,8 +110,8 @@
       
       <!-- 다음페이지 처리 -->
       {% if fList.has_next %}
-      <a href="{%url 'fboard:fList' nowpage=fList.next_page_number %}"><li class="next"></li></a>
-      <a href="{%url 'fboard:fList' nowpage=fList.paginator.num_pages %}"><li class="last"></li></a>
+      <a href="{%url 'fboard:fList' nowpage=fList.next_page_number category=category searchword=searchword %}"><li class="next"></li></a>
+      <a href="{%url 'fboard:fList' nowpage=fList.paginator.num_pages category=category searchword=searchword%}"><li class="last"></li></a>
       {% else %}
       <li class="next"></li>
       <li class="last"></li>

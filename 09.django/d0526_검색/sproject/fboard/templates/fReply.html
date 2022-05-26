@@ -11,7 +11,7 @@
 
     function cancelBtn3(){
       if (confirm('답글을 취소하시겠습니까?')){
-        location.href="{% url 'fboard:fList' nowpage %}"
+        location.href="{% url 'fboard:fList' nowpage category searchword%}"
       }
       
     }
@@ -20,7 +20,7 @@
   <h1>답글쓰기</h1>
   <hr>
   
-  <form action="{% url 'fboard:fReply' nowpage board.f_no %}" name="write" method="post">
+  <form action="{% url 'fboard:fReply' nowpage category searchword board.f_no %}" name="write" method="post">
     {% csrf_token %}
     <table>
       <colgroup>
