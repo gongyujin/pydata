@@ -18,7 +18,7 @@ print('a text : ', soup.a.get_text()) # a: 원하는 태그 ==> text만 따로 �
 # print('div : ', soup.div)
 # print('div : ', soup.div.attrs) # 속성
 # print('div id : ',soup.div['id']) # 해당속성에 대한 value값을 나타냄
-
+print('------------------')
 
 print('div id = menu : ',soup.find('div',attrs={'id':'menu'})) # {속성값:value값}
 

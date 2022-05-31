@@ -1,9 +1,37 @@
+from datetime import datetime
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
+from urllib3 import HTTPResponse
 from fboard.models import Fboard,Comment
 from member.models import Member
 from django.db.models import F,Q
 from django.core.paginator import Paginator
+from django.core import serializers
+
+# 댓글수정저장
+def commUpdateOk(request):
+    c_no=request.GET.get('c_no')
+    c_content=request.GET.get('c_content')
+    id=request.session.get('session_id')
+    
+    print("commUpdateOk : ",c_no,c_content,id)
+    # 해당데이터 검색
+    qs=Comment.objects.get(c_no=c_no)
+    qs.c_content=c_content
+    qs.c_date=datetime.now()
+    qs.save()
+    
+    # ajax으로 전송
+    context={'c_no':c_no,'c_content':c_content,'c_date':qs.c_date,'result':'댓글이 수정되었습니다.'}
+    return JsonResponse(context) 
+
+
+def commDelete(request):
+    c_no=request.GET.get('c_no')
+    qs=Comment.objects.get(c_no=c_no)
+    qs.delete()
+    context={'result':'댓글이 삭제되었습니다.'}
+    return JsonResponse(context) # json은 무조건 string형태로 넘어감
 
 # 댓글 write ==> query 형태로 들어옴 ; 딕셔너리 형태로 넘겨줌
 def commWrite(request):
@@ -33,9 +61,22 @@ def commList(request):
     print('f_no commList: ',f_no)
     # f_no 하단댓글을 검색
     qs=Comment.objects.filter(fboard=f_no).order_by('-c_no')
+    # list타입으로 전송 : safe=False
     clist=list(qs.values()) # [0:q1,1:q2,2:q3]
     return JsonResponse(clist,safe=False) #safe=False: list타입모양으로 리턴한다는 의미
-    # return HttpResponse('<html><h2>테스트</h2></html>')
+    # # return HttpResponse('<html><h2>테스트</h2></html>')
+
+    # # HTTPResponse : json형 변환 - dic 타입
+    # clist=serializers.serialize('json',qs)
+    # return HttpResponse(clist,content_type='text/json-comment-filtered')
+    
+    
+    # # Jsonresponse: dic타입으로 전송
+    # # context={'reload_all':False,'clist':clist}
+    # context={'clist':clist}
+    # return JsonResponse(context)
+
+
 
 
 # 이벤트뷰 함수

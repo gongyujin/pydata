@@ -197,7 +197,7 @@
 						//jquery 선언
 						$(function(){
 							//ajax선언 - 댓글list 출력
-							alert('f_no ajax: '+{{f_no}})
+							
 							$.ajax({
 								url:"{% url 'fboard:commList' %}",
 								type:"GET",
@@ -205,19 +205,27 @@
 								dataType:"json", //json형태로 보냄
 								success:function(data){
 									//f_no:1 해당되는 댓글을 가져옴.
+									//console.log(data.clist)
+									//console.log(data.clist[0]) //리스트 모양을 str로 인식
+
 									var html_data=''
 									for(var i in data){
-										html_data+='<ul>'
-										html_data+='<li class="name">'+data[i].member_id+' <span>['+moment(data[i].c_date).format("YYYY-MM-DD HH:mm:ss")+']</span></li>'
+										html_data+='<ul id="'+data[i].c_no+'">'
+										html_data+='<li class="name">'+data[i].member_id+'<span>['+moment(data[i].c_date).format("YYYY-MM-DD HH:mm:ss")+']</span></li>'
 										html_data+='<li class="txt">'+data[i].c_content+'</li>'
+										//html_data+='<li class="name">'+data[i].fields.member+' <span>['+moment(data[i].fields.c_date).format("YYYY-MM-DD HH:mm:ss")+']</span></li>'
+										//html_data+='<li class="txt">'+data[i].fields.c_content+'</li>'
 										html_data+='<li class="btn">'
-										html_data+='<a href="#" class="rebtn">수정</a>&nbsp'
-										html_data+='<a href="#" class="rebtn">삭제</a>'
+										if('{{request.session.session_id}}'==data[i].member_id){
+											html_data+="<a onclick='commUpdateBtn("+data[i].c_no+",\""+data[i].c_date+"\",\""+data[i].c_content+"\")' class='rebtn'>수정</a>&nbsp"
+											html_data+='<a onclick="commDeleteBtn('+data[i].c_no+')" class="rebtn">삭제</a>'
+										}
 										html_data+='</li>'
 										html_data+='</ul>'
 									}
 
 									$('.replyBox').html(html_data)
+									$('.orange').html(data.length)
 								},
 								error:function(){
 									alert('에러!!!')
@@ -225,11 +233,118 @@
 							})//ajax
 						})//function
 
+
+						// 수정입력창 확인 변수; 전역변수
+						var updateCheck=0
+						// 댓글 수정입력창 생성
+						function commUpdateBtn(c_no,c_date,c_content){
+							if(updateCheck==0){
+								alert('수정입력창 테스트 : '+c_no+c_date+c_content)
+	
+								var html_data=''
+								html_data+='<li class="name">'+'{{request.session.session_id}}'+'<span>['+moment(c_date).format('YYYY-MM-DD HH:mm:ss')+']</span></li>'
+								html_data+='<li class="txt"><textarea class="replyType">'+c_content+'</textarea></li>'
+								html_data+='<li class="btn">'
+								html_data+="<a onclick='commUpdateOkBtn("+c_no+")' class='rebtn'>완료</a>&nbsp"
+								html_data+="<a onclick='commCancelBtn("+c_no+",\""+c_date+"\",\""+c_content+"\")' class='rebtn'>취소</a>"
+								html_data+='</li>'
+								
+								//id 안의 html 데이터를 모두 지우고 추가
+								$('#'+c_no).html(html_data)
+								updateCheck=1
+								
+							}else{
+								alert('다른 입력창이 열려 있습니다. 댓글입력창 종료후 가능합니다.')
+							}
+							
+						}//function
+						
+						// 댓글수정 저장
+						function commUpdateOkBtn(c_no){
+							alert('댓글수정 저장 테스트 : '+c_no)
+
+							$.ajax({
+								url:'{%url "fboard:commUpdateOk"%}',
+								type:'GET',
+								data:{'c_no':c_no,'c_content':$('#'+c_no+' .replyType').val()},
+								dataType:'json',
+								success:function(data){
+									alert(data.result)
+									html_data=''
+									html_data+='<li class="name">'+'{{request.session.session_id}}'+'<span>['+moment(data.c_date).format("YYYY-MM-DD HH:mm:ss")+']</span></li>'
+									html_data+='<li class="txt">'+data.c_content+'</li>'
+									html_data+='<li class="btn">'
+									html_data+="<a onclick='commUpdateBtn("+data.c_no+",\""+data.c_date+"\",\""+data.c_content+"\")' class='rebtn'>수정</a>&nbsp"
+									html_data+='<a onclick="commDeleteBtn('+data.c_no+')" class="rebtn">삭제</a>'
+									html_data+='</li>'
+
+									//id 안의 html 데이터를 모두 지우고 추가
+									$('#'+c_no).html(html_data)
+									updateCheck=0
+
+								},
+								error:function(){
+									alert('error!!!')
+								}
+							})//ajax
+						}//function
+
+
+						// 댓글 수정 취소
+						function commCancelBtn(c_no,c_date,c_content){
+							alert('댓글수정 취소 테스트 : '+c_no+c_date+c_content)
+							html_data=''
+							html_data+='<li class="name">'+'{{request.session.session_id}}'+'<span>['+moment(c_date).format("YYYY-MM-DD HH:mm:ss")+']</span></li>'
+							html_data+='<li class="txt">'+c_content+'</li>'
+							html_data+='<li class="btn">'
+							html_data+="<a onclick='commUpdateBtn("+c_no+",\""+c_date+"\",\""+c_content+"\")' class='rebtn'>수정</a>&nbsp"
+							html_data+='<a onclick="commDeleteBtn('+c_no+')" class="rebtn">삭제</a>'
+							html_data+='</li>'
+								
+							//id 안의 html 데이터를 모두 지우고 추가
+							$('#'+c_no).html(html_data)
+							updateCheck=0
+						}//function
+
+
+
+						//댓글 삭제
+						//매개변수를 태워서 보냄
+						function commDeleteBtn(c_no){
+
+							if (confirm('댓글을 삭제하시겠습니까?')){
+								alert('댓글삭제 테스트 : '+c_no)
+	
+								$.ajax({
+									url:"{%url 'fboard:commDelete' %}",
+									type:'GET',
+									data:{'c_no':c_no},
+									dataType:'json',
+									success:function(data){
+										alert(data.result)
+										alert('#'+c_no)
+										$('#'+c_no).remove() //ul의 클래스 위치를 찾아서 remove해줌
+									},
+									error:function(){
+										alert('error!!')
+									}
+								})
+
+							}
+
+						}//function
+
+
+
 						//댓글쓰기
 						function commWriteBtn(){
 							//1. input에 있는 데이터 가져오기
-							alert($('.replynum').val())
-							alert($('.replyType').val())
+							//alert($('.replynum').val())
+							//alert($('.replyType').val())
+							if($('.replyType').val().length<2){
+								alert('두글자 이상 입력하셔야 등록이 가능합니다.')
+								return false
+							}
 
 							var id='{{request.session.session_id}}'
 							//2. views.py 전송, db에 저장, views에서 데이터 가져오기
@@ -241,17 +356,20 @@
 								success:function(data){
 									//5. html에 넣기
 									var html_data=''
-									html_data+='<ul>'
+									html_data+='<ul ud="'+data.c_no+'">'
 									html_data+='<li class="name">'+'{{request.session.session_id}}'+'<span>['+moment(data.c_date).format("YYYY-MM-DD HH:mm:ss")+']</span></li>'
 									html_data+='<li class="txt">'+data.c_content+'</li>'
 									html_data+='<li class="btn">'
 									html_data+='<a href="#" class="rebtn">수정</a>&nbsp'
-									html_data+='<a href="#" class="rebtn">삭제</a>'
+									html_data+='<a onclick="commDeleteBtn('+data.c_no+')" class="rebtn">삭제</a>'
 									html_data+='</li>'
 									html_data+='</ul>'
 
 									$('.replyBox').prepend(html_data)
-								},
+									alert('댓글이 등록되었습니다.')
+									$('.replynum').val('')
+									$('.replyType').val('')
+								},	
 								error:function(){
 									alert('에러!!!')
 								}
@@ -284,33 +402,17 @@
 					{% comment %} 글쓰기 끝 {% endcomment %}
 					
 					<div class="replyBox">
-						<!--수정버튼 클릭시 나타나는 페이지 시작
-						<ul>
-							<li class="name">jjabcde <span>[2014-03-04&nbsp;&nbsp;15:01:59]</span></li>
-							<li class="txt"><textarea class="replyType"></textarea></li>
-							<li class="btn">
-								<a href="#" class="rebtn">완료</a>
-								<a href="#" class="rebtn">취소</a>
-							</li>
-						</ul>
-						끝	-->
-
-
-
-
-						<!--비밀글 시작
-						<ul>
+						<!--						<ul>
 							<li class="name">jjabcde <span>[2014-03-04&nbsp;&nbsp;15:01:59]</span></li>
 							<li class="txt">
 								<a href="password.html" class="passwordBtn"><span class="orange">※ 비밀글입니다.</span></a>
 							</li>
 						</ul>
 
-						비밀글 끝-->
-
-
-
 					</div>
+				-->
+
+
 					<!-- //댓글 -->
 
 
