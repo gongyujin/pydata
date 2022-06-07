@@ -1,6 +1,7 @@
-# body fat percentage
+# body fat percentage 체지방률
 
 import requests
+from ast import literal_eval
 
 url = "https://fitness-calculator.p.rapidapi.com/bodyfat"
 
@@ -13,4 +14,5 @@ headers = {
 
 response = requests.request("GET", url, headers=headers, params=querystring)
 
-print(response.text)
+dic1=literal_eval(response.text)['data']
+print(dic1['Body Fat (U.S. Navy Method)']) # 체지방률

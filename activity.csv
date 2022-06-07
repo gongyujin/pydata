@@ -1,0 +1,403 @@
+﻿_id,id,activity,metValue,intensityLevel,name
+61732967343c73779c4208c8,co_1,conditioning exercise,2.3,2,activity promoting video game (e.g.
+61732969343c73779c4208d6,co_15,conditioning exercise,2.8,2,calisthenics (e.g.
+6173296d343c73779c4208ed,co_38,conditioning exercise,2.3,2,stretching
+6173296d343c73779c4208ee,co_39,conditioning exercise,3.0,2,pilates
+6173296d343c73779c4208f0,co_41,conditioning exercise,2.8,2,therapeutic exercise ball
+6173296e343c73779c4208f1,co_42,conditioning exercise,2.8,2,upper body exercise
+6173296e343c73779c4208f5,co_46,conditioning exercise,2.3,2,video exercise workouts
+6173296f343c73779c4208f8,co_49,conditioning exercise,2.5,2,yoga
+61732972343c73779c42090d,da_16,dancing,3.0,2,ballroom
+61732974343c73779c42091c,fi_13,fishing and hunting,3.0,2,fishing
+61732974343c73779c42091d,fi_14,fishing and hunting,2.3,2,fishing with a spear
+61732974343c73779c42091e,fi_15,fishing and hunting,2.5,2,hunting
+61732975343c73779c420922,fi_19,fishing and hunting,2.5,2,hunting large game
+61732975343c73779c420924,fi_21,fishing and hunting,2.5,2,hunting
+61732975343c73779c420925,fi_22,fishing and hunting,3.0,2,hunting
+61732977343c73779c42092d,fi_30,fishing and hunting,2.5,2,pistol shooting or trap shooting
+61732977343c73779c42092e,fi_31,fishing and hunting,2.3,2,rifle exercises
+61732977343c73779c42092f,fi_32,fishing and hunting,2.5,2,rifle exercises
+61732977343c73779c420931,ho_2,home activities,2.3,2,cleaning
+61732978343c73779c420936,ho_7,home activities,2.5,2,mopping
+61732978343c73779c420938,ho_9,home activities,2.8,2,multiple household tasks all at once
+61732979343c73779c42093c,ho_13,home activities,2.3,2,dusting or polishing furniture
+61732979343c73779c42093e,ho_15,home activities,2.5,2,cleaning
+6173297a343c73779c420940,ho_17,home activities,2.5,2,wash dishes
+6173297a343c73779c420942,ho_19,home activities,3.0,2,butchering animals
+6173297a343c73779c420944,ho_21,home activities,2.3,2,cutting and smoking fish
+6173297b343c73779c420948,ho_25,home activities,2.5,2,serving food
+6173297b343c73779c420949,ho_26,home activities,2.5,2,cooking or food preparation
+6173297b343c73779c42094a,ho_27,home activities,2.5,2,feeding household animals
+6173297b343c73779c42094b,ho_28,home activities,2.5,2,putting away groceries (e.g. carrying groceries
+6173297c343c73779c42094d,ho_30,home activities,3.0,2,cooking Indian bread on an outside stove
+6173297c343c73779c42094e,ho_31,home activities,2.3,2,food shopping with or without a grocery cart
+6173297c343c73779c42094f,ho_32,home activities,2.3,2,non-food shopping
+6173297c343c73779c420952,ho_35,home activities,2.8,2,sewing with a machine
+6173297d343c73779c420955,ho_38,home activities,2.3,2,laundry
+6173297f343c73779c420960,ho_49,home activities,3.0,2,implied walking
+6173297f343c73779c420961,ho_50,home activities,2.5,2,watering plants
+6173297f343c73779c420962,ho_51,home activities,2.5,2,building a fire inside
+6173297f343c73779c420966,ho_55,home activities,2.2,2,sitting
+61732980343c73779c420967,ho_56,home activities,2.8,2,standing
+61732980343c73779c42096a,ho_59,home activities,3.0,2,walking and carrying small child
+61732980343c73779c42096b,ho_60,home activities,2.3,2,walking and carrying small child
+61732981343c73779c42096d,ho_62,home activities,2.5,2,child care
+61732981343c73779c42096f,ho_64,home activities,3.0,2,child care
+61732981343c73779c420972,ho_67,home activities,2.5,2,sit
+61732981343c73779c420973,ho_68,home activities,2.8,2,stand
+61732982343c73779c420974,ho_69,home activities,3.0,2,walk/run
+61732982343c73779c420978,ho_73,home activities,2.3,2,animal care
+61732982343c73779c42097a,ho_75,home activities,2.3,2,elder care
+61732983343c73779c42097b,ho_1,home repair,3.0,2,airplane repair
+61732983343c73779c42097e,ho_4,home repair,3.0,2,carpentry
+61732984343c73779c420984,ho_10,home repair,2.3,2,carpentry
+61732985343c73779c42098b,ho_17,home repair,3.0,2,hammering nails
+61732985343c73779c42098c,ho_18,home repair,2.5,2,home repair
+61732986343c73779c420991,ho_23,home repair,3.0,2,repairing appliances
+61732987343c73779c420995,ho_27,home repair,3.0,2,plumbing
+61732987343c73779c420996,ho_28,home repair,3.0,2,put on and removal of tarp – sailboat
+6173298c343c73779c4209ba,la_11,lawn and garden,2.8,2,driving tractor
+6173298d343c73779c4209be,la_15,lawn and garden,2.3,2,gardening
+6173298e343c73779c4209c3,la_20,lawn and garden,2.5,2,mowing lawn
+6173298e343c73779c4209c7,la_24,lawn and garden,2.5,2,operating snow blower
+6173298f343c73779c4209cf,la_32,lawn and garden,3.0,2,riding snow blower
+61732991343c73779c4209d7,la_40,lawn and garden,3.0,2,walking
+61732992343c73779c4209e0,la_49,lawn and garden,3.0,2,walking
+61732992343c73779c4209e2,la_51,lawn and garden,3.0,2,yard work
+61732993343c73779c4209e6,mi_2,miscellaneous,2.5,2,casino gambling
+61732995343c73779c4209f4,mi_16,miscellaneous,2.5,2,standing
+61732995343c73779c4209f6,mi_18,miscellaneous,3.0,2,sitting
+61732996343c73779c4209f7,mi_19,miscellaneous,2.5,2,standing
+61732996343c73779c4209fb,mi_23,miscellaneous,3.0,2,retreat/family reunion activities involving playing games with children
+61732997343c73779c4209fe,mi_26,miscellaneous,2.5,2,camping involving standing
+61732997343c73779c420a01,mu_2,music playing,2.3,2,cello
+61732997343c73779c420a02,mu_3,music playing,2.3,2,conducting orchestra
+61732997343c73779c420a03,mu_4,music playing,2.5,2,double bass
+61732998343c73779c420a05,mu_6,music playing,3.0,2,drumming (e.g.
+61732998343c73779c420a08,mu_9,music playing,2.3,2,piano
+61732999343c73779c420a0d,mu_14,music playing,2.5,2,violin
+61732999343c73779c420a10,mu_17,music playing,3.0,2,guitar
+6173299a343c73779c420a14,oc_1,occupation,2.3,2,active workstation
+6173299a343c73779c420a15,oc_2,occupation,3.0,2,airline flight attendant
+6173299b343c73779c420a18,oc_5,occupation,2.3,2,bookbinding
+6173299b343c73779c420a1b,oc_8,occupation,2.5,2,carpentry
+6173299d343c73779c420a25,oc_18,occupation,2.5,2,cook
+6173299d343c73779c420a27,oc_20,occupation,2.3,2,custodial work
+6173299e343c73779c420a2e,oc_27,occupation,2.8,2,farming
+617329a2343c73779c420a4a,oc_55,occupation,3.0,2,kitchen maid
+617329a3343c73779c420a4d,oc_58,occupation,3.0,2,locksmith
+617329a3343c73779c420a4e,oc_59,occupation,3.0,2,machine tooling (e.g.
+617329a3343c73779c420a51,oc_62,occupation,2.8,2,manual or unskilled labor
+617329a4343c73779c420a55,oc_66,occupation,2.5,2,masonry
+617329a4343c73779c420a59,oc_70,occupation,2.5,2,operating heavy duty equipment
+617329a5343c73779c420a5c,oc_73,occupation,3.0,2,plumbing activities
+617329a5343c73779c420a5e,oc_75,occupation,2.5,2,police
+617329a5343c73779c420a5f,oc_76,occupation,2.5,2,police
+617329a6343c73779c420a62,oc_79,occupation,2.3,2,postal carrier
+617329a7343c73779c420a6a,oc_87,occupation,2.5,2,sitting tasks
+617329a7343c73779c420a6b,oc_88,occupation,2.8,2,sitting
+617329a7343c73779c420a6c,oc_89,occupation,3.0,2,standing tasks
+617329a8343c73779c420a6d,oc_90,occupation,3.0,2,standing
+617329a8343c73779c420a73,oc_96,occupation,2.3,2,tailoring
+617329a9343c73779c420a74,oc_97,occupation,2.5,2,tailoring
+617329a9343c73779c420a76,oc_99,occupation,2.5,2,tailoring
+617329ab343c73779c420a83,oc_112,occupation,3.0,2,walking
+617329ac343c73779c420a8c,oc_121,occupation,3.0,2,working in scene shop
+617329b0343c73779c420aa6,se_1,self care,2.3,2,getting ready for bed
+617329b1343c73779c420aa9,se_4,self care,2.5,2,dressing
+617329b1343c73779c420aae,se_9,self care,2.5,2,hairstyling
+617329b2343c73779c420ab1,se_1,sexual activity,2.8,2,active
+617329b4343c73779c420abf,sp_12,sports,2.5,2,billiards
+617329b4343c73779c420ac0,sp_13,sports,3.0,2,bowling
+617329b6343c73779c420acd,sp_26,sports,2.5,2,darts
+617329b7343c73779c420ad4,sp_33,sports,2.5,2,football or baseball
+617329b7343c73779c420ad5,sp_34,sports,3.0,2,frisbee playing
+617329b8343c73779c420ad9,sp_38,sports,3.0,2,golf
+617329bb343c73779c420aed,sp_58,sports,3.0,2,horseshoe pitching
+617329bf343c73779c420b08,sp_85,sports,3.0,2,shuffleboard
+617329c2343c73779c420b1b,sp_104,sports,3.0,2,tai chi
+617329c4343c73779c420b26,sp_115,sports,3.0,2,volleyball
+617329c5343c73779c420b2d,tr_1,transportation,2.5,2,automobile or light truck (not a semi) driving
+617329c6343c73779c420b34,tr_8,transportation,2.5,2,truck
+617329c7343c73779c420b39,wa_4,walking,2.3,2,carrying 15 lb child
+617329c9343c73779c420b49,wa_20,walking,2.5,2,bird watching
+617329cb343c73779c420b55,wa_32,walking,2.8,2,walking
+617329cb343c73779c420b57,wa_34,walking,2.5,2,walking from house to car or bus
+617329cb343c73779c420b58,wa_35,walking,2.5,2,walking to neighbor’s house or family’s house for social reasons
+617329cc343c73779c420b59,wa_36,walking,3.0,2,walking the dog
+617329cc343c73779c420b5a,wa_37,walking,3.0,2,walking
+617329ce343c73779c420b68,wa_51,walking,2.5,2,walking
+617329cf343c73779c420b6e,wa_1,water activities,2.5,2,boating
+617329d0343c73779c420b73,wa_6,water activities,2.8,2,canoeing
+617329d0343c73779c420b78,wa_11,water activities,3.0,2,diving
+617329d1343c73779c420b7b,wa_14,water activities,3.0,2,sailing
+617329d2343c73779c420b84,wa_23,water activities,3.0,2,surfing
+617329d5343c73779c420b96,wa_41,water activities,2.3,2,tubing
+617329d5343c73779c420b99,wa_44,water activities,3.0,2,water volleyball
+617329d6343c73779c420b9b,wa_46,water activities,2.5,2,water walking
+617329d7343c73779c420ba3,wi_2,winter activities,2.5,2,dog sledding
+617329db343c73779c420bbf,wi_30,winter activities,2.5,2,snow blower
+617329de343c73779c420bce,re_15,religious activities,2.5,2,serving food at church
+617329df343c73779c420bda,vo_3,volunteer activities,2.5,2,sitting
+617329df343c73779c420bdb,vo_4,volunteer activities,2.3,2,standing
+617329e0343c73779c420bdd,vo_6,volunteer activities,3.0,2,standing
+617329e0343c73779c420be0,vo_9,volunteer activities,3.0,2,standing
+617329e2343c73779c420bea,vo_19,volunteer activities,3.0,2,walk/stand combination
+61732965343c73779c4208ba,bi_5,bicycling,4.0,3,bicycling
+61732966343c73779c4208be,bi_9,bicycling,3.5,3,bicycling
+61732968343c73779c4208c9,co_2,conditioning exercise,3.8,3,activity promoting video game (e.g.
+61732968343c73779c4208cd,co_6,conditioning exercise,3.5,3,bicycling
+61732969343c73779c4208d5,co_14,conditioning exercise,3.8,3,calisthenics (e.g.
+6173296a343c73779c4208d7,co_16,conditioning exercise,3.5,3,calisthenics
+6173296a343c73779c4208da,co_19,conditioning exercise,3.5,3,CurvesTM exercise routines in women 
+6173296b343c73779c4208de,co_23,conditioning exercise,3.5,3,resistance (weight) training
+6173296b343c73779c4208e2,co_27,conditioning exercise,3.8,3,home exercise
+6173296e343c73779c4208f6,co_47,conditioning exercise,4.0,3,video exercise workouts
+6173296f343c73779c4208f9,co_50,conditioning exercise,4.0,3,yoga
+6173296f343c73779c4208fb,co_52,conditioning exercise,3.3,3,yoga
+61732972343c73779c42090f,da_18,dancing,3.5,3,Caribbean dance (Abakua
+61732972343c73779c420910,fi_1,fishing and hunting,3.5,3,fishing
+61732973343c73779c420912,fi_3,fishing and hunting,4.0,3,fishing
+61732973343c73779c420914,fi_5,fishing and hunting,4.0,3,fishing from river bank and walking
+61732973343c73779c420916,fi_7,fishing and hunting,3.5,3,fishing from river bank
+61732974343c73779c42091a,fi_11,fishing and hunting,3.5,3,fishing
+61732974343c73779c42091b,fi_12,fishing and hunting,3.8,3,fishing
+61732975343c73779c420921,fi_18,fishing and hunting,4.0,3,hunting large marine animals
+61732976343c73779c420928,fi_25,fishing and hunting,3.3,3,hunting
+61732976343c73779c42092a,fi_27,fishing and hunting,3.3,3,hunting
+61732977343c73779c420930,ho_1,home activities,3.3,3,cleaning
+61732977343c73779c420932,ho_3,home activities,3.8,3,cleaning
+61732978343c73779c420933,ho_4,home activities,3.5,3,cleaning
+61732978343c73779c420934,ho_5,home activities,3.5,3,cleaning
+61732978343c73779c420935,ho_6,home activities,3.2,3,cleaning windows
+61732979343c73779c420939,ho_10,home activities,3.5,3,multiple household tasks all at once
+61732979343c73779c42093b,ho_12,home activities,3.3,3,cleaning
+61732979343c73779c42093d,ho_14,home activities,3.3,3,kitchen activity
+6173297a343c73779c420941,ho_18,home activities,3.3,3,vacuuming
+6173297a343c73779c420945,ho_22,home activities,4.0,3,tanning hides
+6173297b343c73779c420946,ho_23,home activities,3.5,3,cooking or food preparation
+6173297d343c73779c420954,ho_37,home activities,4.0,3,laundry
+6173297d343c73779c420956,ho_39,home activities,3.3,3,making bed
+6173297e343c73779c42095b,ho_44,home activities,3.5,3,scrubbing floors
+6173297e343c73779c42095e,ho_47,home activities,4.0,3,sweeping garage
+6173297e343c73779c42095f,ho_48,home activities,3.5,3,standing
+6173297f343c73779c420965,ho_54,home activities,3.5,3,walking
+61732980343c73779c420968,ho_57,home activities,3.5,3,walking/running
+61732982343c73779c420975,ho_70,home activities,4.0,3,walk/run
+61732982343c73779c420977,ho_72,home activities,3.5,3,standing
+61732982343c73779c420979,ho_74,home activities,4.0,3,elder care
+61732983343c73779c42097c,ho_2,home repair,4.0,3,automobile body work
+61732983343c73779c42097d,ho_3,home repair,3.3,3,automobile repair
+61732983343c73779c420980,ho_6,home repair,3.8,3,carpentry
+61732984343c73779c420981,ho_7,home repair,3.3,3,carpentry
+61732984343c73779c420983,ho_9,home repair,4.0,3,carpentry
+61732986343c73779c420990,ho_22,home repair,3.8,3,laying tile or linoleum
+61732986343c73779c420993,ho_25,home repair,3.3,3,painting inside house
+61732988343c73779c42099f,ho_37,home repair,3.3,3,wiring
+6173298b343c73779c4209b0,la_1,lawn and garden,3.3,3,carrying
+6173298b343c73779c4209b4,la_5,lawn and garden,3.5,3,clearing light brush
+6173298c343c73779c4209b7,la_8,lawn and garden,3.5,3,digging
+6173298d343c73779c4209bf,la_16,lawn and garden,4.0,3,irrigation channels
+6173298f343c73779c4209cc,la_29,lawn and garden,3.8,3,raking lawn or leaves
+6173298f343c73779c4209cd,la_30,lawn and garden,4.0,3,raking lawn
+6173298f343c73779c4209ce,la_31,lawn and garden,4.0,3,raking roof with snow rake
+61732990343c73779c4209d0,la_33,lawn and garden,4.0,3,sacking grass
+61732990343c73779c4209d5,la_38,lawn and garden,4.0,3,trimming shrubs or trees
+61732991343c73779c4209d6,la_39,lawn and garden,3.5,3,trimming shrubs or trees
+61732991343c73779c4209d9,la_42,lawn and garden,3.5,3,weeding
+61732991343c73779c4209dc,la_45,lawn and garden,3.8,3,gardening
+61732992343c73779c4209dd,la_46,lawn and garden,3.5,3,picking fruit off trees
+61732992343c73779c4209df,la_48,lawn and garden,3.3,3,implied walking/standing – picking up yard
+61732992343c73779c4209e3,la_52,lawn and garden,4.0,3,yard work
+61732996343c73779c4209f8,mi_20,miscellaneous,3.3,3,standing
+61732996343c73779c4209f9,mi_21,miscellaneous,3.5,3,standing
+61732996343c73779c4209fd,mi_25,miscellaneous,3.5,3,touring/traveling/vacation involving walking
+61732998343c73779c420a04,mu_5,music playing,3.8,3,drums
+61732999343c73779c420a0b,mu_12,music playing,3.5,3,trombone
+61732999343c73779c420a11,mu_18,music playing,4.0,3,marching band
+6173299a343c73779c420a13,mu_20,music playing,3.5,3,marching band
+6173299a343c73779c420a16,oc_3,occupation,4.0,3,bakery
+6173299c343c73779c420a20,oc_13,occupation,4.0,3,chambermaid
+6173299d343c73779c420a26,oc_19,occupation,4.0,3,construction
+6173299d343c73779c420a28,oc_21,occupation,3.8,3,custodial work
+6173299d343c73779c420a29,oc_22,occupation,3.3,3,electrical work (e.g.
+6173299e343c73779c420a2f,oc_28,occupation,3.5,3,farming
+6173299f343c73779c420a33,oc_32,occupation,3.8,3,farming
+6173299f343c73779c420a34,oc_33,occupation,3.5,3,farming
+617329a0343c73779c420a3a,oc_39,occupation,3.5,3,fishing
+617329a1343c73779c420a43,oc_48,occupation,4.0,3,garbage collector
+617329a2343c73779c420a49,oc_54,occupation,3.8,3,horse racing
+617329a2343c73779c420a4b,oc_56,occupation,4.0,3,lawn keeper
+617329a2343c73779c420a4c,oc_57,occupation,3.3,3,laundry worker
+617329a4343c73779c420a56,oc_67,occupation,4.0,3,massage therapist
+617329a5343c73779c420a5b,oc_72,occupation,3.3,3,painting
+617329a6343c73779c420a61,oc_78,occupation,4.0,3,police
+617329a8343c73779c420a6f,oc_92,occupation,3.5,3,standing
+617329a9343c73779c420a77,oc_100,occupation,3.5,3,tailoring
+617329a9343c73779c420a79,oc_102,occupation,4.0,3,tailoring
+617329aa343c73779c420a80,oc_109,occupation,3.5,3,walking on job
+617329ab343c73779c420a82,oc_111,occupation,3.5,3,walking on job
+617329ab343c73779c420a84,oc_113,occupation,3.8,3,walking
+617329ab343c73779c420a86,oc_115,occupation,3.5,3,walking
+617329b4343c73779c420ac1,sp_14,sports,3.8,3,bowling
+617329b5343c73779c420ac8,sp_21,sports,4.0,3,coaching
+617329b6343c73779c420acb,sp_24,sports,3.3,3,croquet
+617329b6343c73779c420acc,sp_25,sports,4.0,3,curling
+617329b7343c73779c420ad3,sp_32,sports,4.0,3,football
+617329b8343c73779c420adb,sp_40,sports,3.5,3,golf
+617329b8343c73779c420adc,sp_41,sports,3.8,3,gymnastics
+617329b9343c73779c420add,sp_42,sports,4.0,3,hacky sack
+617329b9343c73779c420ae0,sp_45,sports,4.0,3,high ropes course
+617329b9343c73779c420ae1,sp_46,sports,3.5,3,hang gliding
+617329bb343c73779c420aea,sp_55,sports,3.8,3,horseback riding
+617329bc343c73779c420af1,sp_62,sports,4.0,3,juggling
+617329bc343c73779c420af4,sp_65,sports,3.3,3,lawn bowling
+617329bc343c73779c420af5,sp_66,sports,4.0,3,moto-cross
+617329be343c73779c420b00,sp_77,sports,4.0,3,rodeo sports
+617329c0343c73779c420b10,sp_93,sports,3.5,3,skydiving
+617329c1343c73779c420b14,sp_97,sports,4.0,3,softball
+617329c1343c73779c420b15,sp_98,sports,4.0,3,softball
+617329c1343c73779c420b17,sp_100,sports,3.3,3,sports spectator
+617329c2343c73779c420b1a,sp_103,sports,4.0,3,table tennis
+617329c3343c73779c420b22,sp_111,sports,3.5,3,trampoline
+617329c3343c73779c420b24,sp_113,sports,4.0,3,volleyball
+617329c4343c73779c420b2a,sp_119,sports,4.0,3,track and field (e.g.
+617329c6343c73779c420b31,tr_5,transportation,3.5,3,motor scooter
+617329c6343c73779c420b35,tr_9,transportation,3.5,3,walking for transportation
+617329c8343c73779c420b40,wa_11,walking,3.5,3,loading /unloading a car
+617329c9343c73779c420b46,wa_17,walking,3.5,3,descending stairs
+617329ca343c73779c420b4c,wa_23,walking,4.0,3,pushing or pulling stroller with child or walking with children
+617329ca343c73779c420b4d,wa_24,walking,3.8,3,pushing a wheelchair
+617329ca343c73779c420b50,wa_27,walking,4.0,3,stair climbing
+617329cb343c73779c420b56,wa_33,walking,3.5,3,walking for pleasure
+617329cc343c73779c420b5b,wa_38,walking,3.3,3,walking
+617329cc343c73779c420b5c,wa_39,walking,3.5,3,walking
+617329cd343c73779c420b64,wa_47,walking,3.5,3,walking
+617329ce343c73779c420b67,wa_50,walking,4.0,3,walking
+617329cf343c73779c420b70,wa_3,water activities,4.0,3,canoeing
+617329cf343c73779c420b71,wa_4,water activities,3.3,3,canoeing
+617329d0343c73779c420b76,wa_9,water activities,3.5,3,canoeing
+617329d1343c73779c420b7a,wa_13,water activities,4.0,3,paddle boat
+617329d1343c73779c420b7d,wa_16,water activities,3.3,3,sailing
+617329d5343c73779c420b95,wa_40,water activities,3.5,3,swimming
+617329db343c73779c420bbb,wi_26,winter activities,3.5,3,snowmobiling
+617329dd343c73779c420bca,re_11,religious activities,3.5,3,walking
+617329de343c73779c420bd0,re_17,religious activities,3.3,3,washing dishes
+617329de343c73779c420bd3,re_20,religious activities,3.3,3,cleaning church
+617329de343c73779c420bd4,re_21,religious activities,4.0,3,general yard work at church
+617329df343c73779c420bd5,re_22,religious activities,3.5,3,standing
+617329e0343c73779c420bde,vo_7,volunteer activities,3.5,3,walk/run play with children
+617329e0343c73779c420be1,vo_10,volunteer activities,3.5,3,standing
+617329e1343c73779c420be5,vo_14,volunteer activities,3.5,3,walking
+617329e1343c73779c420be7,vo_16,volunteer activities,3.5,3,walking
+61732965343c73779c4208bb,bi_6,bicycling,6.8,6,bicycling
+61732966343c73779c4208bd,bi_8,bicycling,7.5,6,bicycling
+61732966343c73779c4208c0,bi_11,bicycling,6.8,6,bicycling
+61732966343c73779c4208c1,bi_12,bicycling,8.0,6,bicycling
+61732968343c73779c4208ca,co_3,conditioning exercise,7.2,6,activity promoting video/arcade game (e.g.
+61732968343c73779c4208cc,co_5,conditioning exercise,7.0,6,bicycling
+61732968343c73779c4208ce,co_7,conditioning exercise,6.8,6,bicycling
+61732969343c73779c4208d4,co_13,conditioning exercise,8.0,6,calisthenics (e.g.
+6173296a343c73779c4208d9,co_18,conditioning exercise,8.0,6,circuit training
+6173296b343c73779c4208e1,co_26,conditioning exercise,7.8,6,health club exercise
+6173296c343c73779c4208e7,co_32,conditioning exercise,7.0,6,rowing
+6173296d343c73779c4208ea,co_35,conditioning exercise,6.8,6,ski machine
+6173296d343c73779c4208ef,co_40,conditioning exercise,6.8,6,teaching exercise class (e.g.
+6173296f343c73779c4208fd,co_54,conditioning exercise,6.8,6,native New Zealander physical activities (e.g.
+61732970343c73779c4208ff,da_2,dancing,6.8,6,ballet
+61732970343c73779c420901,da_4,dancing,7.3,6,aerobic
+61732970343c73779c420902,da_5,dancing,7.5,6,aerobic
+61732971343c73779c420907,da_10,dancing,7.3,6,aerobic
+61732972343c73779c42090b,da_14,dancing,7.8,6,general dancing (e.g.
+6173297c343c73779c42094c,ho_29,home activities,7.5,6,carrying groceries upstairs
+6173297e343c73779c42095d,ho_46,home activities,6.5,6,scrubbing floors
+6173298b343c73779c4209b3,la_4,lawn and garden,6.3,6,chopping wood
+6173298b343c73779c4209b5,la_6,lawn and garden,6.3,6,clearing brush/land
+6173298c343c73779c4209b9,la_10,lawn and garden,7.8,6,digging
+6173298d343c73779c4209c0,la_17,lawn and garden,6.3,6,laying crushed rock
+61732990343c73779c4209d4,la_37,lawn and garden,7.5,6,shoveling snow
+6173299b343c73779c420a1d,oc_10,occupation,7.0,6,carpentry
+6173299b343c73779c420a1e,oc_11,occupation,8.0,6,carrying heavy loads (e.g.
+6173299c343c73779c420a1f,oc_12,occupation,8.0,6,carrying moderate loads up stairs
+6173299c343c73779c420a24,oc_17,occupation,6.3,6,coal mining
+6173299d343c73779c420a2b,oc_24,occupation,7.8,6,farming
+6173299f343c73779c420a36,oc_35,occupation,8.0,6,fire fighter
+6173299f343c73779c420a37,oc_36,occupation,6.8,6,fire fighter
+6173299f343c73779c420a38,oc_37,occupation,8.0,6,fire fighter
+617329a0343c73779c420a3c,oc_41,occupation,7.0,6,fishing
+617329a0343c73779c420a3f,oc_44,occupation,8.0,6,forestry
+617329a1343c73779c420a41,oc_46,occupation,8.0,6,forestry
+617329a1343c73779c420a45,oc_50,occupation,7.3,6,horse grooming
+617329a2343c73779c420a47,oc_52,occupation,7.3,6,horse racing
+617329a4343c73779c420a53,oc_64,occupation,6.5,6,manual or unskilled labor
+617329a4343c73779c420a57,oc_68,occupation,7.5,6,moving
+617329a6343c73779c420a64,oc_81,occupation,7.8,6,shoveling
+617329a7343c73779c420a67,oc_84,occupation,6.5,6,shoveling
+617329a9343c73779c420a7a,oc_103,occupation,6.5,6,truck driving
+617329aa343c73779c420a7d,oc_106,occupation,6.3,6,using heavy power tools such as pneumatic tools (e.g.
+617329aa343c73779c420a7e,oc_107,occupation,8.0,6,using heavy tools (not power) such as shovel
+617329ac343c73779c420a89,oc_118,occupation,6.5,6,walking or walk downstairs or standing
+617329ac343c73779c420a8a,oc_119,occupation,7.5,6,walking or walk downstairs or standing
+617329ad343c73779c420a8e,ru_2,running,7.0,6,jogging
+617329ad343c73779c420a8f,ru_3,running,8.0,6,jogging
+617329af343c73779c420aa1,ru_21,running,8.0,6,running
+617329b0343c73779c420aa4,ru_24,running,8.0,6,running
+617329b3343c73779c420ab6,sp_3,sports,7.0,6,badminton
+617329b3343c73779c420ab8,sp_5,sports,8.0,6,basketball
+617329b3343c73779c420aba,sp_7,sports,6.5,6,basketball
+617329b3343c73779c420abb,sp_8,sports,7.0,6,basketball
+617329b4343c73779c420abe,sp_11,sports,7.8,6,basketball
+617329b5343c73779c420ac4,sp_17,sports,7.8,6,boxing
+617329b5343c73779c420ac5,sp_18,sports,7.0,6,broomball
+617329b6343c73779c420ac9,sp_22,sports,8.0,6,coaching
+617329b7343c73779c420ad1,sp_30,sports,8.0,6,football
+617329b7343c73779c420ad2,sp_31,sports,8.0,6,football
+617329b8343c73779c420ad6,sp_35,sports,8.0,6,frisbee
+617329b9343c73779c420adf,sp_44,sports,8.0,6,handball
+617329b9343c73779c420ae2,sp_47,sports,7.8,6,hockey
+617329ba343c73779c420ae3,sp_48,sports,8.0,6,hockey
+617329ba343c73779c420ae9,sp_54,sports,7.3,6,horseback riding
+617329bc343c73779c420af2,sp_63,sports,7.0,6,kickball
+617329bc343c73779c420af3,sp_64,sports,8.0,6,lacrosse
+617329bd343c73779c420af9,sp_70,sports,8.0,6,polo
+617329bd343c73779c420afb,sp_72,sports,7.0,6,racquetball
+617329bd343c73779c420afc,sp_73,sports,8.0,6,rock or mountain climbing
+617329bd343c73779c420afd,sp_74,sports,7.5,6,rock climbing
+617329be343c73779c420b02,sp_79,sports,7.0,6,rodeo sports
+617329bf343c73779c420b07,sp_84,sports,6.3,6,rugby
+617329c0343c73779c420b0b,sp_88,sports,7.0,6,skating
+617329c0343c73779c420b0c,sp_89,sports,7.5,6,rollerblading
+617329c1343c73779c420b12,sp_95,sports,7.0,6,soccer
+617329c2343c73779c420b19,sp_102,sports,7.3,6,squash
+617329c2343c73779c420b1d,sp_106,sports,7.3,6,tennis
+617329c3343c73779c420b20,sp_109,sports,8.0,6,tennis
+617329c4343c73779c420b27,sp_116,sports,8.0,6,volleyball
+617329c4343c73779c420b29,sp_118,sports,7.0,6,wallyball
+617329c6343c73779c420b32,tr_6,transportation,6.3,6,pulling rickshaw
+617329c6343c73779c420b36,wa_1,walking,7.0,6,backpacking
+617329c6343c73779c420b37,wa_2,walking,7.8,6,backpacking
+617329c7343c73779c420b3d,wa_8,walking,8.0,6,carrying 25 to 49 lb load
+617329c8343c73779c420b41,wa_12,walking,6.3,6,climbing hills
+617329c8343c73779c420b42,wa_13,walking,6.5,6,climbing hills with 0 to 9 lb load
+617329c8343c73779c420b43,wa_14,walking,7.3,6,climbing hills with 10 to 20 lb load
+617329c9343c73779c420b4b,wa_22,walking,8.0,6,marching rapidly
+617329ca343c73779c420b4e,wa_25,walking,6.5,6,race walking
+617329ca343c73779c420b4f,wa_26,walking,8.0,6,stair climbing
+617329cc343c73779c420b5f,wa_42,walking,8.0,6,walking
+617329cd343c73779c420b61,wa_44,walking,7.0,6,walking
+617329ce343c73779c420b6b,wa_54,walking,6.8,6,walking
+617329cf343c73779c420b6d,wa_56,walking,8.0,6,walking
+617329cf343c73779c420b72,wa_5,water activities,7.0,6,canoeing
+617329d1343c73779c420b7f,wa_18,water activities,7.0,6,jet skiing
+617329d2343c73779c420b82,wa_21,water activities,7.0,6,skindiving
+617329d4343c73779c420b92,wa_37,water activities,7.0,6,swimming
+617329d4343c73779c420b93,wa_38,water activities,8.0,6,swimming
+617329d6343c73779c420b9d,wa_48,water activities,6.8,6,water walking
+617329d7343c73779c420ba2,wi_1,winter activities,7.5,6,dog sledding
+617329d8343c73779c420ba8,wi_7,winter activities,7.0,6,skating
+617329d8343c73779c420bab,wi_10,winter activities,7.0,6,ski jumping
+617329d8343c73779c420bac,wi_11,winter activities,7.0,6,skiing
+617329d8343c73779c420bad,wi_12,winter activities,6.8,6,skiing
+617329da343c73779c420bb6,wi_21,winter activities,8.0,6,skiing
+617329da343c73779c420bb8,wi_23,winter activities,7.0,6,sledding
+617329db343c73779c420bbe,wi_29,winter activities,7.5,6,snow shoveling
