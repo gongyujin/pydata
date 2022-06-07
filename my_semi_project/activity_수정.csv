@@ -1,0 +1,65 @@
+_id,id,activity,metValue,intensityLevel,name
+6173296d343c73779c4208ed,co_38,conditioning exercise,2.3,2,stretching
+6173296d343c73779c4208ee,co_39,conditioning exercise,3,2,pilates
+6173296d343c73779c4208f0,co_41,conditioning exercise,2.8,2,therapeutic exercise ball
+6173296e343c73779c4208f1,co_42,conditioning exercise,2.8,2,upper body exercise
+6173296e343c73779c4208f5,co_46,conditioning exercise,2.3,2,video exercise workouts
+6173296f343c73779c4208f8,co_49,conditioning exercise,2.5,2,yoga
+617329b4343c73779c420ac0,sp_13,sports,3,2,bowling
+617329b8343c73779c420ad9,sp_38,sports,3,2,golf
+617329bb343c73779c420aed,sp_58,sports,3,2,horseshoe pitching
+617329c2343c73779c420b1b,sp_104,sports,3,2,tai chi
+617329c4343c73779c420b26,sp_115,sports,3,2,volleyball
+617329cb343c73779c420b55,wa_32,walking,2.8,2,walking
+617329d0343c73779c420b78,wa_11,water activities,3,2,diving
+617329d2343c73779c420b84,wa_23,water activities,3,2,surfing
+617329d5343c73779c420b99,wa_44,water activities,3,2,water volleyball
+61732965343c73779c4208ba,bi_5,bicycling,4,3,bicycling
+6173296f343c73779c4208f9,co_50,conditioning exercise,4,3,yoga
+617329b4343c73779c420ac1,sp_14,sports,3.8,3,bowling
+617329b6343c73779c420acb,sp_24,sports,3.3,3,croquet
+617329b6343c73779c420acc,sp_25,sports,4,3,curling
+617329b7343c73779c420ad3,sp_32,sports,4,3,football
+617329b8343c73779c420adb,sp_40,sports,3.5,3,golf
+617329b8343c73779c420adc,sp_41,sports,3.8,3,gymnastics
+617329b9343c73779c420add,sp_42,sports,4,3,hacky sack
+617329bb343c73779c420aea,sp_55,sports,3.8,3,horseback riding
+617329c0343c73779c420b10,sp_93,sports,3.5,3,skydiving
+617329c1343c73779c420b14,sp_97,sports,4,3,softball
+617329c2343c73779c420b1a,sp_103,sports,4,3,table tennis
+617329c3343c73779c420b22,sp_111,sports,3.5,3,trampoline
+617329c3343c73779c420b24,sp_113,sports,4,3,volleyball
+617329cc343c73779c420b5b,wa_38,walking,3.3,3,walking
+617329cf343c73779c420b70,wa_3,water activities,4,3,canoeing
+617329d5343c73779c420b95,wa_40,water activities,3.5,3,swimming
+61732965343c73779c4208bb,bi_6,bicycling,6.8,6,bicycling
+6173296b343c73779c4208e1,co_26,conditioning exercise,7.8,6,health club exercise
+6173296c343c73779c4208e7,co_32,conditioning exercise,7,6,rowing
+6173296d343c73779c4208ea,co_35,conditioning exercise,6.8,6,ski machine
+617329ad343c73779c420a8e,ru_2,running,7,6,jogging
+617329af343c73779c420aa1,ru_21,running,8,6,running
+617329b3343c73779c420ab6,sp_3,sports,7,6,badminton
+617329b3343c73779c420ab8,sp_5,sports,8,6,basketball
+617329b5343c73779c420ac4,sp_17,sports,7.8,6,boxing
+617329b7343c73779c420ad1,sp_30,sports,8,6,football
+617329b9343c73779c420adf,sp_44,sports,8,6,handball
+617329b9343c73779c420ae2,sp_47,sports,7.8,6,hockey
+617329ba343c73779c420ae9,sp_54,sports,7.3,6,horseback riding
+617329bc343c73779c420af3,sp_64,sports,8,6,lacrosse
+617329bd343c73779c420af9,sp_70,sports,8,6,polo
+617329bd343c73779c420afc,sp_73,sports,8,6,rock or mountain climbing
+617329bf343c73779c420b07,sp_84,sports,6.3,6,rugby
+617329c0343c73779c420b0b,sp_88,sports,7,6,skating
+617329c1343c73779c420b12,sp_95,sports,7,6,soccer
+617329c2343c73779c420b19,sp_102,sports,7.3,6,squash
+617329c2343c73779c420b1d,sp_106,sports,7.3,6,tennis
+617329c4343c73779c420b27,sp_116,sports,8,6,volleyball
+617329c8343c73779c420b41,wa_12,walking,6.3,6,climbing hills
+617329ca343c73779c420b4f,wa_26,walking,8,6,stair climbing
+617329cc343c73779c420b5f,wa_42,walking,8,6,walking
+617329d1343c73779c420b7f,wa_18,water activities,7,6,jet skiing
+617329d2343c73779c420b82,wa_21,water activities,7,6,skindiving
+617329d4343c73779c420b92,wa_37,water activities,7,6,swimming
+617329d8343c73779c420ba8,wi_7,winter activities,7,6,skating
+617329d8343c73779c420bab,wi_10,winter activities,7,6,ski jumping
+617329d8343c73779c420bac,wi_11,winter activities,7,6,skiing
