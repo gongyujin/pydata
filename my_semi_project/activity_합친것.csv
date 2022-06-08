@@ -1,0 +1,119 @@
+_id,id,activity,metValue,intensityLevel,name,category,muscles,equipment,images
+6173296d343c73779c4208ed,co_38,conditioning exercise,2.3,2,stretching,,,,
+6173296d343c73779c4208ee,co_39,conditioning exercise,3,2,pilates,,,,
+6173296d343c73779c4208f0,co_41,conditioning exercise,2.8,2,therapeutic exercise ball,,,,
+6173296e343c73779c4208f1,co_42,conditioning exercise,2.8,2,upper body exercise,,,,
+6173296e343c73779c4208f5,co_46,conditioning exercise,2.3,2,video exercise workouts,,,,
+6173296f343c73779c4208f8,co_49,conditioning exercise,2.5,2,yoga,,,,
+617329b4343c73779c420ac0,sp_13,sports,3,2,bowling,,,,
+617329b8343c73779c420ad9,sp_38,sports,3,2,golf,,,,
+617329bb343c73779c420aed,sp_58,sports,3,2,horseshoe pitching,,,,
+617329c2343c73779c420b1b,sp_104,sports,3,2,tai chi,,,,
+617329c4343c73779c420b26,sp_115,sports,3,2,volleyball,,,,
+617329cb343c73779c420b55,wa_32,walking,2.8,2,walking,,,,
+617329d0343c73779c420b78,wa_11,water activities,3,2,diving,,,,
+617329d2343c73779c420b84,wa_23,water activities,3,2,surfing,,,,
+617329d5343c73779c420b99,wa_44,water activities,3,2,water volleyball,,,,
+61732965343c73779c4208ba,bi_5,bicycling,4,3,bicycling,,,,
+6173296f343c73779c4208f9,co_50,conditioning exercise,4,3,yoga,,,,
+617329b4343c73779c420ac1,sp_14,sports,3.8,3,bowling,,,,
+617329b6343c73779c420acb,sp_24,sports,3.3,3,croquet,,,,
+617329b6343c73779c420acc,sp_25,sports,4,3,curling,,,,
+617329b7343c73779c420ad3,sp_32,sports,4,3,football,,,,
+617329b8343c73779c420adb,sp_40,sports,3.5,3,golf,,,,
+617329b8343c73779c420adc,sp_41,sports,3.8,3,gymnastics,,,,
+617329b9343c73779c420add,sp_42,sports,4,3,hacky sack,,,,
+617329bb343c73779c420aea,sp_55,sports,3.8,3,horseback riding,,,,
+617329c0343c73779c420b10,sp_93,sports,3.5,3,skydiving,,,,
+617329c1343c73779c420b14,sp_97,sports,4,3,softball,,,,
+617329c2343c73779c420b1a,sp_103,sports,4,3,table tennis,,,,
+617329c3343c73779c420b22,sp_111,sports,3.5,3,trampoline,,,,
+617329c3343c73779c420b24,sp_113,sports,4,3,volleyball,,,,
+617329cc343c73779c420b5b,wa_38,walking,3.3,3,walking,,,,
+617329cf343c73779c420b70,wa_3,water activities,4,3,canoeing,,,,
+617329d5343c73779c420b95,wa_40,water activities,3.5,3,swimming,,,,
+61732965343c73779c4208bb,bi_6,bicycling,6.8,6,bicycling,,,,
+6173296c343c73779c4208e7,co_32,conditioning exercise,7,6,rowing,,,,
+6173296d343c73779c4208ea,co_35,conditioning exercise,6.8,6,ski machine,,,,
+617329ad343c73779c420a8e,ru_2,running,7,6,jogging,,,,
+617329af343c73779c420aa1,ru_21,running,8,6,running,,,,
+617329b3343c73779c420ab6,sp_3,sports,7,6,badminton,,,,
+617329b3343c73779c420ab8,sp_5,sports,8,6,basketball,,,,
+617329b5343c73779c420ac4,sp_17,sports,7.8,6,boxing,,,,
+617329b7343c73779c420ad1,sp_30,sports,8,6,football,,,,
+617329b9343c73779c420adf,sp_44,sports,8,6,handball,,,,
+617329b9343c73779c420ae2,sp_47,sports,7.8,6,hockey,,,,
+617329ba343c73779c420ae9,sp_54,sports,7.3,6,horseback riding,,,,
+617329bc343c73779c420af3,sp_64,sports,8,6,lacrosse,,,,
+617329bd343c73779c420af9,sp_70,sports,8,6,polo,,,,
+617329bd343c73779c420afc,sp_73,sports,8,6,rock or mountain climbing,,,,
+617329bf343c73779c420b07,sp_84,sports,6.3,6,rugby,,,,
+617329c0343c73779c420b0b,sp_88,sports,7,6,skating,,,,
+617329c1343c73779c420b12,sp_95,sports,7,6,soccer,,,,
+617329c2343c73779c420b19,sp_102,sports,7.3,6,squash,,,,
+617329c2343c73779c420b1d,sp_106,sports,7.3,6,tennis,,,,
+617329c4343c73779c420b27,sp_116,sports,8,6,volleyball,,,,
+617329c8343c73779c420b41,wa_12,walking,6.3,6,climbing hills,,,,
+617329ca343c73779c420b4f,wa_26,walking,8,6,stair climbing,,,,
+617329cc343c73779c420b5f,wa_42,walking,8,6,walking,,,,
+617329d1343c73779c420b7f,wa_18,water activities,7,6,jet skiing,,,,
+617329d2343c73779c420b82,wa_21,water activities,7,6,skindiving,,,,
+617329d4343c73779c420b92,wa_37,water activities,7,6,swimming,,,,
+617329d8343c73779c420ba8,wi_7,winter activities,7,6,skating,,,,
+617329d8343c73779c420bab,wi_10,winter activities,7,6,ski jumping,,,,
+617329d8343c73779c420bac,wi_11,winter activities,7,6,skiing,,,,
+5b14e0f0-1131-4ad9-9821-5703f1370bc5,he67,health club exercise,7.8,6,Beinheben Liegend,Abs,Abs,Gym mat,137
+27d322ba-cbf5-44fa-a3bc-1999c6711757,he70,health club exercise,7.8,6,Beinstrecker,Legs,Quads,NaN,165
+3717d144-7815-4a97-9a56-956fb889c996,he73,health club exercise,7.8,6,Bankdrücken LH,Chest,Chest,Barbell,68
+28321cf3-70e6-48a4-ade1-d11382180cb3,he75,health club exercise,7.8,6,Bankdrücken KH,Chest,Chest,Bench,113
+3db63138-a047-4a4d-b616-1a0b7dfca105,he76,health club exercise,7.8,6,Bankdrücken Eng,Arms,Triceps,Barbell,15
+4af6dbd9-8991-484b-9810-68f117c21edf,he83,health club exercise,7.8,6,Bent Over Rowing,Back,Lats,Barbell,84
+2f0ddf9a-f520-4c55-8883-f0d4a789f481,he84,health club exercise,7.8,6,Bent Over Rowing Reverse,Back,Lats,Barbell,91
+7b99a081-6b1a-4aa5-b86a-5a935d083a35,he91,health club exercise,7.8,6,Biceps Curls With Barbell,Arms,Biceps,Barbell,27
+1ae6a28d-10e7-4ecf-af4f-905f8193e2c6,he92,health club exercise,7.8,6,Biceps Curls With Dumbbell,Arms,Biceps,Dumbbell,23
+bcb7020c-8678-496d-8f4d-aad0e233a5bd,he95,health club exercise,7.8,6,Biceps Curl With Cable,Arms,Biceps,NaN,19
+8953df3e-4027-45fb-8740-5d9bea55dde1,he105,health club exercise,7.8,6,"Bizeps am Kabel, ß-Stange",Arms,Biceps,NaN,189
+99449eae-0eae-44ab-a57f-fc094bbdda13,he135,health club exercise,7.8,6,Butterfly,Chest,Chest,NaN,111
+424da49e-d155-4247-bbb2-161a5c797789,he154,health club exercise,7.8,6,Chin-ups,Back,Lats,Pull-up bar,73
+b186f1f8-4957-44dc-bf30-d0b00064ce6f,he167,health club exercise,7.8,6,Crunches,Abs,Abs,Bench,3
+7de7b8a8-313d-465f-bb22-8527ae45110a,he171,health club exercise,7.8,6,Crunches an Schrägbank,Abs,Abs,Incline bench,135
+bcd801f0-9a38-4615-a91c-900153c8c234,he185,health club exercise,7.8,6,Decline Bench Press Barbell,Chest,Chest,Barbell,115
+6a496c73-721d-4ed2-9f7f-337e8ad2b388,he195,health club exercise,7.8,6,Dips,Arms,Triceps,NaN,31
+7c8eb1ac-2d7e-4ca7-919a-1848ba38e0f4,he197,health club exercise,7.8,6,Dips Between Two Benches,Arms,Triceps,Bench,35
+dcc6e237-a8bb-4eca-bbc5-7fb852636f6a,he206,health club exercise,7.8,6,Ausfallschritte im Gehen,Legs,Quads,Dumbbell,121
+8f7b6fce-4a75-42fc-b217-efe44e349fdc,he215,health club exercise,7.8,6,Einarmiges Rudern KH,Back,Lats,Dumbbell,95
+07c5b9f4-2be5-4a3d-b6d2-16235da1ae3a,he237,health club exercise,7.8,6,Fly With Cable,Chest,Chest,NaN,119
+95a7e546-e8f8-4521-a76b-983d94161b25,he246,health club exercise,7.8,6,French Press (skullcrusher) SZ-bar,Arms,Triceps,Bench,60
+d677de4c-5bd9-412a-91f1-857116a666a2,he257,health club exercise,7.8,6,Front Kniebeuge,Legs,Glutes,Barbell,149
+fb928a58-9e24-4e7b-b714-71a5f759e8d6,he268,health club exercise,7.8,6,Good Mornings,Legs,Hamstrings,NaN,66
+c0d9fe98-f4fe-49f3-8037-05e1984e7d2d,he272,health club exercise,7.8,6,Hammercurls,Arms,Biceps,Dumbbell,47
+04365177-e078-489b-983a-8ac61b7346f1,he275,health club exercise,7.8,6,Hammercurls am Seil,Arms,Biceps,NaN,51
+69378ddf-377d-4624-b500-3406682a84e4,he305,health club exercise,7.8,6,Incline Bench Press,Chest,Chest,Incline bench,117
+b16e3e5d-8401-4d2b-919c-15b536f9ec5e,he323,health club exercise,7.8,6,Kabelcross,Chest,Chest,NaN,127
+63375f5b-2d81-471c-bea4-fc3d207e96cb,he348,health club exercise,7.8,6,Lateral Raises,Shoulders,Shoulders,Dumbbell,177
+c323d8a4-310f-4381-925c-3893ef5f8422,he361,health club exercise,7.8,6,Latzug Eng im Untergriff Zur Brust,Back,Lats,NaN,209
+3bc8b411-a28d-4e1c-a6d1-769e18fe9881,he365,health club exercise,7.8,6,Beinbeuger Liegend,Legs,Hamstrings,NaN,179
+440a5184-de58-4a86-a7ba-76ddeafaa855,he366,health club exercise,7.8,6,Leg Curls (sitting),Legs,Hamstrings,NaN,181
+49189e88-40b6-4c0d-a784-0cc3abbb8e75,he367,health club exercise,7.8,6,Beinbeuger Stehend,Legs,Hamstrings,NaN,183
+4ceb1ba5-1ce1-4fe3-b60a-5d0e173a2ab3,he370,health club exercise,7.8,6,Beinbeuger Sitzend,Legs,Quads,NaN,167
+18104387-4567-4c1e-8d03-db0b274646dd,he375,health club exercise,7.8,6,Kniebeuge an Hackenschmidtmaschine,Legs,Quads,NaN,125
+9e34bc01-9cec-4ee2-a9bb-9c937a471c24,he377,health club exercise,7.8,6,"Leg Raises, Lying",Abs,Abs,Gym mat,139
+a7e6c20a-6ddc-4401-9935-ace2d02e3995,he394,health club exercise,7.8,6,Long-Pulley,Back,Lats,NaN,143
+cbc5fbc9-9bca-4766-941d-4b6903d4a521,he427,health club exercise,7.8,6,Crunches an Negativbank,Abs,Abs,NaN,7
+5930ce9c-dfbd-452c-9949-dd34c5e41fd6,he482,health club exercise,7.8,6,Liegestütz,Arms,Triceps,none (bodyweight exercise),55
+a6c2a970-a621-4e03-be1d-4a29118b1687,he484,health club exercise,7.8,6,Rack Deadlift,Back,Glutes,NaN,145
+32c129f7-cc28-4ebc-8465-e4fa62e220b1,he513,health club exercise,7.8,6,"Rowing, T-bar",Back,Lats,NaN,77
+a68c991c-ac42-47c8-9a84-9b288a4a7a76,he521,health club exercise,7.8,6,Rudern Aufrecht ß-Stange,Shoulders,Shoulders,Barbell,69
+d9e306b6-d6ff-4e61-b283-4b085d8edaaf,he525,health club exercise,7.8,6,Rudern Vorgebeugt LH Reverse,Back,Lats,Barbell,88
+57e17672-52b9-43cf-8d0d-4b3f06a0c0d0,he537,health club exercise,7.8,6,Schrägbankdrücken KH,Chest,Chest,Dumbbell,105
+275fb49f-975c-4d6e-9d63-2c86ed740f40,he538,health club exercise,7.8,6,Schrägbankdrücken LH,Chest,Chest,Barbell,129
+60e9a0c0-5458-46cd-ab41-7d7b85225cf8,he539,health club exercise,7.8,6,Schrägbankdrücken MP,Chest,Chest,NaN,107
+5912d7ed-6a0e-4b4c-b30a-fc9f3f890fc1,he543,health club exercise,7.8,6,Schultermaschine,Shoulders,Shoulders,NaN,195
+8b0a0371-c0a9-42a7-aab7-68d520542fb2,he566,health club exercise,7.8,6,Schulterdrücken LH,Shoulders,Shoulders,Barbell,171
+87affa4b-395b-437c-9581-2bd20ea5aa7c,he567,health club exercise,7.8,6,Schulterdrücken KH,Shoulders,Shoulders,Dumbbell,173
+92702a8e-1d5f-4c59-aa18-5d8f6a2826e3,he568,health club exercise,7.8,6,"Shoulder Press, on Machine",Shoulders,Shoulders,NaN,175
+270e108d-3cd2-45a9-807b-c357317eb15c,he571,health club exercise,7.8,6,"Shrugs, Barbells",Shoulders,Shoulders,Barbell,43
+72a945ec-3a7f-424b-9a05-1616ef7dce91,he572,health club exercise,7.8,6,"Shrugs, Dumbbells",Shoulders,Shoulders,Dumbbell,39
+a2f5b6ef-b780-49c0-8d96-fdaff23e27ce,he615,health club exercise,7.8,6,Kniebeuge,Legs,Quads,Barbell,151
+24b62fb4-0158-486e-89f1-9a5f1db234ef,he641,health club exercise,7.8,6,T-Bar Rudern (breit),Back,Lats,NaN,76
+557ae429-100d-4d5b-a173-e5186fa2d9bc,he665,health club exercise,7.8,6,Trizepsdrücken KH Über Kopf,Arms,Triceps,Dumbbell,62
