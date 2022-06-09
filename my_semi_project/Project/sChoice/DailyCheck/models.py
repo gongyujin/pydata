@@ -8,3 +8,4 @@ class Dailyexercise(models.Model):
     burned_kcal=models.IntegerField(default=0,blank=True)
     goal_kcal=models.IntegerField(default=1000,blank=True)
     createdate=models.DateTimeField(auto_now_add=True)
+    content=models.TextField(blank=True)

@@ -1,0 +1,45 @@
+<script>
+    $(function(){
+        $("#eResult").click(function(e){
+            if (validate()) {
+                requestResultPage();
+            }
+        });
+        function validate()
+        {
+            var weight = parseInt($("#mi_weightc").val());
+            var height = parseInt($("#mi_heightc").val());
+            var age = parseInt($("#mi_age").val());
+            var goal_burn = parseInt($("#mi_goal_burn").val());
+            var goal_date = parseInt($("#mi_goal_date").val());                                                
+            
+            var result = true;
+            
+            if (isNaN(height)) {
+                alert("키를 입력해주세요.");
+                result = false;
+            } else if (isNaN(weight)) {
+                alert("몸무게를 입력해주세요.");
+                result = false;
+            } else if (isNaN(age)) {
+                alert("나이를 입력해주세요.");
+                result = false;
+            } else if (isNaN(goal_burn)) {
+                alert("감량목표를 입력해주세요.");
+                result = false;
+            } else if (isNaN(goal_date)) {
+                alert("목표기간을 입력해주세요.");
+                result = false;
+            } else if ($(".mi_sex:checked").val()==null) {
+                alert("성별를 체크해주세요.");
+                result = false;
+            } else if ($(".mi_act:checked").val()==null) {
+                alert("활동량을 체크해주세요.");
+                result = false;
+            }
+            return result;
+            
+        }
+    });
+
+</script>

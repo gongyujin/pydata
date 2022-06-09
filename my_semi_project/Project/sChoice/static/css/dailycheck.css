@@ -44,7 +44,7 @@ a:hover{
     
     border-collapse: collapse;
 }
-tr,td{
+#inputsection tr,td{
     margin: 0 auto;
     
     border-collapse: collapse;
@@ -54,7 +54,7 @@ tr,td{
 
 }
 
-ul{
+#box2 ul{
   font-size: 30px;
   font-weight: bold;
   text-align: center;    
@@ -71,10 +71,11 @@ ul{
     z-index: 5;
     display: flex;
     justify-content: center;
+    text-align: center; 
     align-items: center;
     pointer-events: none;
     font-size: 1.5rem;
-    padding-top: 1.5rem;
+    padding-top: 0;
 }
 
 
@@ -100,8 +101,55 @@ ul{
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  height: 500px
+  font-size: 20px;
 }
+
+
+#des{
+  font-size: 12px;
+}
+.activitysel{
+  margin: 0 auto;
+  width:50%;
+}
+.activitysel ul{
+  padding: 20px;
+  text-decoration: none;
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+.activitysel ul:hover,
+.activitysel ul:focus{
+  text-decoration: underline;
+  cursor: pointer;
+
+}
+.activitysel ul:active{
+  color: red;
+}
+
+.exerciseysel{
+  margin: 0 auto;
+  width:50%;
+}
+.exerciseysel ul{
+  padding: 20px;
+  text-decoration: none;
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+.exerciseysel ul:hover,
+.exerciseysel ul:focus{
+  text-decoration: underline;
+  cursor: pointer;
+
+}
+.exerciseysel ul:active{
+  color: red;
+}
+
 
 /* The Close Button */
 .close {
@@ -117,10 +165,46 @@ ul{
   cursor: pointer;
 }
 
+/* The Close Button */
+.close2 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 
+.nextBtn{
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  border: 1px solid white;
+  border-collapse: collapse;
 
+}
 
+.nextBtn:hover,
+.nextBtn:focus{
+  cursor: pointer;
+}
+.nextBtn2{
+  float: right;
+  font-size: 28px;
+  border: 1px solid white;
+  font-weight: bold;border-collapse: collapse;
+
+}
+
+.nextBtn2:hover,
+.nextBtn2:focus{
+  cursor: pointer;
+}
 
 
 /* PROGRESSBAR */
@@ -167,7 +251,7 @@ ul{
   }
 
 
-  #carbB{
+  #ex1B{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -178,22 +262,22 @@ ul{
     color: #ECEC84;
   }
   
-  #carbB::-webkit-progress-bar {
+  #ex1B::-webkit-progress-bar {
     background-color: #eee;
     border-radius: 8px;
   }
   
-  #carbB::-webkit-progress-value {
+  #ex1B::-webkit-progress-value {
     background-color: #ECEC84;
     border-radius: 8px;
   }
   
-  #carbB::-moz-progress-bar {
+  #ex1B::-moz-progress-bar {
     background-color: #eee;
     border-radius: 8px;
   }
 
-  #proteinB{
+  #ex2B{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -204,22 +288,22 @@ ul{
     color: #FFB69B;
   }
   
-  #proteinB::-webkit-progress-bar {
+  #ex2B::-webkit-progress-bar {
     background-color: #eee;
     border-radius: 8px;
   }
   
-  #proteinB::-webkit-progress-value {
+  #ex2B::-webkit-progress-value {
     background-color: #FFB69B;
     border-radius: 8px;
   }
   
-  #proteinB::-moz-progress-bar {
+  #ex2B::-moz-progress-bar {
     background-color: #eee;
     border-radius: 8px;
   }
 
-  #fatB{
+  #ex3B{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -230,17 +314,17 @@ ul{
     color: #A299CA;
   }
   
-  #fatB::-webkit-progress-bar {
+  #ex3B::-webkit-progress-bar {
     background-color: #eee;
     border-radius: 8px;
   }
   
-  #fatB::-webkit-progress-value {
+  #ex3B::-webkit-progress-value {
     background-color: #A299CA;
     border-radius: 8px;
   }
   
-  #fatB::-moz-progress-bar {
+  #ex3B::-moz-progress-bar {
     background-color: #eee;
     border-radius: 8px;
   }
