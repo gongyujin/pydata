@@ -1,0 +1,117 @@
+ex_id,activity,aerobic,met,level,ex_name,target_category,muscle,equipment,imgUrl
+co_38,conditioning exercise,o,2.3,2,stretching,,,,
+co_39,conditioning exercise,o,3,2,pilates,,,,
+co_41,conditioning exercise,o,2.8,2,therapeutic exercise ball,,,,
+co_42,conditioning exercise,o,2.8,2,upper body exercise,,,,
+co_46,conditioning exercise,o,2.3,2,video exercise workouts,,,,
+co_49,conditioning exercise,o,2.5,2,yoga,,,,
+sp_13,sports,o,3,2,bowling,,,,
+sp_38,sports,o,3,2,golf,,,,
+sp_58,sports,o,3,2,horseshoe pitching,,,,
+sp_104,sports,o,3,2,tai chi,,,,
+sp_115,sports,o,3,2,volleyball,,,,
+wa_32,walking,o,2.8,2,walking,,,,
+wa_11,water activities,o,3,2,diving,,,,
+wa_23,water activities,o,3,2,surfing,,,,
+wa_44,water activities,o,3,2,water volleyball,,,,
+bi_5,bicycling,o,4,3,bicycling,,,,
+co_50,conditioning exercise,o,4,3,yoga,,,,
+sp_14,sports,o,3.8,3,bowling,,,,
+sp_24,sports,o,3.3,3,croquet,,,,
+sp_25,sports,o,4,3,curling,,,,
+sp_32,sports,o,4,3,football,,,,
+sp_40,sports,o,3.5,3,golf,,,,
+sp_41,sports,o,3.8,3,gymnastics,,,,
+sp_42,sports,o,4,3,hacky sack,,,,
+sp_55,sports,o,3.8,3,horseback riding,,,,
+sp_93,sports,o,3.5,3,skydiving,,,,
+sp_97,sports,o,4,3,softball,,,,
+sp_103,sports,o,4,3,table tennis,,,,
+sp_111,sports,o,3.5,3,trampoline,,,,
+sp_113,sports,o,4,3,volleyball,,,,
+wa_38,walking,o,3.3,3,walking,,,,
+wa_3,water activities,o,4,3,canoeing,,,,
+wa_40,water activities,o,3.5,3,swimming,,,,
+bi_6,bicycling,o,6.8,6,bicycling,,,,
+co_32,conditioning exercise,o,7,6,rowing,,,,
+co_35,conditioning exercise,o,6.8,6,ski machine,,,,
+ru_2,running,o,7,6,jogging,,,,
+ru_21,running,o,8,6,running,,,,
+sp_3,sports,o,7,6,badminton,,,,
+sp_5,sports,o,8,6,basketball,,,,
+sp_17,sports,o,7.8,6,boxing,,,,
+sp_30,sports,o,8,6,football,,,,
+sp_44,sports,o,8,6,handball,,,,
+sp_47,sports,o,7.8,6,hockey,,,,
+sp_54,sports,o,7.3,6,horseback riding,,,,
+sp_64,sports,o,8,6,lacrosse,,,,
+sp_70,sports,o,8,6,polo,,,,
+sp_73,sports,o,8,6,rock or mountain climbing,,,,
+sp_84,sports,o,6.3,6,rugby,,,,
+sp_88,sports,o,7,6,skating,,,,
+sp_95,sports,o,7,6,soccer,,,,
+sp_102,sports,o,7.3,6,squash,,,,
+sp_106,sports,o,7.3,6,tennis,,,,
+sp_116,sports,o,8,6,volleyball,,,,
+wa_12,walking,o,6.3,6,climbing hills,,,,
+wa_26,walking,o,8,6,stair climbing,,,,
+wa_42,walking,o,8,6,walking,,,,
+wa_18,water activities,o,7,6,jet skiing,,,,
+wa_21,water activities,o,7,6,skindiving,,,,
+wa_37,water activities,o,7,6,swimming,,,,
+wi_7,winter activities,o,7,6,skating,,,,
+wi_10,winter activities,o,7,6,ski jumping,,,,
+wi_11,winter activities,o,7,6,skiing,,,,
+he275,health club exercise,x,7.8,6,Hammer curls on rope,Arms,Biceps,NaN,https://wger.de/media/exercise-images/138/Hammer-curls-with-rope-1.png
+he237,health club exercise,x,7.8,6,Fly With Cable,Chest,Chest,NaN,https://wger.de/media/exercise-images/122/Incline-cable-flyes-1.png
+he375,health club exercise,x,7.8,6,Squat on Hackenschmidt machine,Legs,Quads,NaN,https://wger.de/media/exercise-images/130/Narrow-stance-hack-squats-1-1024x721.png
+he92,health club exercise,x,7.8,6,Biceps Curls With Dumbbell,Arms,Biceps,Dumbbell,https://wger.de/media/exercise-images/81/Biceps-curl-1.png
+he571,health club exercise,x,7.8,6,"Shrugs, Barbells",Shoulders,Shoulders,Barbell,https://wger.de/media/exercise-images/150/Barbell-shrugs-1.png
+he538,health club exercise,x,7.8,6,Incline press LH,Chest,Chest,Barbell,https://wger.de/media/exercise-images/41/Incline-bench-press-1.png
+he70,health club exercise,x,7.8,6,leg extension,Legs,Quads,NaN,https://wger.de/media/exercise-images/39/Seated-leg-curl-1.png
+he75,health club exercise,x,7.8,6,Bench press CH,Chest,Chest,Bench,https://wger.de/media/exercise-images/97/Dumbbell-bench-press-1.png
+he84,health club exercise,x,7.8,6,Bent Over Rowing Reverse,Back,Lats,Barbell,https://wger.de/media/exercise-images/110/Reverse-grip-bent-over-rows-1.png
+he513,health club exercise,x,7.8,6,"Rowing, T-bar",Back,Lats,NaN,https://wger.de/media/exercise-images/106/T-bar-row-1.png
+he73,health club exercise,x,7.8,6,Bench Press LH,Chest,Chest,Barbell,https://wger.de/media/exercise-images/192/Bench-press-1.png
+he365,health club exercise,x,7.8,6,Lying Leg Curls,Legs,Hamstrings,NaN,https://wger.de/media/exercise-images/154/lying-leg-curl-machine-large-1.png
+he76,health club exercise,x,7.8,6,Bench Press Eng,Arms,Triceps,Barbell,https://wger.de/media/exercise-images/88/Narrow-grip-bench-press-1.png
+he154,health club exercise,x,7.8,6,Chin-ups,Back,Lats,Pull-up bar,https://wger.de/media/exercise-images/181/Chin-ups-2.png
+he366,health club exercise,x,7.8,6,Leg Curls (sitting),Legs,Hamstrings,NaN,https://wger.de/media/exercise-images/117/seated-leg-curl-large-1.png
+he83,health club exercise,x,7.8,6,Bent Over Rowing,Back,Lats,Barbell,https://wger.de/media/exercise-images/109/Barbell-rear-delt-row-1.png
+he370,health club exercise,x,7.8,6,Seated Leg Curls,Legs,Quads,NaN,https://wger.de/media/exercise-images/177/Seated-leg-curl-1.png
+he665,health club exercise,x,7.8,6,Tricep Extension KH Overhead,Arms,Triceps,Dumbbell,https://wger.de/media/exercise-images/45/Seated-triceps-press-1.png
+he537,health club exercise,x,7.8,6,Incline bench press KH,Chest,Chest,Dumbbell,https://wger.de/media/exercise-images/16/Incline-press-1.png
+he543,health club exercise,x,7.8,6,shoulder machine,Shoulders,Shoulders,NaN,https://wger.de/media/exercise-images/53/Shoulder-press-machine-2.png
+he482,health club exercise,x,7.8,6,pushup,Arms,Triceps,none (bodyweight exercise),https://wger.de/media/exercise-images/195/Push-ups-1.png
+he67,health club exercise,x,7.8,6,Lying leg raises,Abs,Abs,Gym mat,https://wger.de/media/exercise-images/34/Leg-raises-2.png
+he539,health club exercise,x,7.8,6,Incline press MP,Chest,Chest,NaN,https://wger.de/media/exercise-images/61/Close-grip-bench-press-1.png
+he348,health club exercise,x,7.8,6,Lateral Raises,Shoulders,Shoulders,Dumbbell,https://wger.de/media/exercise-images/148/lateral-dumbbell-raises-large-2.png
+he305,health club exercise,x,7.8,6,Incline Bench Press,Chest,Chest,Incline bench,https://wger.de/media/exercise-images/163/Incline-bench-press-1.png
+he195,health club exercise,x,7.8,6,Dips,Arms,Triceps,NaN,https://wger.de/media/exercise-images/82/Tricep-dips-2-1.png
+he572,health club exercise,x,7.8,6,"Shrugs, Dumbbells",Shoulders,Shoulders,Dumbbell,https://wger.de/media/exercise-images/151/Dumbbell-shrugs-2.png
+he91,health club exercise,x,7.8,6,Biceps Curls With Barbell,Arms,Biceps,Barbell,https://wger.de/media/exercise-images/74/Bicep-curls-1.png
+he197,health club exercise,x,7.8,6,Dips Between Two Benches,Arms,Triceps,Bench,https://wger.de/media/exercise-images/83/Bench-dips-1.png
+he171,health club exercise,x,7.8,6,Incline bench crunches,Abs,Abs,Incline bench,https://wger.de/media/exercise-images/56/Decline-crunch-1.png
+he567,health club exercise,x,7.8,6,shoulder press KH,Shoulders,Shoulders,Dumbbell,https://wger.de/media/exercise-images/123/dumbbell-shoulder-press-large-1.png
+he105,health club exercise,x,7.8,6,"Biceps on the cable, ß-bar",Arms,Biceps,NaN,https://wger.de/media/exercise-images/231/Standing-biceps-curl-1.png
+he566,health club exercise,x,7.8,6,Shoulder press LH,Shoulders,Shoulders,Barbell,https://wger.de/media/exercise-images/119/seated-barbell-shoulder-press-large-1.png
+he215,health club exercise,x,7.8,6,One-Arm Row KH,Back,Lats,Dumbbell,https://wger.de/media/exercise-images/11/Rear-deltoid-row-2.png
+he568,health club exercise,x,7.8,6,"Shoulder Press, on Machine",Shoulders,Shoulders,NaN,https://wger.de/media/exercise-images/152/seated-shoulder-press-machine-large-1.png
+he246,health club exercise,x,7.8,6,French Press (skullcrusher) SZ-bar,Arms,Triceps,Bench,https://wger.de/media/exercise-images/84/Lying-close-grip-triceps-press-to-chin-1.png
+he135,health club exercise,x,7.8,6,Butterfly,Chest,Chest,NaN,https://wger.de/media/exercise-images/98/Butterfly-machine-2.png
+he377,health club exercise,x,7.8,6,"Leg Raises, Lying",Abs,Abs,Gym mat,https://wger.de/media/exercise-images/125/Leg-raises-2.png
+he615,health club exercise,x,7.8,6,squat,Legs,Quads,Barbell,https://wger.de/media/exercise-images/111/Wide-stance-squat-2.gif
+he521,health club exercise,x,7.8,6,Row Upright ß-bar,Shoulders,Shoulders,Barbell,https://wger.de/media/exercise-images/62/Barbell-upright-rows-2.png
+he484,health club exercise,x,7.8,6,Rack Deadlift,Back,Glutes,NaN,https://wger.de/media/exercise-images/161/Dead-lifts-2.png
+he394,health club exercise,x,7.8,6,Long-Pulley,Back,Lats,NaN,https://wger.de/media/exercise-images/143/Cable-seated-rows-2.png
+he323,health club exercise,x,7.8,6,cable cross,Chest,Chest,NaN,https://wger.de/media/exercise-images/71/Cable-crossover-2.png
+he167,health club exercise,x,7.8,6,Crunches,Abs,Abs,Bench,https://wger.de/media/exercise-images/91/Crunches-1.png
+he95,health club exercise,x,7.8,6,Biceps Curl With Cable,Arms,Biceps,NaN,https://wger.de/media/exercise-images/129/Standing-biceps-curl-1.png
+he185,health club exercise,x,7.8,6,Decline Bench Press Barbell,Chest,Chest,Barbell,https://wger.de/media/exercise-images/100/Decline-bench-press-1.png
+he272,health club exercise,x,7.8,6,Hammercurls,Arms,Biceps,Dumbbell,https://wger.de/media/exercise-images/86/Bicep-hammer-curl-1.png
+he361,health club exercise,x,7.8,6,Lat pull tight in the underhand grip to the chest,Back,Lats,NaN,https://wger.de/media/exercise-images/244/Close-grip-front-lat-pull-down-2.png
+he427,health club exercise,x,7.8,6,Crunches on negative bench,Abs,Abs,NaN,https://wger.de/media/exercise-images/93/Decline-crunch-1.png
+he257,health club exercise,x,7.8,6,Front squat,Legs,Glutes,Barbell,https://wger.de/media/exercise-images/191/Front-squat-1-857x1024.png
+he525,health club exercise,x,7.8,6,Rows Bent Over LH Reverse,Back,Lats,Barbell,https://wger.de/media/exercise-images/70/Reverse-grip-bent-over-rows-1.png
+he206,health club exercise,x,7.8,6,Walking lunges,Legs,Quads,Dumbbell,https://wger.de/media/exercise-images/113/Walking-lunges-1.png
+he268,health club exercise,x,7.8,6,Good Mornings,Legs,Hamstrings,NaN,https://wger.de/media/exercise-images/116/Good-mornings-2.png

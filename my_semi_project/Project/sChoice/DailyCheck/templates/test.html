@@ -1,48 +1,26 @@
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  
-  <!-- Modal content -->
-  <div class="modal-content">
-      <form id="all_form" method="post" action="#"> 
-          {% csrf_token %}
+$('#nextBtn').click(function(){
+    alert(activityName)
+    console.log(activityName)
+    $.ajax({
+        url:'{%url "DailyCheck:exercise1"%}',
+        dataType:'json',
+        success:function(data){
+            console.log(data)
+            let str=''
+            for (let i=0;i<data.length;i++){
+                if (data[i].activity==activityName){
+                    str+='<ul class="exercise" name="exercise">'+data[i].ex_name+'</ul>'
+
+                }
+            }
+            $('#exerciseysel')base.html(str)
+        
+
+        },
+        error:function(){
+            alert('실패')
+        }
+    })//ajax 
 
 
-
-          <!--activity 고르기-->
-          <div class='sel_box' name='activitybox'>
-              <h3 class="join_title">
-                  <label for="activity">운동항목</label>
-              </h3>
-
-              <div class='id1'>
-                  <select id="activity" name="activity" class="sel">
-                      <option value='' selected>운동항목</option>
-                      <option value="bicycling">자전거</option>
-                      <option value="conditioning">체형교정운동</option>
-                      <option value="healthclub">헬스</option>
-                      <option value="running">러닝</option>
-                      <option value="sports">스포츠</option>
-                      <option value="walking">걷기</option>
-                      <option value="water">수상운동</option>
-                      <option value="winter">설상운동</option>
-                  </select>
-              </div>
-              <span class="error_next_box" id="activityMSg">
-                  원하는 운동항목을 선택하세요.
-              </span>
-          </div>
-
-          <!---->
-          <!---->
-          <!---->
-
-          
-  
-      </form>
-  
-      <span class="close">&times;</span>
-      <br>
-
-
-      
-  </div>
+})//nextBtn function
