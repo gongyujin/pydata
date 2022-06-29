@@ -18,6 +18,7 @@ def func(a):
         output.append(float(i)/256)
     return output
 
+# data만 map으로 재분배해줌
 train_data=list(map(func,train_csv.iloc[:,1:].values)) #0-255숫자를 배분해서 넣어둠
 test_data=list(map(func,test_csv.iloc[:,1:].values))
 train_label=train_csv[0].values
