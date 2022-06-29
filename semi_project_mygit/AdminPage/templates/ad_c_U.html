@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--최신제이쿼리 이용-->
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <link rel="stylesheet" href="{% static 'css/admin_update.css'%}">
+  <title>AdminPage</title>
+  <script>
+
+    function cancelBtn(){
+
+      location.href="{% url 'AdminPage:ad_c_L' searchword4=searchword4 category4=category4 %}"
+    }
+
+  </script>
+</head>
+
+<body bgcolor='#f7f7f7'>
+
+
+
+
+
+  <section>
+    <div class="admin_name">
+  
+      <h1>문의사항수정</h1>
+  
+    </div>
+  
+  
+    <form action="{% url 'AdminPage:ad_c_U' searchword4=searchword4 category4=category4 c_No=c_List.c_No %}" name="update" method="post">
+      {% csrf_token %}
+      
+        <colgroup>
+          <col width="15%">
+          <col width="85%">
+        </colgroup>
+        
+  {% if c_List%}
+  
+  <div class="whole_thing">
+
+    <div class="form-group">
+      <label class="label_name" for="c_No">번호</label><br>
+      <input type= "text" class="form-control" id="c_No" value="{{c_List.c_No}}" name ="c_No" readonly>
+      </div>
+    <div class="form-group">
+      <label class="label_name" for="c_name">이름</label><br>
+      <input type= "text" class="form-control" id="ex_id" value="{{c_List.c_name}}"  placeholder="{{c_List.c_name}}" name ="c_name">
+      </div>
+    <div class="form-group">
+      <label class="label_name" for="c_title">제목</label><br>
+      <input type= "text" class="form-control" id="c_title" value="{{c_List.c_title}}" name ="c_title">
+      </div>
+    <div class="form-group">
+      <label class="label_name" for="c_email">이메일</label><br>
+      <input type= "text" class="form-control" id="met" value="{{c_List.c_email}}" name ="c_email">
+      </div>
+    <div class="form-group">
+      <label class="label_name" for="c_tel">전화번호</label><br>
+      <input type= "text" class="form-control" id="c_tel" value="{{c_List.c_tel}}" name ="c_tel">
+      </div>
+    <div class="form-group">
+      <label class="label_name" for="c_content">문의내용</label><br>
+      <input type= "text" class="form-control" id="c_content" value="{{c_List.c_content}}" name ="c_content">
+      </div>
+  
+          <div class="button-wrapper">
+            <button type="submit" class="btnfont" >수정완료</button>
+            <button type="button" onclick= 'cancelBtn()' class="btnfont" >취소</button>
+          </div>
+  
+      {% endif %}
+  
+    </form>
+  
+  </div>
+  
+  </section>
+
+</body>
+
+
+ 
+</html>

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block mycontent %}
+<!--
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/mystatus.css" />
+<script src="/static/js/mystatus.js"></script>
+
+<main>
+    <div id="usertotalstatus" style="margin-top:90px; margin-left:300px;">
+       
+        
+    </div>	
+
+    <div id="topchart">
+
+        <table id='maintb' class='maintb'>
+            <colgroup>
+                <col width="60%">
+                <col width="5%">
+                <col width="35%">
+            </colgroup>
+            <tr >
+                <td style="text-align:center;" rowspan=4>
+                    <canvas id="goalchart" style="width:700px;"></canvas> 
+                     
+                        
+                    <details>
+                        <summary>  몸무게 그래프 확인</summary>
+                            <p><canvas id="weightchange"></canvas></p>
+                    </details>
+                    
+                    
+                </td>
+                <td>
+                    <div style="margin:150px 10px 10px 0px;"> 
+                        <canvas id="mealChart"></canvas> 
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <canvas id="weeklyBarChart_meal" style="width:500px;"></canvas> 
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                
+                <td colspan='2'><div id="mealtxt">현재까지 식단목표를 88% 달성중이십니다</div></td>
+                
+            </tr>
+            <tr>
+                
+                <td>
+                    <div style="margin:150px 10px 10px 0px;">   
+                        <canvas id="exerChart"></canvas> 
+                    </div>
+                </td>
+                <td>
+                    <div style="margin-right:20px;">
+                        <canvas id="weeklyBarChart_exer" style="width:500px;"></canvas> 
+                
+                    </div>
+                </td>
+            </tr>
+            <tr> 
+                <td colspan='2'><div id="exertxt">현재까지 운동목표를 90% 달성중이십니다</div></td>
+            </tr>
+            
+        </table>
+        
+    </div>
+
+    
+</main>
+
+{% endblock mycontent %}

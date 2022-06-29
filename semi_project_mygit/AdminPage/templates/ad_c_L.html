@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>AdminPage</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static 'css/admin_list.css'%}">
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<title>AdminPage</title>
+	<script>
+		
+	
+	
+		function searchBtn(){
+	
+		if($('#searchword4').val()==''){
+	
+			alert('검색어를 입력하세요.')
+			$('#searchword4').focus()
+			return false 
+			
+		} 
+	
+		$('#searchfrm4').submit()
+	
+		}
+
+
+  </script> 
+
+
+
+
+</head>
+<body>
+
+	<nav>
+  
+		<ul class='nav_container'>
+		  <li class='nav_item'><a href="/">UNNI'S CHOICE</a></li>
+		  <li class='nav_item'><a href="{% url 'AdminPage:ad_m_L' searchword='searchword' category='category' %}">회원관리</a></li>
+		  <li class='nav_item'><a href="{% url 'AdminPage:ad_f_L' searchword2='searchword2' category2='category2' %}">음식DB관리</a></li>
+		  <li class='nav_item'><a href="{% url 'AdminPage:ad_e_L' searchword3='searchword3' category3='category3' %}">운동DB관리</a></li>
+		  <li class='nav_item'><a href="{% url 'AdminPage:ad_c_L' searchword4='searchword4' category4='category4'%}">Contact-Us</a></li>
+		  <li class='nav_item'><a href="{% url 'AdminPage:ad_logout'%}">로그아웃</a></li>
+		</ul>
+	  
+	  </nav>
+
+
+
+	<section class="main-content">
+		<div class="container">
+
+			<div class="admin_name">
+
+				<h1>Contact Us-Admin</h1>
+
+			</div>
+
+			<div class="wrapper">
+				<form action="{% url 'AdminPage:ad_c_L' searchword4='searchword4'  category4='category4' %}" name="searchfrm4" id='searchfrm4' method="post">
+				  {% csrf_token %} 
+				
+
+				  <select class='admin_select' name="category4" id="category4">
+					<option value="c_name">이름</option>
+					<option value="c_title">제목</option>
+					<option value="c_email">이메일</option>
+					<option value="all">전체</option>
+				  </select>
+			
+			
+				  <div class="title">
+					<input type="text" name='searchword4' id='searchword4' size="16">
+				  <div>
+					<button type="button" onclick='searchBtn()'><span>search</span></button>
+				  </div>
+				</form>
+			  </div>
+
+
+			<br>
+			<br>
+
+			<table class="table">
+				<thead>
+
+					<colgroup>
+						<col width="12%">
+						<col width="12%">
+						<col width="12%">
+						<col width="12%">
+						<col width="12%">
+						<col width="20%">
+						<col width="12%">
+					  </colgroup>
+
+					<tr>
+						<th>번호</th>
+						<th>이름</th>
+						<th>제목</th>
+						<th>이메일</th>
+						<th>전화번호</th>
+						<th>내용</th>
+						<th>actions</th>
+					  </tr>
+					
+				</thead>
+				<tbody>
+					{% if contact_List %}
+					{% for board in contact_List %}
+
+					<script>
+
+						function deleteBtn(){
+							if(confirm('삭제하시겠습니까?')){
+
+								location.href="{% url 'AdminPage:ad_c_D' searchword4='searchword4' category4='category4' c_No=board.c_No %}"
+
+							
+							}else{
+				
+								return false
+							}
+						}
+					</script>
+					<tr>
+						<td>
+							<div class="user-info">
+								<div class="user-info__basic">
+									<h6 class="mb-0"><a href="{% url 'AdminPage:ad_c_V' searchword4='searchword4' category4='category4' c_No=board.c_No %}">{{board.c_No}}</a></h6>
+									
+								</div>
+							</div>
+						</td>
+						
+						<td>
+							<h6 class="mb-0">{{board.c_name}}</h6>
+							
+						</td>
+						<td>
+							<h6 class="mb-0">{{board.c_title}}</h6>
+							
+						</td>
+						<td>
+							<h6 class="mb-0">{{board.c_email}}</h6>
+						</td>
+						<td>
+							<h6 class="mb-0">{{board.c_tel}}</h6>
+						</td>
+						<td>
+							<h6 class="mb-0">{{board.c_content}}</h6>
+						</td>
+
+						<td>
+							<div class="dropdown open">
+								<a href="#!" class="px-2" id="triggerId1" data-toggle="dropdown" aria-haspopup="true"
+										aria-expanded="false">
+											<i class="fa fa-ellipsis-v"></i>
+								</a>
+								<div class="dropdown-menu" aria-labelledby="triggerId1">
+									<a class="dropdown-item" href="{% url 'AdminPage:ad_c_U' searchword4=searchword4 category4=category4 c_No=board.c_No %}"><i class="fa fa-pencil mr-1"></i> Edit</a>
+									<a class="dropdown-item text-danger" onclick='deleteBtn()'><i class="fa fa-trash mr-1"></i>Delete</a>
+								</div>
+							</div> 
+					</tr>
+
+					{% endfor %}
+					{%else%}
+					<tr>
+					  <td colspan='6'>데이터가 없습니다</td>
+					</tr>
+					{% endif %}
+
+				</tbody>
+			</table>
+		</div>
+	</section>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+@font-face {
+
+    src : url("/static/font/BMDOHYEON_otf.otf"); 
+
+    font-family: "dohyeon";
+
+}
+* {
+    margin: 0 auto;
+    font-family: "dohyeon";
+}
+
+#choicebox{
+    margin: auto;
+}
+.disease {
+    margin:10px;
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #40e0d0;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    float:left;
+    text-align: center;
+    }
+#chartinfo, #mychart, #dinfo {width:75%;}
+#chartinfo{
+    clear:both;
+    }
+
+table,td {
+    border-collapse: collapse;
+    border: 1px solid white;
+    text-align: center;
+
+}
+table{
+    width: 100%;
+}
+td{
+    width: 25%;
+}
+
+ul,li{
+    list-style-type: none;
+}
+h2,h3{margin:0 auto;
+    font-family: "dohyeon";
+}
+
+.td_odd{
+    background: #40e0d0;
+    color:#fff;
+}
+
+.td_even{
+    color:black;
+}
+
+img{width: 100%;}

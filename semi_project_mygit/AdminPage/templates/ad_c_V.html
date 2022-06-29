@@ -1,0 +1,76 @@
+{% load static %}
+
+  <link rel="stylesheet" href="{% static 'css/admin_view.css'%}">
+  
+<script>
+
+
+  function deleteBtn(){
+
+    if(confirm('삭제하시겠습니까?')){
+
+      location.href="{% url 'AdminPage:ad_c_D' searchword4 category4 c_List.c_No %}"
+
+
+    }else{
+
+      return false
+    }
+
+   
+   }
+
+
+
+</script>
+
+
+  <section>
+    <div class="admin_name">
+      <h1>문의사항 상세페이지</h1>
+    </div>
+
+    <table>
+
+
+      {% if c_List %}
+      <tr>
+        <td>번호</td> 
+        <td>{{c_List.c_No}}</td>
+      </tr>
+  
+      <tr>
+        <td>이름</td>
+        <td>{{c_List.c_name}}</td>
+      </tr>
+  
+      <tr>
+        <td>이메일</td>
+        <td>{{c_List.c_email}}</td>
+      </tr>
+  
+      <tr>
+        <td>제목</td>
+        <td>{{c_List.c_title}}</td>
+      </tr>
+      <tr>
+        <td>문의내용</td>
+        <td>{{c_List.c_content}}</td>
+      </tr>
+      
+        
+      {% endif %}
+
+
+
+    </table>
+
+
+    
+    <div class="btns">
+      <div class="list1"><a href="{% url 'AdminPage:ad_c_L' searchword4='searchword4' category4='category4' %}">목록</a></div>
+      <div class="list2" onclick='deleteBtn()'>삭제</div>
+      <div class="list3"><a href="{% url 'AdminPage:ad_c_U' searchword4=searchword4 category4=category4  c_No=c_List.c_No %}">수정</a></div>
+    </div>
+  </section>
+

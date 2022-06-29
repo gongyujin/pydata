@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+*{ margin:0; padding:0; font-family: 'Noto Sans KR', sans-serif;}
+
+a{ text-decoration: none; }
+a:link{ color:white;}
+a:visited{ color:white;}
+a:hover{ color:white;}
+a:active{ color:white;}
+	
+#shop_banner{ display:block; width: 1000px; height: 200px; background: url("/static/img/shop_img/shop_banner.png") no-repeat;
+	position: relative; top:20px; margin-left: 300px; margin-right: 100px;
+	overflow: hidden; top: 20px;}
+	
+#best_box {
+	/* border:1px solid black; */
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+    position: relative; 
+	top: 20px;}
+	
+#item_list { 
+	/* border:1px solid black; */
+	width: 1154px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin: 0 auto;
+	overflow: hidden;
+    position: relative; 
+	top: 30px;}
+
+#item_context .item_nth {
+	/* border:1px solid black; */
+    position: relative;
+    display: inline-block;
+    width: 342px;
+    margin-left: 20px;
+	margin-right: 20px;
+    float: left;
+    vertical-align: top;
+	list-style: none;
+	padding: 0;
+	text-align: -webkit-match-parent;
+	font-family: 'Noto sans',sans-serif;
+    font-size: 12px;	
+}
+.best_nth{
+	text-align: left;
+	position: relative;
+    display: block;
+	
+}
+.item_img .img_nth {
+	width: 342px;
+	height: 342px;
+	/* border: 1px solid black; */
+	overflow: hidden;
+	border-radius: 8px;
+}
+.item_text{
+	position: relative;
+    display: block;
+    font-weight: normal;
+    height: 100px;
+    text-align: left;
+	display: block;
+	height: 130px;
+	padding: 5px 5px 0px 5px;
+	
+
+}
+.pri_re{
+	background-color: #F8F8F8;
+	color: #404040;
+}
+.item_name{
+	overflow: hidden;
+	width: 315;
+	font-size: 1.7em;
+	font-weight: 700;
+	text-overflow: ellipsis;
+	letter-spacing: 0px;
+	padding-left: 10px;
+	letter-spacing: -0.05em;
+	display: block;
+	position: relative;
+	text-overflow: ellipsis;
+}
+.item_price{
+	overflow: hidden;
+	font-size: 1.2em;
+	font-weight: 400;
+	text-overflow: ellipsis;
+	letter-spacing: 0px;
+	padding-left: 10px;
+	position: relative;
+	white-space: nowrap;
+    letter-spacing: 0px
+	
+}
+.item_review{
+	font-size: 1.2em;
+	font-weight: 400;
+	text-overflow: ellipsis;
+	letter-spacing: 0px;
+	display: block;
+	padding-left: 36px;
+	position: relative;
+	white-space: nowrap;
+    letter-spacing: 0px
+	
+}

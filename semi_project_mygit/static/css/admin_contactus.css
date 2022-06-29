@@ -1,0 +1,104 @@
+@font-face {
+
+    src : url("/static/font/BMDOHYEON_otf.otf"); 
+
+    font-family: "dohyeon";
+
+}
+
+
+.unni {
+
+    padding-left: 200px;
+    padding-bottom: 50px;
+    color:black;
+    font-size: 25px;
+
+
+}
+
+
+
+a:hover {
+
+    text-decoration:none; 
+    color:black;
+
+
+}
+a:visited {
+
+    text-decoration:none; 
+    color:black;
+
+
+}
+a:active {
+
+    text-decoration:none; 
+    color:black;
+
+
+}
+a:link{
+
+    text-decoration:none; 
+    color:black;
+
+
+}
+
+
+
+  
+    h1 {
+
+    font-family: "dohyeon";
+    margin: 0 0 20px;
+    font-size: 26px;
+    color: #40e0d0;
+    }
+    p {
+    margin: 0 0 5px;
+    font-family: "dohyeon";
+    }
+
+    form {
+    width:700px;
+    height: 700px;
+    padding: 70px;
+    margin-left:310px;
+    box-shadow: 0 2px 5px #f5f5f5; 
+    background: #f5f5f5; 
+    font-family: "dohyeon";
+    }
+    .fas {
+    margin: 25px 10px 0;
+    font-size: 72px;
+    color: #fff;
+    }
+ 
+    input, textarea {
+    width: calc(100% - 18px);
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #40e0d0;
+    outline: none;
+    }
+    input::placeholder {
+    color: #666;
+    }
+    button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #40e0d0; 
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "dohyeon";
+    color: #fff;
+    }
+    button:hover {
+    background: #5ecbb8;
+    }    
+  

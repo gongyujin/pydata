@@ -1,0 +1,310 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block mycontent %}
+
+<!--
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/css/dailycheck.css" />
+<script src="/static/js/dailycheckMeal.js"></script>
+
+<style>
+    #mealbox1{
+        float: left;
+        width: 63%;
+        border: 1px solid white;
+        border-radius: 30px;
+    }
+    #mealbox2{
+        width: 37%;
+        float: right;
+        
+        border-radius: 30px;
+        background-color : #f7f7f7;
+
+    }
+    #m_select{
+        width:120px;
+        height:40px;
+        text-align: center;
+        font-size: 15px;
+
+    }
+    #mealdb{
+        border: 0px solid black;
+        border-collapse: collapse;
+        width: 90%;
+        text-align: center;
+    }
+    #mealdb_input{
+        margin: 0 auto;
+    }
+    #meal_input{
+        margin: 0 auto;
+        width: 95%;
+        margin-right: 10px;
+        border-collapse: collapse;
+    }
+    .m_in_tb thead tr th{
+        border-bottom: 2px solid gray;
+        border-top: 2px solid gray;
+        padding: 10px;
+    }
+    .m_in_tb tbody tr td{
+        border-bottom: 1px solid black;
+        padding: 10px;
+    }
+    
+    .mealdbtb{
+        margin: 0 auto;
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align:center;
+    }
+    .mealdbtb tbody tr td{
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        padding: 10px;
+        text-align: center;
+    }
+    #searchbox{
+        margin:0 auto;
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+  
+
+    #table-wrapper {
+        margin-top:10px;
+        margin-left: 10px;
+        position:relative;
+      }
+    #table-scroll {
+        height:550px;
+        overflow:auto;  
+        margin-top:1px;
+    }
+    #table-wrapper table {
+        width:98%;      
+    }    
+
+    #table-wrapper table thead th .overlayed-text {
+        text-align: center;
+        position:absolute;   
+        top:-20px; 
+        display: block;  
+        padding-left: 50px;  
+    }
+
+    #table-wrapper th {
+        position: sticky;
+        top: 0px;
+        background-color: #A0DDE0 !important;
+        height: 30px;
+    }
+
+
+    
+
+</style>
+
+<main>	
+	<div id="box1">
+        
+            <canvas id="myChart" >
+               
+            </canvas> 
+       
+
+        <table id="progressbars">
+
+        </table>
+
+
+	</div>
+	
+	<div id="box2">
+		<table id = "inputsection">
+            <tr>                
+                {% if bcnt %}
+                <td width=250 height=250 style='background-color:#A0DDE0;'> 
+                    <a onclick="addMeal('{{ sdate }}',1)">
+                    <ul class="mealtxt" id="mealsel">아침</ul>
+                    <ul class="mealtxt">{{ b_k }} kcal</ul>
+                    <ul><p style="font-size:17px;">탄수화물: {{ b_c }}g</p></ul>
+                    <ul><p style="font-size:17px;">단백질: {{ b_p }}g </p></ul>
+                    <ul><p style="font-size:17px;">지방: {{ b_f }}g</p></ul>                 
+                    </a>
+                </td>
+                {% else %}
+                <td width=250 height=250 style='background-color:#eee;'>
+                    <ul style="font-size:10px; margin-top:0px; text-align: center;">아침</ul>
+                    <img onclick="addMeal('{{ sdate }}',1)" width=50 height=50 src='/static/img/basic/plus.png'>
+                </td>
+                {% endif %}
+                {% if lcnt %}
+                <td width=250 height=250 style='background-color:#A0DDE0;'> 
+                    <a onclick="addMeal('{{ sdate }}',2)">
+                    <ul class="mealtxt">점심</ul>
+                    <ul class="mealtxt">{{ l_k }} kcal</ul>
+                    <ul><p style="font-size:17px;">탄수화물: {{ l_c }}g</p></ul>
+                    <ul><p style="font-size:17px;">단백질: {{ l_p }}g </p></ul>
+                    <ul><p style="font-size:17px;">지방: {{ l_f }}g</p></ul>                 
+                    </a>
+                
+                </td>
+                {% else %}
+                <td width=250 height=250 style='background-color:#eee;'>
+                    <ul style="font-size:10px; margin-top:0px; text-align: center;">점심</ul>
+                    <img onclick="addMeal('{{ sdate }}',2)" width=50 height=50 src='/static/img/basic/plus.png'>
+                </td>
+                {% endif %}
+                
+            </tr>
+            <tr>                
+                {% if dcnt %}
+                <td width=250 height=250 style='background-color:#A0DDE0;'> 
+                    <a onclick="addMeal('{{ sdate }}',3)">
+                    <ul class="mealtxt">저녁</ul>
+                    <ul class="mealtxt">{{ d_k }} kcal</ul>
+                    <ul><p style="font-size:17px;">탄수화물: {{ d_c }}g</p></ul>
+                    <ul><p style="font-size:17px;">단백질: {{ d_p }}g </p></ul>
+                    <ul><p style="font-size:17px;">지방: {{ d_f }}g</p></ul>                 
+                    </a>
+                </td>
+                {% else %}
+                <td width=250 height=250 style='background-color:#eee;'>
+                    <ul style="font-size:10px; margin-top:0px; text-align: center;">저녁</ul>
+                    <img onclick="addMeal('{{ sdate }}',3)" width=50 height=50 src='/static/img/basic/plus.png'>
+                </td>
+                {% endif %}
+                {% if scnt %}
+                <td width=250 height=250 style='background-color:#A0DDE0;'> 
+                    <a onclick="addMeal('{{ sdate }}',4)">
+                    <ul class="mealtxt">간식</ul>
+                    <ul class="mealtxt">{{ s_k }} kcal</ul>
+                    <ul><p style="font-size:17px;">탄수화물: {{ s_c }}g</p></ul>
+                    <ul><p style="font-size:17px;">단백질: {{ s_p }}g </p></ul>
+                    <ul><p style="font-size:17px;">지방: {{ s_f }}g</p></ul>                 
+                    </a>
+                
+                </td>
+                {% else %}
+                <td width=250 height=250 style='background-color:#eee;'>
+                    <ul style="font-size:10px; margin-top:0px; text-align: center;">간식</ul>
+                    <img onclick="addMeal('{{ sdate }}',4)" width=50 height=50 src='/static/img/basic/plus.png'>
+                </td>
+                {% endif %}
+                
+            </tr>
+            <tr>
+                <td colspan="2"><img id="gocalendarimg" onclick="gocalendar()" width=50 height=50 src='/static/img/basic/gocalendar_icon.png'></td>
+            </tr>
+        </table>
+	</div>
+
+    <!-- 모달 창 !!  -->
+    <div id="myModal" class="modal">
+        
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- 모달 창의 왼쪽 창 !!  -->
+            <!-- 선택된 음식을 보여주고, 무게에따라 칼로리 계산해서 개인 식단 db에 저장  -->
+            <div id = "mealbox1">
+                <form name="frm" method="POST" id="mealdb_input"  onsubmit="return false;">  
+                      
+                    <!-- 아침, 점심, 저녁, 간식 선택  --> 
+                    <div style="margin-left:50px" id='selbox'></div>
+                    <div style="margin-left:50px" id='selbox1' hidden>
+                        <select id="m_select" name="meal_time" style="display:none;" >
+                            <option value="">선택해주세요</option>
+                            <option value="B">아침</option>
+                            <option value="L">점심</option>
+                            <option value="D">저녁</option>
+                            <option value="S">간식</option>
+                        </select>
+                    </div>
+                   <br>
+                    <table id="meal_input" class="m_in_tb" >
+                        <colgroup>
+                            <col width="15%">
+                            <col width="19%">
+                            <col width="16%">
+                            <col width="14%">
+                            <col width="14%">
+                            <col width="14%">
+                            <col width="8%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>이름</th>
+                                <th>무게(g)</th>
+                                <th>칼로리(kcal)</th>
+                                <th>탄수화물(g)</th>
+                                <th>단백질(g)</th>
+                                <th>지방(g)</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="meal_input_tbody">
+                            <tr>
+                                <td colspan=7> 등록할 식품이 없습니다 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <button type="button" id="registerdb" class='saveBtn' onclick="registerdbBtn('{{ sdate }}')" > 등록 </button> 
+                    <button type="button" id="canceldb" class='noBtn' onclick="canceldBtnb()" > 취소 </button> 
+                </form>           
+            </div>
+
+            <!-- 모달 창의 오른쪽 창 !!  -->
+            <!-- 음식db에서 키워드를 통해서 검색해서 테이블 형태로 보여줌  -->
+            <div id = "mealbox2">
+                <!-- 검색어 입력  -->
+                <div id="searchbox">
+                    <input type="text" id="serDB" name="serDB" size="20" style="height:35px;" placeholder="검색할 식품명을 입력하세요">
+                    <button type="button" onclick="searchDB()" id='okBtn' class='okBtn'>search</button>
+                </div>
+
+                <!-- food db 에서 검색된 결과 -->
+                <div id="table-wrapper">
+                    <div id="table-scroll">
+                        <table id="mealdb" class="mealdb"  >
+                            
+                                <tr bgcolor="#40e0d0">
+                                    <th style="width:30%; text-align: center;"><span class="overlayed-text">이름</span></th>
+                                    <th style="width:30%; text-align: center;"><span class="overlayed-text">무게</span></th>
+                                    <th style="width:30%; text-align: center;"><span class="overlayed-text">칼로리</span></th>
+                                    <th style="width:10%"><span class="overlayed-text"></span></th>
+                                </tr>
+                            
+                            
+                            <tbody id="mealdb_tbody">
+                             <!-- food db 를 테이블로 보여줌  -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- 모달창  -->
+    
+    <script src="/static/js/dailycheckMeal_modal.js"></script>
+    <script>
+        function gocalendar(){
+            location.href="{%url 'DailyCheck:calendar'%}"
+        
+        }
+    </script>
+</main>
+
+{% endblock mycontent %}

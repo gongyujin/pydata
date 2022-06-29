@@ -1,0 +1,429 @@
+*{ 
+	margin: 0;
+	padding: 0;
+}
+#box1{
+
+	float: left;
+	width: 50%;
+
+
+}
+#box2{
+    
+	width: 50%;
+  float: left;
+    
+}
+
+a:link {
+    color: black;
+    text-decoration:none;
+}
+a:visited{
+    color:black;
+    text-decoration: none;
+}
+a:hover{
+    color:black;
+    text-decoration: none;
+}
+#inputsection{
+    margin: 0 auto;
+    margin-top: 10%;
+    width: 70%;
+    height: 500px;
+    
+    border-collapse: collapse;
+}
+#progressbars{
+    margin: 0 auto;
+    
+    width: 700px;
+    height: 50px;
+    
+    border-collapse: collapse;
+}
+
+#inputsection tr,td{
+  margin: 0 auto;
+  height:250px;
+  border-collapse: collapse;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+#modalcontent3>.sel_box>.savecontent tr,td{
+    margin: 0 auto;
+    height: 50px;
+    border-collapse: collapse;
+    text-align: center;
+    border: 1px solid white;
+
+}
+
+
+#box2 ul{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;    
+}
+
+
+.label-text {
+    margin-top:10%; 
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    width: 50%; 
+    height: 60%; 
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    text-align: center; 
+    align-items: center;
+    pointer-events: none;
+    font-size: 1.5rem;
+    padding-top: 0;
+}
+
+#health_result{
+  border: 1px solid white;
+  border-radius: 15px;
+  width: 200px;
+  height: 50px;
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left:80px;
+}
+
+#aerobic,
+#anaerobic{
+border: 1px solid white;
+border-radius: 10px;
+width: 95px;
+height: 30px;
+color: black;
+font-size: 12px;
+font-weight: bold;
+margin-right: 0;
+}
+#aerobic{
+margin-left:80px;
+}
+
+#health_cont,
+#aerobic_cont,
+#anaerobic_cont{
+  margin: 0 auto;
+  display: none;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  font-size: 20px;
+  overflow: auto;
+}
+
+/* Modal save Content */
+.modal-save-content {
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  font-size: 20px;
+  overflow: auto;
+}
+
+
+#des{
+  font-size: 12px;
+}
+.activitysel,
+.exerciseysel{
+  margin: 0 auto;
+  width:50%;
+}
+#inputsection #gocalendarimg{
+  height: 100px;
+  float: right;
+}
+
+#gocalendarimg:hover,
+#gocalendarimg:focus{
+  cursor: pointer;
+}
+
+.imgtt{
+  display: none;
+}
+.on .imgtt{
+  display: inline-block;
+  line-height: 0px;
+  font-size: 0px;
+
+}
+.on2 .imgtt{
+  display: inline-block;
+  line-height: 0px;
+  font-size: 0px;
+
+}
+
+#addExercise:hover{
+  cursor: pointer;
+  width: 100px;
+}
+.activitysel ul,
+.exerciseysel ul{
+  padding: 20px;
+  text-decoration: none;
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+.activitysel ul:hover,
+.exerciseysel ul:hover{
+  cursor: pointer;
+
+}
+.labelname{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 100px;
+}
+
+
+.savecontent{
+  margin: 0 ;
+  padding-top: 20px;
+}
+.savecontent2{
+  font-size: 15px;
+}
+
+
+/* The Close Button */
+.close,
+.close2,
+.close2_1,
+.close3 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus,
+.close3:hover,
+.close3:focus,
+.close2_1:hover,
+.close2_1:focus,
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.prevBtn,
+.prevBtn2,
+.prevBtn22,
+.cancelBtn{
+  float: left;
+  font-size: 28px;
+  font-weight: bold;
+  border: 1px solid white;
+  border-collapse: collapse;
+
+}
+
+
+.nextBtn,
+.nextBtn2,
+.okBtn,
+.noBtn,
+.saveBtn{
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  border: 1px solid white;
+  border-collapse: collapse;
+
+}
+.noBtn{
+  padding-right: 10px;
+
+}
+
+.prevBtn:hover,
+.prevBtn:focus,
+.prevBtn2:hover,
+.prevBtn2:focus,
+.prevBtn22:hover,
+.prevBtn22:focus,
+.nextBtn:hover,
+.nextBtn:focus,
+.nextBtn2:hover,
+.nextBtn2:focus,
+.noBtn:hover,
+.noBtn:focus,
+.okBtn:hover,
+.okBtn:focus,
+.saveBtn:hover,
+.saveBtn:focus,
+.cancelBtn:hover,
+.cancelBtn:focus{
+  cursor: pointer;
+}
+
+
+
+
+/* PROGRESSBAR */
+
+.progress-value {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    font-size: .875rem;
+    padding-bottom: .25rem;
+  }
+  
+  progress {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    color: #273238;
+  }
+  
+  progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 8px;
+  }
+  
+  progress::-webkit-progress-value {
+    background-color: #273238;
+    border-radius: 8px;
+  }
+  
+  progress::-moz-progress-bar {
+    background-color: #eee;
+    border-radius: 8px;
+  }
+
+
+  #exB1{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    color: #ECEC84;
+  }
+  
+  #exB1::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 8px;
+  }
+  
+  #exB1::-webkit-progress-value {
+    background-color: #ECEC84;
+    border-radius: 8px;
+  }
+  
+  #exB1::-moz-progress-bar {
+    background-color: #eee;
+    border-radius: 8px;
+  }
+
+  #exB2{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    color: #FFB69B;
+  }
+  
+  #exB2::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 8px;
+  }
+  
+  #exB2::-webkit-progress-value {
+    background-color: #FFB69B;
+    border-radius: 8px;
+  }
+  
+  #exB2::-moz-progress-bar {
+    background-color: #eee;
+    border-radius: 8px;
+  }
+
+  #exB3{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    color: #A299CA;
+  }
+  
+  #exB3::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 8px;
+  }
+  
+  #exB3::-webkit-progress-value {
+    background-color: #A299CA;
+    border-radius: 8px;
+  }
+  
+  #exB3::-moz-progress-bar {
+    background-color: #eee;
+    border-radius: 8px;
+  }
+
+

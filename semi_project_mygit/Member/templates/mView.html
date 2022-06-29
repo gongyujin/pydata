@@ -1,0 +1,134 @@
+
+{% load static %}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="{% static 'css/mview.css' %}">
+    
+    <title>언니's Choice - My Info</title>
+    <script>
+        function deleteBtn(){
+        if(confirm("데이터를 삭제하시겠습니까?")){
+            location.href="{% url 'Member:mDelete' %}"
+        }else{
+            return false
+        }
+        }
+    </script>
+</head>
+
+    <section>
+        <div class ="main_logo">
+            <a class = "main_logo_text" href='/'><h2>UNNI'S CHOICE</h2></a>
+
+            
+        </div><br><br>
+        <h1>나의 정보</h1>
+        <table>
+            <colgroup>
+                <col width="30%">
+                <col width="70%">
+            </colgroup>
+            <tr>
+                <td>사용자이름</td>
+                <td>{{view.user_name}}</td>
+            </tr>
+            <tr>
+                <td>아이디</td>
+                <td>{{view.user_id}}</td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td>{{view.user_pw}}</td>
+            </tr>
+            <tr>
+                <td>생년월일</td>
+                <td>{{view.birth|date:'Y-m-d'}}</td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>{{view.gender}}</td>
+            </tr>
+            
+            <tr>
+                <td>전화</td>
+                <td>{{view.phone}}</td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td>{{view.email}}</td>
+            </tr>
+            <tr>
+                <td rowspan="3">주소</td>
+                <td>{{view.zipcode}}</td>
+            </tr>
+            <tr>
+                
+                <td>{{view.addressd1}}</td>
+            </tr>
+            <tr>
+                
+                <td>{{view.addressd2}}</td>
+            </tr>
+            <tr>
+                <td>서비스</td>
+                <td>{{ view.service}}</td>
+            </tr>
+            <tr>
+                <td>목적</td>
+                <td>{{view.user_purpose}}</td>
+            </tr>
+            <tr>
+                <td>타겟부위</td>
+                <td>{{view.user_target}}</td>
+            </tr>
+            <tr>
+                <td>비건여부</td>
+                <td>{{view.vegan}}</td>
+            </tr>
+            <tr>
+                <td>전문가여부</td>
+                <td>{{view.pro}}</td>
+            </tr>
+            <tr>
+                <td>키</td>
+                <td>{{view1.height}}</td>
+            </tr>
+            <tr>
+                <td>몸무게</td>
+                <td>{{view1.cur_weight}}</td>
+            </tr>
+            <tr>
+                <td>체질량지수(BMI)</td>
+                <td>{{view1.cur_bmi|floatformat:1}}</td>
+            </tr>
+            <tr>
+                <td>목표몸무게</td>
+                <td>{{view.goal_weight}}</td>
+            </tr>
+            <tr>
+                <td>목표체지방률</td>
+                <td>{{view.goal_bodyfat}}</td>
+            </tr>
+            <tr>
+                <td>목표기간 </td>
+                <td>{{view.goal_period}}일</td>
+            </tr>
+            <tr>
+                <td>활동량</td>
+                <td>{{view.allergic_food}}</td>
+            </tr>
+            <tr>
+                <td>가입 날짜</td>
+                <td>{{view.createdate|date:'Y-m-d H:i'}}</td>
+            </tr>
+        </table>
+        <div class="btn">
+            <div class="btn_list"><a href="{% url 'Member:mUpdate' %}">정보수정</a></div>
+            <div class="btn_list" onclick="deleteBtn()">삭제</div>
+        </div>
+        </section>

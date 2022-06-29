@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--최신제이쿼리 이용-->
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <link rel="stylesheet" href="{% static 'css/admin_update.css'%}">
+  <title>AdminPage</title>
+  <script>
+
+    function cancelBtn(){
+
+      location.href="{% url 'AdminPage:ad_f_L' searchword2=searchword2 category2=category2 %}"
+    }
+
+  </script>
+</head>
+
+<body bgcolor='#f7f7f7 '>
+
+
+  <section>
+    <div class="admin_name">
+  
+      <h1>음식정보수정</h1>
+  
+    </div>
+  
+  
+    <form action="{% url 'AdminPage:ad_f_U' searchword2=searchword2 category2=category2 f_NO=f_NO %}" name="update" method="post">
+      {% csrf_token %}
+      
+        <colgroup>
+          <col width="15%">
+          <col width="85%">
+        </colgroup>
+        
+  {% if food_List%}
+  <div class="whole_thing">
+  
+  
+    <div class="form-group">
+      <label class="label_name" for="f_NO">음식번호</label><br>
+      <input type= "text" class="form-control" id="f_NO" value="{{food_List.f_NO}}" name ="f_NO" readonly>
+      </div>
+    <div class="form-group">
+      <label class="label_name" for="f_id">음식아이디</label><br>
+      <input type= "text" class="form-control" id="f_id" value="{{food_List.f_id}}" name ="f_id">
+      </div>
+    <div class="form-group">
+      <label class="label_name" for="f_DB">음식DB군</label><br>
+      <input type= "text" class="form-control" id="f_DB" value="{{food_List.f_DB}}" name ="f_DB">
+      </div>
+    <div class="form-group">
+      <label class="label_name" for="f_name">음식이름</label><br>
+      <input type= "text" class="form-control" id="f_name" value="{{food_List.f_name}}" name ="f_name">
+      </div>
+    <div class="form-group">
+      <label class="label_name" for="f_por">g당</label><br>
+      <input type= "text" class="form-control" id="f_por" value="{{food_List.f_por}}" name ="f_por">
+      </div>
+    <div class="form-group">
+      <label class="label_name" for="f_carb">탄수화물</label><br>
+      <input type= "text" class="form-control" id="f_carb" value="{{food_List.f_carb}}" name ="f_carb">
+      </div>
+    <div class="form-group">
+      <label class="label_name" for="f_protein">단백질</label><br>
+      <input type= "text" class="form-control" id="f_protein" value="{{food_List.f_protein}}" name ="f_protein">
+      </div>
+    <div class="form-group">
+      <label class="label_name" for="f_fat">지방</label><br>
+      <input type= "text" class="form-control" id="f_fat" value="{{food_List.f_fat}}" name ="f_fat">
+      </div>
+  
+  
+     
+          
+          <div class="button-wrapper">
+            <button class="btnfont" type="submit"  class="update">수정완료</button>
+            <button class="btnfont" type="button" onclick= 'cancelBtn()' class="cancel">취소</button>
+          </div>
+  
+      {% endif %}
+
+        </div>
+  
+    </form>
+  
+  </section>
+
+</body>
+ 
+</html>
