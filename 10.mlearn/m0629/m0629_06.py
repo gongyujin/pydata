@@ -1,4 +1,3 @@
-from turtle import back
 import urllib.request as req
 import gzip, os, os.path
 import struct
