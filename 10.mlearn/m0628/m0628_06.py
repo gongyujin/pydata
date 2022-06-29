@@ -4,8 +4,11 @@ from sklearn import svm
 import pandas as pd
 import numpy as np
 from sklearn.neural_network import MLPClassifier
+from sklearn.preprocessing import StandardScaler # 정규화작업을 해주는 함수
+
 import matplotlib.pyplot as plt
 import matplotlib
+
 matplotlib.rcParams['font.family']='Malgun Gothic'
 # matplotlib.rcParams['font.family']='AppleGothic'
 matplotlib.rcParams['font.size']=15
@@ -38,46 +41,55 @@ data=np.column_stack((length,weight))
 # ones,zeros array를 1개의 array로 변형
 label=np.concatenate((np.ones(35),np.zeros(14))) # 도미:1 빙어:0
 
+# ------------------------------------------------
+# # 정규화 작업
+# # (현재데이터 - 평균)/표준편차 = 표준점수
+# # 평균
+# mean=np.mean(data,axis=0) # 산술평균
+# std=np.std(data,axis=0) # 표준편차
 
-# 정규화 작업
-# (현재데이터 - 평균)/표준편차 = 표준점수
-# 평균
-mean=np.mean(data,axis=0) # 산술평균
-std=np.std(data,axis=0) # 표준편차
+# # 표준점수
+# train_scaled=(data-mean)/std
 
-# 표준점수
-train_scaled=(data-mean)/std
+# # 25,150 정규화작업
+# new=([25,150]-mean)/std
+# ------------------------------------------------
 
-# 25,150 정규화작업
-new=([25,150]-mean)/std
+# 1) train데이터, test 데이터 분리
+train_data,test_data,train_label,test_label=train_test_split(data,label)
 
+# 정규화작업2
+ss=StandardScaler()
+ss.fit(train_data) 
+train_scaled=ss.transform(train_data) # (data-산술평균)/표준편차
+test_scaled=ss.transform(test_data) # (data-산술평균)/표준편차
+new=ss.transform([[25,150]])
+# ------------------------------------------------
 # 산점도 그래프
 # s : 원크기설정, c : color, cmap : colormap을 사용
 plt.scatter(train_scaled[:,0],train_scaled[:,1])
 # train데이터 (길이, 무게)
 # plt.scatter(train_data[indexs,0],train_data[indexs,1],marker="D")
-plt.scatter(new[0],new[1],marker="x")
+plt.scatter(new[0][0],new[0][1],marker="x")
 plt.show()
 
-# 1) train데이터, test 데이터 분리
-train_data,test_data,train_label,test_label=train_test_split(train_scaled,label)
-
+# ------------------------------------------------
 # 알고리즘 선택
 clf=KNeighborsClassifier()
 # clf=svm.SVC()
 # clf=MLPClassifier()
 
 # 데이터 학습
-clf.fit(train_data,train_label)
+clf.fit(train_scaled,train_label)
 # # clf에 있는 train_data의 knn이웃하는 5개의 데이터를 추출
 # distances, indexs = clf.kneighbors([new])
 # print(indexs)
 print('-'*50)
 
 # 데이터 예측 (길이 30,무게 600의 고기를 예측)
-result=clf.predict([new])
+result=clf.predict(new)
 print("결과값 : ",result)
 # 정답률
-score=clf.score(test_data,test_label)
+score=clf.score(test_scaled,test_label)
 print("정답률 : ", score)
 
