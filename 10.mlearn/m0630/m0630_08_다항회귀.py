@@ -18,54 +18,55 @@ perch_weight = [5.9, 32.0, 40.0, 51.5, 70.0, 100.0, 78.0, 80.0, 85.0, 85.0, 110.
 length=np.array(perch_length)
 weight=np.array(perch_weight)
 
-# 2. 데이터 전처리
-train_data,test_data,train_label,test_label=\
-    train_test_split(length,weight,random_state=42) # 회귀에서는 stratify를 넣지않음
+
+# LinearRegression 회귀 70cm 농어의 무게를 예측하시오!
+
+# 1. 데이터전처리
+train_data,test_data,train_label,test_label=train_test_split(length,weight)
 
 train_data=train_data.reshape(-1,1) # 2차원배열로 변경
 test_data=test_data.reshape(-1,1) # 2차원배열로 변경
-    
-# 3. 알고리즘선택
-# knr=KNeighborsRegressor()
+
+# 다항회귀 데이터 처리
+train_poly=np.column_stack((train_data**2,train_data))
+test_poly=np.column_stack((test_data**2,test_data))
+
+
+# 2. 알고리즘 선택
 lr=LinearRegression()
 
-# 4. 실습훈련
-# test데이터가 train보다 정답률이 높으면 과소적합, train이 높으면 과대적합
-lr.fit(train_data,train_label)
-
+# 3. 학습
+lr.fit(train_poly,train_label)
 # LinearRegression -> 기울기, y절편
-print("기울기 : ",lr.coef_) 
-print("y절편 : ",lr.intercept_) 
+print("기울기 : ",lr.coef_) # 기울기 lr.coef_[0], lr.coef[1]
+print("y절편 : ",lr.intercept_) # y절편
+
+# 4. 예측 - 데이터(제곱데이터, 데이터)
+result1=lr.predict([[50**2,50]])
+result2=lr.predict([[100**2,100]])
+print('50cm 결과값 : ',result1)
+print('100cm 결과값 : ',result2)
+
+# 5. 정확도
+score1=lr.score(train_poly,train_label)
+score2=lr.score(test_poly,test_label)
+print('test 정확도 : ',score1)
+print('train 정확도 : ',score2)
+
+# 6. 오차범위
+mae1=mean_absolute_error([[70]],result1)
+print('오차값 : ',mae1)
 
 
-# 5. 예측
-result0=lr.predict(test_data)
-result=lr.predict([[50]])
-result2=lr.predict([[100]])
-print('test 예측결과 : ', result0)
-print('50cm 예측결과 : ',result)
-print('100cm 예측결과 : ',result2)
+# 구간별 직선을 그리기 위해 범위를 정수 배열로 생성
+point=np.arange(15,101)
 
-# 6. 정답률, 정확도 (알고리즘 성능비교)
-score1=lr.score(train_data,train_label)
-score2=lr.score(test_data,test_label)
-print('train 정확도 : ', score1)
-print('test 정확도 : ', score2)
-
-# 7. 오차범위
-mae=mean_absolute_error([[50]],result) # 실제데이터, 예측값을 비교해서 오차값을 구함
-mae2=mean_absolute_error([[100]],result2) # 실제데이터, 예측값을 비교해서 오차값을 구함
-print('50cm 오차범위 : ',mae)
-print('100cm 오차범위 : ',mae2)
-
-# 그래프 그리기
+# 그래프
+# y=ax^2+bx+c
 plt.scatter(train_data,train_label)
-# 기울기와 y절편을 이용한 선 그래프: y=ax+b
-plt.plot([15,100],[15*lr.coef_+lr.intercept_,100*lr.coef_+lr.intercept_])
-plt.scatter([[50]],result,marker='^')
-plt.scatter([[100]],result2,marker='^')
+plt.plot(point,lr.coef_[0]*point**2+lr.coef_[1]*point+lr.intercept_)
+plt.scatter([[50]],result1,marker="D")
+plt.scatter([[100]],result2,marker="^")
 plt.xlabel('length')
 plt.ylabel('weight')
 plt.show()
-
-######## 예측은 맞지만 정확도가 떨어짐 #############
