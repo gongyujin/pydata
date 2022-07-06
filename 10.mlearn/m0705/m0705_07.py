@@ -23,12 +23,12 @@ train_scaled= ss.fit_transform(train_data)
 test_scaled=ss.fit_transform(test_data)
 
 # ----------------------------------------------------------------
-classes=np.unique(train_label)
 # 확률적경사하강법
 # # epoch 300번 반복 train_score, test_score 그래프 출력
 # sc=SGDClassifier(loss='log_loss',random_state=42)
 # train_score=[]
 # test_score=[]
+# classes=np.unique(train_label)
 # # 300번 반복 - partial_fit을 바로 사용시, class값을 전송
 # for idx in range(300):
 #     sc.partial_fit(train_scaled,train_label,classes=classes)
