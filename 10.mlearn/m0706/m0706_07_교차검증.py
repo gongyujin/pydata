@@ -16,7 +16,7 @@ print(wine.columns)
 data=wine[['alcohol', 'sugar', 'pH']].to_numpy()
 label=wine['class'].to_numpy()
 
-# 데이터 전처리
+# 데이터 전처리 : test_data는 최종적으로 검토할 때 사용하면 좋음
 train_data,test_data,train_label,test_label=train_test_split(data,label,random_state=42)
 
 # 알고리즘 선택
@@ -29,3 +29,5 @@ scores=cross_validate(dt,train_data,train_label) # 딕셔너리 형태
 print(scores)
 # 정확도 출력
 print('train_score : ',np.mean(scores['test_score']))
+dt.fit(train_data,train_label)
+print('test score : ', dt.score(test_data,test_label))

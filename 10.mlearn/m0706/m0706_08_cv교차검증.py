@@ -25,6 +25,7 @@ dt=DecisionTreeClassifier(random_state=42)
 ########### 교차검증 - 분할기 사용
 # n_splits: 몇개로 분할할지 결정 ex)10이면 scores가 10개, shuffle: 섞기
 splitter=StratifiedKFold(n_splits=10,shuffle=True,random_state=42)
+
 # 훈련 ; scores는 알아서 데이터를 다섯개로 나눠짐
 # 훈련: 교차검증함수 cross_validate(알고리즘, 데이터, class)
 # fit_time: 훈련시간, score_time: model score값 출력시간, test_score: score정확도

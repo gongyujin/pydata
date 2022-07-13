@@ -7,7 +7,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 
-# 확률적경사하강법
 # 데이터불러오기 0: red wine, 1: white wine
 wine=pd.read_csv('10.mlearn/m0706/wine.csv')
 print(wine.columns)
