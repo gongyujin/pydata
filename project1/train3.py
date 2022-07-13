@@ -564,85 +564,84 @@ y = tf.keras.utils.to_categorical(train_y['label'])
 # plt.show()
 
 
-from keras.models import Sequential
-from keras.layers import Dense, LSTM,Bidirectional,Dropout
-from keras.layers import Dense
-from keras.layers import Dropout
-from keras.layers import LSTM
-from keras.layers.convolutional import Conv1D
-from keras.layers.convolutional import MaxPooling1D
-from keras.utils import to_categorical
-from keras import backend as K 
-from keras.callbacks import EarlyStopping, ModelCheckpoint,ReduceLROnPlateau
-from sklearn.model_selection import KFold,StratifiedKFold
-from numpy.random import seed
-import keras
+# from keras.models import Sequential
+# from keras.layers import Dense, LSTM,Bidirectional,Dropout
+# from keras.layers import Dense
+# from keras.layers import Dropout
+# from keras.layers import LSTM
+# from keras.layers.convolutional import Conv1D
+# from keras.layers.convolutional import MaxPooling1D
+# from keras.utils import to_categorical
+# from keras import backend as K 
+# from keras.callbacks import EarlyStopping, ModelCheckpoint,ReduceLROnPlateau
+# from sklearn.model_selection import KFold,StratifiedKFold
+# from numpy.random import seed
+# import keras
 
-def cnn_model(input_shape, classes):
-    seed(2021)
-    tf.random.set_seed(2021)
+# def cnn_model(input_shape, classes):
+#     seed(2021)
+#     tf.random.set_seed(2021)
     
-    input_layer = keras.layers.Input(input_shape)
-    conv1 = keras.layers.Conv1D(filters=128, kernel_size=9, padding='same')(input_layer)
-    conv1 = keras.layers.BatchNormalization()(conv1)
-    conv1 = keras.layers.Activation(activation='relu')(conv1)
-    conv1 = keras.layers.Dropout(rate=0.3)(conv1)
+#     input_layer = keras.layers.Input(input_shape)
+#     conv1 = keras.layers.Conv1D(filters=128, kernel_size=9, padding='same')(input_layer)
+#     conv1 = keras.layers.BatchNormalization()(conv1)
+#     conv1 = keras.layers.Activation(activation='relu')(conv1)
+#     conv1 = keras.layers.Dropout(rate=0.3)(conv1)
 
-    conv2 = keras.layers.Conv1D(filters=256, kernel_size=6, padding='same')(conv1)
-    conv2 = keras.layers.BatchNormalization()(conv2)
-    conv2 = keras.layers.Activation('relu')(conv2)
-    conv2 = keras.layers.Dropout(rate=0.4)(conv2)
+#     conv2 = keras.layers.Conv1D(filters=256, kernel_size=6, padding='same')(conv1)
+#     conv2 = keras.layers.BatchNormalization()(conv2)
+#     conv2 = keras.layers.Activation('relu')(conv2)
+#     conv2 = keras.layers.Dropout(rate=0.4)(conv2)
     
-    conv3 = keras.layers.Conv1D(128, kernel_size=3,padding='same')(conv2)
-    conv3 = keras.layers.BatchNormalization()(conv3)
-    conv3 = keras.layers.Activation('relu')(conv3)
-    conv3 = keras.layers.Dropout(rate=0.5)(conv3)
+#     conv3 = keras.layers.Conv1D(128, kernel_size=3,padding='same')(conv2)
+#     conv3 = keras.layers.BatchNormalization()(conv3)
+#     conv3 = keras.layers.Activation('relu')(conv3)
+#     conv3 = keras.layers.Dropout(rate=0.5)(conv3)
     
-    gap = keras.layers.GlobalAveragePooling1D()(conv3)
+#     gap = keras.layers.GlobalAveragePooling1D()(conv3)
     
-    output_layer = keras.layers.Dense(classes, activation='softmax')(gap)
+#     output_layer = keras.layers.Dense(classes, activation='softmax')(gap)
     
-    model = keras.models.Model(inputs=input_layer, outputs=output_layer)
+#     model = keras.models.Model(inputs=input_layer, outputs=output_layer)
     
-    model.compile(loss='categorical_crossentropy', optimizer = keras.optimizers.Adam(), 
-        metrics=['accuracy'])
+#     model.compile(loss='categorical_crossentropy', optimizer = keras.optimizers.Adam(), 
+#         metrics=['accuracy'])
     
-    return model
+#     return model
 
-skf = StratifiedKFold(n_splits = 10, random_state = 2021, shuffle = True)
-reLR = ReduceLROnPlateau(patience = 4,verbose = 1,factor = 0.5) 
-es =EarlyStopping(monitor='val_loss', patience=8, mode='min')
+# skf = StratifiedKFold(n_splits = 10, random_state = 2021, shuffle = True)
+# reLR = ReduceLROnPlateau(patience = 4,verbose = 1,factor = 0.5) 
+# es =EarlyStopping(monitor='val_loss', patience=8, mode='min')
 
-accuracy = []
-losss=[]
-models=[]
-
-for i, (train, validation) in enumerate(skf.split(X, y.argmax(1))) :
-    mc = ModelCheckpoint(f'./model_kf/cv_study{i + 1}.h5',save_best_only=True, verbose=0, monitor = 'val_loss', mode = 'min', save_weights_only=True)
-    print("-" * 20 +"Fold_"+str(i+1)+ "-" * 20)
-    model = cnn_model((600,18),61)
-    history = model.fit(X[train], y[train], epochs = 100, validation_data= (X[validation], y[validation]), 
-                        verbose=1,batch_size=64,callbacks=[es,mc,reLR])
-    model.load_weights(f'./model_kf/cv_study{i + 1}.h5')
+# accuracy = []
+# losss=[]
+# models=[]
+# for i, (train, validation) in enumerate(skf.split(X, y.argmax(1))) :
+#     mc = ModelCheckpoint(f'./model_kf/cv_study{i + 1}.h5',save_best_only=True, verbose=0, monitor = 'val_loss', mode = 'min', save_weights_only=True)
+#     print("-" * 20 +"Fold_"+str(i+1)+ "-" * 20)
+#     model = cnn_model((600,18),61)
+#     history = model.fit(X[train], y[train], epochs = 100, validation_data= (X[validation], y[validation]), 
+#                         verbose=1,batch_size=64,callbacks=[es,mc,reLR])
+#     model.load_weights(f'./model_kf/cv_study{i + 1}.h5')
     
-    k_accuracy = '%.4f' % (model.evaluate(X[validation], y[validation])[1])
-    k_loss = '%.4f' % (model.evaluate(X[validation], y[validation])[0])
+#     k_accuracy = '%.4f' % (model.evaluate(X[validation], y[validation])[1])
+#     k_loss = '%.4f' % (model.evaluate(X[validation], y[validation])[0])
     
-    accuracy.append(k_accuracy)
-    losss.append(k_loss)
-    models.append(model)
+#     accuracy.append(k_accuracy)
+#     losss.append(k_loss)
+#     models.append(model)
 
-print('\nK-fold cross validation Auc: {}'.format(accuracy))
-print('\nK-fold cross validation loss: {}'.format(losss))
+# print('\nK-fold cross validation Auc: {}'.format(accuracy))
+# print('\nK-fold cross validation loss: {}'.format(losss))
 
-print(sum([float(i) for i in accuracy])/10)
-print()
-print(sum([float(i) for i in losss])/10)
+# print(sum([float(i) for i in accuracy])/10)
+# print()
+# print(sum([float(i) for i in losss])/10)
 
-preds = []
-for model in models:
-    pred = model.predict(final_test)
-    preds.append(pred)
-pred = np.mean(preds, axis=0)
-pred
-submission=pd.read_csv('project1/features/sample_submission8.csv')
+# preds = []
+# for model in models:
+#     pred = model.predict(final_test)
+#     preds.append(pred)
+# pred = np.mean(preds, axis=0)
+# pred
+# submission=pd.read_csv('project1/features/sample_submission8.csv')
