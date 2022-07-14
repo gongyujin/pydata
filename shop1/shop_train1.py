@@ -126,8 +126,9 @@ model = LinearRegression()
 model.fit(final_train_x,label)
 # 학습된 모델을 이용해 결과값 예측후 상위 10개의 값 확인
 prediction = model.predict(final_test_x)
+score=model.score(final_train_x,label)
 print('----------------------예측된 데이터의 상위 10개의 값 확인--------------------\n')
 print(prediction[:10])
 
 sample_submission['Weekly_Sales'] = prediction
-sample_submission.to_csv('shop1/submission.csv',index = False)
+sample_submission.to_csv('shop1/sample_submission1.csv',index = False)
