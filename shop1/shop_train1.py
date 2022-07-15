@@ -9,6 +9,7 @@
 # Weekly_Sales : 주간 매출액 (목표 예측값)
 
 # 데이터를 불러오고 살펴보기 위한 pandas 라이브러리
+from lightgbm import LGBMClassifier
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
@@ -79,45 +80,60 @@ test = test.drop(columns=['id','Date'])
 data = train.drop(columns=['Weekly_Sales']) # real train data
 label = train[['Weekly_Sales']] # label
 
-## 스케일링
-def find_best_scaler(train_x, test_x, train_y):
-    best_score = 100
-    columns = train_x.columns
-    for scaler in [PowerTransformer(), MinMaxScaler(), StandardScaler(), MaxAbsScaler(), RobustScaler()]:        
-        scaled_train_x = scaler.fit_transform(train_x)
+## scaling - 스케일링하지않은것, minmaxscaler, standarscaler 세가지중 score가 가장높은 것으로 선정
+best_score = 0
+columns = 'scaled_' + data.columns
+for scaler in [PowerTransformer(), MinMaxScaler(), StandardScaler(), MaxAbsScaler(), RobustScaler()]: # scaling하는 방식 3가지
+    if scaler == None:
+        scaled_train_x = data.copy()
+        scaled_test_x = test.copy()
+    else:
+        scaled_train_x = scaler.fit_transform(data)
         scaled_train_x = pd.DataFrame(scaled_train_x, columns = columns).astype('float64')
-        train1=scaled_train_x.to_numpy()
-        print(train1)
-        scaled_test_x = scaler.transform(test_x)
+        scaled_test_x = scaler.transform(test)
         scaled_test_x = pd.DataFrame(scaled_test_x, columns = columns).astype('float64')
-        test1=scaled_test_x.to_numpy()
-        print(test1)
-        print(train_y.to_numpy())
-        skf = StratifiedKFold(n_splits=3 , shuffle=True)
-        rf = RandomForestClassifier()
-        scores = [abs(x) for x in cross_validate(rf, train1, train_y.to_numpy(), cv=skf)]
-        print(scaler.__class__.__name__)
-        print(f'TOTAL 최대성능: {min(scores)}\n평균성능: {np.mean(scores)}')
-        print('-'*30)
         
-        if np.mean(scores) < best_score:
-            best_score = np.mean(scores)
-            best_train_x = scaled_train_x
-            best_test_x = scaled_test_x
-            best_scaler = scaler
+    skf = StratifiedKFold(n_splits=3 , shuffle=True) # 교차검증 위한 선택
+    main_model = LGBMClassifier(n_jobs = -1) # LGBMClassifier 모델선정
+    scores = cross_val_score(main_model, scaled_train_x, label, scoring='accuracy', cv=skf, n_jobs=-1)
     
+    scores1=cross_validate(main_model, scaled_train_x, label, cv=skf,return_train_score=True)
+    print('cross_validate test_score: ',np.mean(scores1['test_score'])) 
+    print('cross_validate train_score: ',np.mean(scores1['train_score']))
+    
+    #### 그리드서치 - 매개변수 교대로 변경, 교차검증까지 해서 score점수를 계산함.
+    # n_jobs = -1 cpu코어를 모두사용, 컴퓨터가 느려짐.
+    # params = {'min_impurity_decrease': np.arange(0.0001, 0.001, 0.0001),
+    #     'max_depth': range(5, 20, 1),
+    #     'min_samples_split': range(2, 100, 10)
+    # }
+    # params = {'min_impurity_decrease': [0.0001, 0.0002, 0.0003, 0.0004, 0.0005]}
+    # gs = GridSearchCV(DecisionTreeClassifier(), params, n_jobs=-1)
+    # # 훈련
+    # gs.fit(scaled_train_x, train_labels.label.values)
+    # # 훈련후 최적의 모델을 넣어줌.
+    # dt = gs.best_estimator_
+    # print('gridsearchCV DecisionTreeClassifier score : ',dt.score(scaled_train_x, train_labels.label.values))
+    
+    if scaler == None : print('NON_SCALED')
+    else:    
+        print(scaler.__class__.__name__)
+    print(f'TOTAL 최대성능: {max(scores)}\n평균성능: {np.mean(scores)}')
+    print('-'*30)
+
+    if np.mean(scores) >= best_score:
+        best_score = np.mean(scores)
+        best_train_x = scaled_train_x
+        best_test_x = scaled_test_x
+        best_scaler = scaler
+
+if best_scaler == None:
+    print('BEST SCALER IS NON_SCALED')
+else:
     print('BEST SCALER : ', best_scaler.__class__.__name__)
-    
-    return best_score, best_train_x, best_test_x, best_scaler
 
-print(label)
-
-_, scaled_train_x, scaled_test_x, scaler = find_best_scaler(data,test, label)
-
-
-
-final_train_x=scaled_train_x
-final_test_x=scaled_test_x
+final_train_x=best_train_x
+final_test_x=best_test_x
 
 from sklearn.linear_model import LinearRegression
 # 모델 선언
